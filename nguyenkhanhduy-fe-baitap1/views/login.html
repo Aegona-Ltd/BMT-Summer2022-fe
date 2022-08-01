@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.eot">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.otf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff2">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.eot">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+    <div class="ui middle aligned center aligned grid main-body m-0-auto">
+        <div class="form-column column">
+            <h2 class="ui teal image header">
+                <img src="../assets/images/logo.png" class="image" />
+                <div class="content">
+                    Log-in to your account
+                </div>
+            </h2>
+            <form id = "form-login" class="ui large form">
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input name = "email" placeholder="E-mail address" type = "text"/>
+                        </div>
+                        <div id = "email-message" class="invalid"></div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type = "password" name = "password" type = "text" placeholder="Password"/>
+                        </div>
+                        <div id = "password-message" class="invalid"></div>
+                    </div>
+                    <button type = "submit" class="ui fluid large teal submit button">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <div class="ui message">
+                New to us?
+                <a href = "#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <script src = "../js/main.js"></script>
+</body>
+
+</html>

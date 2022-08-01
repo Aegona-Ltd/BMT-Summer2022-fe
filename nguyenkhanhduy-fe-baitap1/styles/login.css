@@ -1,0 +1,30 @@
+body{
+    background-color: #DADADA;
+}
+
+.main-body{
+    min-height: 100vh;
+    max-width: auto;
+}
+
+.invalid{
+    display: flex;
+    margin-top: 2px;
+}
+
+.m-0-auto{
+    margin: 0 auto;
+}
+
+.form-title{
+    text-align: center;
+}
+
+.title{
+    margin-top: 0px;
+}
+
+.form-column{
+    width: 450px !important;
+    max-width: calc(100% - 16px);
+}
