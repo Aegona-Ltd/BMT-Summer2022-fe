@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.eot">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.otf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff2">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf">
+    <link rel="stylesheet" href="../Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.eot">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+    <section class="main">
+        <form id = "form-login">
+            <img class="login-logo" src = "../assets/images/logo.png"/>
+            <div class="login__tab">
+                <button class="login__tab-btn active">
+                    Login
+                </button>
+                <button class="login__tab-btn">
+                    Register
+                </button>
+            </div>
+            <h2 class="login__title">Login into your account</h2>
+            <div class="field">
+                <div class="input">
+                    <i class="user icon"></i>
+                    <input name = "email" placeholder="Email..."/>
+                </div>
+                <div class="invalid"></div>
+            </div>
+            <div class="field">
+                <div class="input">
+                    <i class="lock icon"></i>
+                    <input name = "password" type="password" placeholder="Password..."/>
+                </div>
+                <div class="invalid"></div>
+            </div>
+            <div class="login__action">
+                <div class="login__action-remember">
+                    <input id = "remember" type="checkbox"/>
+                    <label for="remember">Keep me logged in</label>
+                </div>
+                <button type = "submit" class="login__action-btn">
+                    Login
+                </button>
+            </div>
+            <h4 class="login__other">
+                Or Login With
+            </h4>
+            <div class="login__social">
+                <button type = "button" class="login__social-btn">
+                    <i class="facebook f icon"></i>
+                </button>
+                <button type = "button" class="login__social-btn twitter">
+                    <i class="twitter icon"></i>
+                </button>
+                <button type = "button" class="login__social-btn google">
+                    <i class="google plus g icon"></i>
+                </button>
+                <button type = "button" class="login__social-btn linked">
+                    <i class="linkedin icon"></i>
+                </button>
+                <button type = "button" class="login__social-btn pinterest">
+                    <i class="pinterest p icon"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+    <script src = "../js/main.js"></script>
+</body>
+
+</html>

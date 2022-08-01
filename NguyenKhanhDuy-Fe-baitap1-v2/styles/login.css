@@ -1,0 +1,218 @@
+.main{
+    background-image: url('../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#form-login{
+    border-radius: 20px;
+    border-radius: 20px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.88);
+    width: 700px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+}
+
+.login-logo{
+    display: flex;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+
+.login__tab{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.login__tab-btn{
+    width: 30%;
+    border: none;
+    outline: none;
+    background-color: var(--bg-primary);
+    padding: 15px 30px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.04rem;
+}
+
+.login__tab-btn.active{
+    background-color: #D2A41D;
+}
+
+.login__tab-btn:first-child{
+    margin-right: 1px;
+    border-radius: 20px 0 0 20px;
+}
+.login__tab-btn:last-child{
+    margin-left: 1px;
+    border-radius: 0 20px 20px 0px;
+}
+.login__title{
+    font-weight: 500;
+}
+
+.field{
+    margin-bottom: 15px;
+}
+
+.field.error > .input{
+    border: 1px solid rgb(227, 5, 5);
+    color: rgb(227, 5, 5);
+}
+
+.field.error > .input > i{
+    color: rgb(227, 5, 5);
+}
+.input{
+    background-color: #fff;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.input > i{
+    padding-left:10px;
+    display: block;
+    color: #BEBEBE;
+    font-size: 1.2rem;
+}
+.input > input{
+    width: 100%;
+    border: none;
+   font-size: 1.2rem;
+    outline: none;
+    padding: 15px 10px;
+}
+
+.login__action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login__action-remember{
+    font-size: 1.2rem;
+}
+
+.login__action-btn{
+    background-color: var(--bg-primary);
+    border: none;
+    outline: none;
+    padding: 14px 30px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 1.2rem;
+}
+
+.login__other{
+    position: relative;
+    z-index: 2;
+    color: #666666;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.login__other::after{
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 0.5px;
+    background-color: #666666;
+    width: 35%;
+
+}
+.login__other::before{
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 0.5px;
+    background-color: #666666;
+    width: 35%;
+
+}
+
+.login__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__social-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3B5998;
+    border-radius: 5px;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0 5px;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: all ease .3s;
+}
+.login__social-btn:hover{
+    border-color: #3B5998;
+    background-color: transparent;
+    color: #3B5998;
+}
+
+.login__social-btn i{
+    margin: 0;
+}
+.login__social-btn.twitter{
+    background-color: #4EC4F1;
+}
+.login__social-btn.twitter:hover{
+    border-color: #4EC4F1;
+    background-color: transparent;
+    color: #4EC4F1;
+}
+.login__social-btn.google{
+    background-color: #CC3333;
+}
+.login__social-btn.google:hover{
+    border-color: #CC3333;
+    background-color: transparent;
+    color: #CC3333;
+}
+.login__social-btn.linked{
+    background-color: #0077B5;
+}
+.login__social-btn.linked:hover{
+    border-color: #0077B5;
+    background-color: transparent;
+    color: #0077B5;
+}
+.login__social-btn.pinterest{
+    background-color: #BD081C;
+}
+
+.login__social-btn.pinterest:hover{
+    border-color: #BD081C;
+    background-color: transparent;
+    color: #BD081C;
+}
+

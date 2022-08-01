@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Aprial', sans-serif;
+}
+
+:root{
+    --bg-primary: #E9B102;
+}
+
+
+.invalid{
+    color: rgb(227, 5, 5);
+}
