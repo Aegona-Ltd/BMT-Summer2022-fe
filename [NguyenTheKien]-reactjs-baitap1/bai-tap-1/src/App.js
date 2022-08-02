@@ -82,7 +82,7 @@ function App() {
           {errorsValidate.isValidate1 ? null : <li className="text-validate">Please enter a valid e-mail</li>}
           {errorsValidate.isValidate2 ? null : <li className="text-validate">Please enter your password</li>}
           {errorsValidate.isValidate3 ? null : <li className="text-validate">Your password must be at least 6 characters</li>}
-        </div> */}
+          </div> */}
           {errorsValidate.isValidate ? null : <div className='validate'> <li className="text-validate">{errorsValidate.Alert}</li> </div>}
         
         <div className='bottom'>
