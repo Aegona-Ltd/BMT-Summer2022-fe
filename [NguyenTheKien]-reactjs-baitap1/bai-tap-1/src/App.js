@@ -71,7 +71,13 @@ function App() {
           </div>
           <div className='input-login'>
             <div className="icon2" onClick={() => {focus_Pass.current.focus()}}></div>
+            {errorsValidate.isValidate ? null : 
+              <input className='input-form1' type='password' name='password' placeholder="Password" ref={focus_Pass} onChange={(e) => setPassWord(e.target.value)}></input>
+            }
+            {!errorsValidate.isValidate ? null :
             <input className='input-form' type='password' name='password' placeholder="Password" ref={focus_Pass} onChange={(e) => setPassWord(e.target.value)}></input>
+            }
+            
           </div>
           <div className='input-login'>
             <div className='login' onClick={() => btnSignIn()}><small className='text-login'>Login</small></div>
@@ -79,11 +85,11 @@ function App() {
         </div>
         {/* <div className='validate'>
           {errorsValidate.isValidate ? null : <li className="text-validate">Please enter your e-mail</li>}
-          {errorsValidate.isValidate1 ? null : <li className="text-validate">Please enter a valid e-mail</li>}
-          {errorsValidate.isValidate2 ? null : <li className="text-validate">Please enter your password</li>}
-          {errorsValidate.isValidate3 ? null : <li className="text-validate">Your password must be at least 6 characters</li>}
+          {errorsValidate.isValidate ? null : <li className="text-validate">Please enter a valid e-mail</li>}
+          {errorsValidate.isValidate ? null : <li className="text-validate">Please enter your password</li>}
+          {errorsValidate.isValidate ? null : <li className="text-validate">Your password must be at least 6 characters</li>}
           </div> */}
-          {errorsValidate.isValidate ? null : <div className='validate'> <li className="text-validate">{errorsValidate.Alert}</li> </div>}
+          {/* {errorsValidate.isValidate ? null : <div className='validate'> <li className="text-validate">{errorsValidate.Alert}</li> </div>} */}
         
         <div className='bottom'>
         <small className='text-New'>New to us? <a href='/#' className='link-SignUp'> Sign Up</a></small>
