@@ -1,4 +1,3 @@
-import MailSolidIcon from "../../shared/assets/icon/MailSolidIcon";
 import FooterBottom from "./FooterBottom";
 import FooterCenter from "./FooterCenter";
 import FooterTop from "./FooterTop";

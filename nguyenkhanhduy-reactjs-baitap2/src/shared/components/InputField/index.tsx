@@ -1,22 +1,21 @@
 import { memo } from 'react'
 
-interface InputField {
+interface InputFieldI {
     label?: string,
     placeholder: string,
+    register: any,
     rows?: number,
     input?: boolean,
     type?: string,
     options?: any[],
     labelClass: string,
-    frmField: any,
-    err: any,
     gap?: number,
     id: string,
     errMessage: any,
     noneLabel?: boolean
 }
-function InputField(props: InputField) {
-    const classInput = `form-control login__form-field-input ${props.err ? "is-invalid" : ""}`
+function InputField(props: InputFieldI) {
+    const classInput = `form-control login__form-field-input ${props.errMessage ? "is-invalid" : ""}`
     
     return (
         <>
@@ -32,7 +31,7 @@ function InputField(props: InputField) {
                             id={props.id}
                             placeholder={props.placeholder}
                             className={classInput}
-                            {...props.frmField}
+                            {...props.register}
 
                             rows={props.rows}
                         >
@@ -45,20 +44,20 @@ function InputField(props: InputField) {
                             type = {props?.type}
                             placeholder={props.placeholder}
                             className={classInput}
-                            {...props.frmField}
+                            {...props.register}
                         />
                     }
                     {props?.options &&
                         <select
                             id={props.id}
                             className={`${classInput} form-select`}
-                            {...props.frmField}
+                            {...props.register}
                         >
                             <option value="" hidden>{props.placeholder}</option>
                             {props?.options.map((option, index) => <option key={index} value={option.value}>{option.name}</option>)}
                         </select>
                     }
-                    {props.err ? <div className="invalid-feedback">{props.errMessage}</div> : ""}
+                    {props.errMessage ? <div className="invalid-feedback">{props.errMessage}</div> : ""}
                 </div>
             </div>
         </>

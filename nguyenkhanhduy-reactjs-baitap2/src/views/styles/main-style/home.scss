@@ -295,6 +295,7 @@
 
 .homeContact {
     position: relative;
+    margin-bottom: 200px;
     &__icon {
         @include flex-center();
         background-color: #fff;

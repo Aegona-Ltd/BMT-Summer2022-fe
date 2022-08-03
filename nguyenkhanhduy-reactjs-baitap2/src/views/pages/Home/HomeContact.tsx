@@ -5,7 +5,7 @@ import { images } from "../../../shared/assets/images";
 
 function HomeContact() {
     return (
-        <section className="homeContact mb-5">
+        <section className="homeContact">
             <div className="container">
                 <h3 className="homeGeneral__about-title my-5 py-4">
                     Liên Hệ Với AEGONA

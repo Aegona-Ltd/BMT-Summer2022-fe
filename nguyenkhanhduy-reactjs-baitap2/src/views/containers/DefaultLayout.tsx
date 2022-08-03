@@ -15,11 +15,11 @@ function DefaultLayout() {
                     )
                 }
             </Routes>
-            <Footer/>
-            <ToastContainer 
-                    position="top-right"
-                />
-            
+            <Footer />
+            <ToastContainer
+                position="top-right"
+            />
+
         </>
     );
 }

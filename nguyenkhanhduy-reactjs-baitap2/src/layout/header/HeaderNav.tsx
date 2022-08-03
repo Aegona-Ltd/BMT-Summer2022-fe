@@ -20,7 +20,7 @@ function HeaderNav() {
                     </div>
                     <div className="col">
                         <ul className="header__nav-list h-100">
-                            <LinkNav to="/home">
+                            <LinkNav to="/">
                                 Trang chủ
                             </LinkNav>
                             <LinkNav to="/hoc-va-on">
