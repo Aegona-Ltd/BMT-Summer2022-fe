@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài 1</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="login.css">
+  <script type="text/javascript" src="contact/contact.js"></script>
+
+<body>
+    <div class="ui middle aligned center aligned grid"> 
+        <div class="column">
+            <!-- tên  -->
+              <div class="header">
+                  <img src='https://semantic-ui.com/examples/assets/images/logo.png' class="App-logo" alt="logo" />
+                  <div class="text-name">
+                    Contact Form
+                  </div>
+              </div>
+              <!-- form input -->
+          <form class="ui large form" >
+            <div class="ui stacked secondary  segment">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input type="text" name="name" placeholder="First Name">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="mail icon"></i>
+                  <input type="text" name="email" placeholder="E-mail address">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="phone icon"></i>
+                  <input type="number" name="phone" placeholder="Phone-Number">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                        <textarea placeholder="text"></textarea>
+                </div>
+              </div>
+              <div class="ui fluid large teal submit button" >Login</div>
+            </div>
+      <!-- validate -->
+            <div class="ui error message"></div>
+      
+          </form>
+
+        </div>
+    </div>
+</body>
+</html>
