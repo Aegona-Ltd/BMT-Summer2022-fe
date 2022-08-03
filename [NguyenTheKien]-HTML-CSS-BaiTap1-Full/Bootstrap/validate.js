@@ -21,7 +21,7 @@ $("form[name='login']").validate({
 	
 	},
 	submitHandler: function(form) {
-	alert("ok")
+	alert("ok");
 	}
 });
 });
