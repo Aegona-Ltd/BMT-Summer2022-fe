@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', 'Aprial',sans-serif;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        color: #000;
+    }
+}
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.b-r{
+    border-right: 1px solid $color-border;
+}
