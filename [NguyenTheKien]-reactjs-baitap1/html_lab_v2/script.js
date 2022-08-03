@@ -1,24 +1,5 @@
 const forms = document.querySelector(".forms"),
-      pwShowHide = document.querySelectorAll(".eye-icon"),
-      links = document.querySelectorAll(".link");
-
-//Ẩn hiện mật khẩu
-pwShowHide.forEach(eyeIcon => {
-    eyeIcon.addEventListener("click", () => {
-        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
-        
-        pwFields.forEach(password => {
-            if(password.type === "password"){
-                password.type = "text";
-                eyeIcon.classList.replace("bx-hide", "bx-show");
-                return;
-            }
-            password.type = "password";
-            eyeIcon.classList.replace("bx-show", "bx-hide");
-        })
-        
-    })
-})      
+      links = document.querySelectorAll(".link");    
 
 //Chuyển trang đăng ký
 links.forEach(link => {
@@ -68,7 +49,9 @@ function checkInputs() {
         setErrorFor(password, 'Your password must be at least 8 characters');
 	}else{
         setSuccessFor(password);
+        window.location.href = './material-ui/material.html'
     }
+
 }
 
 function SignUp(){

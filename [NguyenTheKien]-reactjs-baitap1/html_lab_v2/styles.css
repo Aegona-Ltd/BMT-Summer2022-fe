@@ -131,6 +131,12 @@ a.facebook{
     color: #fff;
     background-color: #4267b2;
 }
+
+a.facebook:hover{
+    color: #fff;
+    background-color: #4267b2;
+}
+
 a.facebook .facebook-icon{
     height: 28px;
     width: 28px;
@@ -271,6 +277,20 @@ a.google span{
     input:focus::placeholder {
     color: rgb(150, 150, 150);
     text-indent: 20px;
+}
+
+select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+.g-recaptcha{
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 400px) {

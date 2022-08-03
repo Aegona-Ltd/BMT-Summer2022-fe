@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="styles.css">
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css"></script>
-                        
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+               
     </head>
     <body>
         <section class="container forms">
@@ -27,6 +28,7 @@
                                   <i class='bx bx-hide eye-icon'></i>
                                   <small>Error message</small>
                               </div>
+                        <div class="g-recaptcha" id="recaptcha" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
 
                         <div class="form-link">
                             <a href="#" class="forgot-pass">Forgot password?</a>
@@ -69,21 +71,26 @@
                         <div class="form-control">
                             <div class="icon"></div>
                             <input class="text-input" type="email" placeholder="E-mail address" ></input>
-                            <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <div class="icon2"></div>
                             <input class="text-input" type="password" placeholder="Password" />
-                            <i class='bx bx-hide eye-icon'></i>
-                            <small>Error message</small>
                         </div>
 
                         <div class="form-control">
                             <div class="icon2"></div>
                             <input class="text-input" type="password" placeholder="Confirm password" />
                             <i class='bx bx-hide eye-icon'></i>
-                            <small>Error message</small>
                         </div>
+
+                        <select id="country" name="country">
+                            <option value="australia">Nam</option>
+                            <option value="canada">Nu</option>
+                            <option value="usa">Khac</option>
+                        </select>
+
+                        <div class="g-recaptcha" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
+                        <!-- <textarea name="subject" placeholder="Write something.." style="height:200px"></textarea> -->
 
                         <div class="field button-field">
                             <button onclick="SignUp()">Signup</button>
@@ -93,6 +100,7 @@
                     <div class="form-link">
                         <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
                     </div>
+                    
                 </div>
 
                 <div class="line"></div>
