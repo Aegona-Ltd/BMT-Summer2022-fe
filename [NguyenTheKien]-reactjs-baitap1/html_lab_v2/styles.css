@@ -279,3 +279,13 @@ a.google span{
     }
     
 }
+
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (min-width : 46.25em) and (max-width : 64.9375em){
+    .form{
+        padding: 20px 10px;
+        width: 100%;
+        height: auto;
+    }
+}
