@@ -1,0 +1,76 @@
+body > .grid {
+	height: 100%;
+}
+.image {
+margin-top: -100px;
+}
+.column {
+max-width: 450px;
+}
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 18px;
+}
+
+.App-logo{
+	height: 8vmin;
+	pointer-events: none;
+	padding-right: 10px;
+}
+.text-name{
+	color: #00B5AD;
+	font-weight: 700;
+	font-size: 24px;
+}
+
+div{
+	background-color: #DADADA;
+}
+
+::placeholder {
+	color: #ccc;
+}
+input:focus::placeholder {
+color: rgb(150, 150, 150);
+}
+
+input:focus{
+	color: rgb(162, 243, 254);
+	border-color: #00B5AD;
+}
+.g-recaptcha{
+	width: 100%;
+	color: rgb(150, 150, 150);
+}
+
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (min-width : 46.25em) and (max-width : 64.9375em){
+	div.column {
+		max-width: 750px;
+		}
+	/* div.ui.stacked.secondary.segment{
+		width: 750px;
+	} */
+	 div.ui {
+		width: 100%;
+	 }
+  }
+
+/* phone <=740px */
+@media(max-width: 767px) {
+	div.column {
+		max-width: 750px;
+		}
+	/* div.ui.stacked.secondary.segment{
+		width: 750px;
+	} */
+	 div.ui {
+		width: 100%;
+	 }
+}
+
+  
