@@ -1,7 +1,6 @@
 import Clock from "../../shared/assets/icon/Clock";
 import MailSolidIcon from "../../shared/assets/icon/MailSolidIcon";
 import Vector from "../../shared/assets/icon/Phone";
-import PhoneContactIcon from "../../shared/assets/icon/PhoneContactIcon";
 
 function FooterTop() {
     return (

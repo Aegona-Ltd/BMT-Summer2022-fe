@@ -1,4 +1,3 @@
-import { useFormik } from "formik";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { MdOutlinePlace } from "react-icons/md";
@@ -7,36 +6,40 @@ import * as Yup from "yup";
 import InputField from "../../../shared/components/InputField";
 import usersService from "../../../services/usersService";
 import { toast } from "react-toastify";
+import { FaTelegramPlane } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { BsTelephone } from "react-icons/bs";
+
+interface ContactFormI {
+    name: string,
+    email: string,
+    subject: string,
+    message: string,
+};
+
+const schema = Yup.object({
+    name: Yup.string().required('Tên không được để trống.'),
+    subject: Yup.string().required('Tiêu đề không được để trống.'),
+    email: Yup.string().required('Email không được để trống.').email('Vui lòng nhập đúng email'),
+    message: Yup.string().required('Nội dung không được để trống.')
+}).required();
 
 function Contact() {
 
-    const formik = useFormik({
-        initialValues: {
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-        },
-        validationSchema: Yup.object({
-            name: Yup.string().required('Tên không được để trống.'),
-            subject: Yup.string().required('Tiêu đề không được để trống.'),
-            email: Yup.string().required('Email không được để trống.').email('Vui lòng nhập đúng email'),
-            message: Yup.string().required('Nội dung không được để trống.')
-        }),
-        onSubmit: (values) => {
-            handleSubmitForm(values)
+    const { register, handleSubmit, reset,formState: { errors } } = useForm<ContactFormI>({
+        resolver: yupResolver(schema)
+    });
+
+    const handleSubmitForm = handleSubmit(async data => {
+        const user = await usersService.getUserById('1');
+        if (user) {
+            await user.contacts.push(data);
+            await usersService.updateUser(user.id, user);
+            await toast.success('Gửi thành công');
+            reset()
         }
     })
-
-    const handleSubmitForm = async (values: any) => {
-        const user = await usersService.getUserById('1')
-        if(user){
-            await user.contacts.push(values)
-            await usersService.updateUser(user.id, user)
-            await toast.success('Gửi thành công')
-        }
-        
-    }
 
     return (
         <section className="position-relative mt-110">
@@ -48,21 +51,28 @@ function Contact() {
                         <div className="col-lg-6 col-12">
                             <div className="row g-5">
                                 <div className="col-12">
-                                    <h2 className="contact__title">We Love to Hear From You</h2>
-                                    <p className="blogDetail__content-des">Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <h2 className="contact__title">
+                                        Thông tin liên hệ
+                                    </h2>
+                                    <p className="blogDetail__content-des">
+                                        Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                                    </p>
                                 </div>
 
                                 <div className="col-md-6 col-12">
                                     <div className="contact__content-address">
-                                        <h6 className="fw-bold contact__content-adress-title">London</h6>
+                                        <h6 className="fw-bold contact__content-adress-title">
+                                            Hồ Chí Minh
+                                        </h6>
                                         <div className="row">
                                             <div className="col-auto">
-                                                <span className="contact__content-address-icon"><MdOutlinePlace /></span>
+                                                <span className="contact__content-address-icon">
+                                                    <MdOutlinePlace />
+                                                </span>
                                             </div>
                                             <div className="col">
                                                 <p className="blogDetail__content-des mb-0">
-                                                    Fifth Avenue 5501,<br />
-                                                    Broadway, New York
+                                                    Tòa nhà QTSC 9, Khu Phần mềm Quang Trung, P. Tân Chánh Hiệp, Quận 12, TP.HCM
                                                 </p>
                                             </div>
                                         </div>
@@ -70,24 +80,31 @@ function Contact() {
                                 </div>
                                 <div className="col-md-6 col-12">
                                     <div className="contact__content-address">
-                                        <h6 className="fw-bold contact__content-adress-title">Paris</h6>
-                                        <div className="row">
+                                        <h6 className="fw-bold contact__content-adress-title">
+                                            Hotline
+                                        </h6>
+                                        <div className="row align-items-center">
                                             <div className="col-auto">
-                                                <span className="contact__content-address-icon"><MdOutlinePlace /></span>
+                                                <span className="contact__content-address-icon">
+                                                    <BsTelephone />
+                                                </span>
                                             </div>
                                             <div className="col">
                                                 <p className="blogDetail__content-des mb-0">
-                                                    Fifth Avenue 5501,<br />
-                                                    Broadway, New York
+                                                    1900 2021
+
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="col-md-6 col-12">
                                     <div className="contact__content-address">
-                                        <h6 className="fw-bold contact__content-adress-title">Contact Information</h6>
-                                        <div className="row">
+                                        <h6 className="fw-bold contact__content-adress-title">
+                                            Liên hệ
+                                        </h6>
+                                        <div className="row align-items-center">
                                             <div className="col-auto">
                                                 <span className="contact__content-address-icon">
                                                     <AiOutlineMail />
@@ -95,8 +112,7 @@ function Contact() {
                                             </div>
                                             <div className="col">
                                                 <p className="blogDetail__content-des mb-0">
-                                                    organicvegan@example.com<br />
-                                                    info@example.com
+                                                    contact@aegona.com
                                                 </p>
                                             </div>
                                         </div>
@@ -105,8 +121,10 @@ function Contact() {
 
                                 <div className="col-md-6 col-12">
                                     <div className="contact__content-address">
-                                        <h6 className="fw-bold contact__content-adress-title">Our Business Hours</h6>
-                                        <div className="row">
+                                        <h6 className="fw-bold contact__content-adress-title">
+                                            Giờ làm việc
+                                        </h6>
+                                        <div className="row align-items-center">
                                             <div className="col-auto">
                                                 <span className="contact__content-address-icon">
                                                     <IoCalendarClearOutline />
@@ -114,8 +132,7 @@ function Contact() {
                                             </div>
                                             <div className="col">
                                                 <p className="blogDetail__content-des mb-0">
-                                                    Monday - Friday: 8am - 4pm<br />
-                                                    Saturday - Sunday: 9am - 5pm
+                                                    Thứ 2 - Thứ 6: 8am - 17pm
                                                 </p>
                                             </div>
                                         </div>
@@ -127,31 +144,29 @@ function Contact() {
                         <div className="col-lg-6 col-12">
                             <form onSubmit={(e) => {
                                 e.preventDefault()
-                                formik.handleSubmit()
+                                handleSubmitForm()
                             }} className="contact__message">
-                                <h2 className="contact__title mb-4">Leave A Message</h2>
+                                <h2 className="contact__title mb-4">Gửi ý kiến</h2>
                                 <InputField
-                                    err={formik.touched.name && formik.errors.name}
-                                    errMessage={formik.errors.name}
-                                    frmField={formik.getFieldProps('name')}
+                                    register={register('name')}
+                                    errMessage={errors.name?.message}
+                                  
                                     id="name"
                                     labelClass="d-none"
                                     placeholder="Tên"
                                     input={true}
                                 />
                                 <InputField
-                                    err={formik.touched.email && formik.errors.email}
-                                    errMessage={formik.errors.email}
-                                    frmField={formik.getFieldProps('email')}
+                                    errMessage={errors.email?.message}
+                                    register={register('email')}
                                     id="email"
                                     labelClass="d-none"
                                     placeholder="Email"
                                     input={true}
                                 />
-                                 <InputField
-                                    err={formik.touched.subject && formik.errors.subject}
-                                    errMessage={formik.errors.subject}
-                                    frmField={formik.getFieldProps('subject')}
+                                <InputField
+                                    errMessage={errors.subject?.message}
+                                    register={register('subject')}
                                     id="subject"
                                     labelClass="d-none"
                                     placeholder="Tiêu đề"
@@ -159,18 +174,22 @@ function Contact() {
                                 />
 
                                 <InputField
-                                    err={formik.touched.message && formik.errors.message}
-                                    errMessage={formik.errors.message}
-                                    frmField={formik.getFieldProps('message')}
+                                    
+                                    errMessage={errors.message?.message}
+                                    register={register('message')}
                                     id="message"
                                     labelClass="d-none"
                                     placeholder="Nội dung"
-                                    rows = {5}
+                                    rows={5}
                                 />
-                                
+
                                 <div className="contact__message-submit">
-                                    <button type = "submit" className="contact__message-submit-btn">
-                                        Submit
+                                    <button type="submit" className="contact__message-submit-btn">
+                                        <span className="me-2">
+                                            <FaTelegramPlane />
+                                        </span>
+                                        Gửi Đi
+
                                     </button>
                                 </div>
                             </form>

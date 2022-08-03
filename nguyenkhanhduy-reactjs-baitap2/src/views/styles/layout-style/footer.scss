@@ -1,5 +1,4 @@
 .footer{
-    margin-top: 200px;
     background-color: $bg-primary;
     &__top{
         border-bottom: 1px solid $color-border;
@@ -109,7 +108,7 @@
             outline: none;
             border: none;
             font-size: 0.96rem;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 4px;
         }
         

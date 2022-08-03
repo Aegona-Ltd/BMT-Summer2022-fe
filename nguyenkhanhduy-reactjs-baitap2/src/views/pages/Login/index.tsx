@@ -1,4 +1,3 @@
-import { useFormik } from "formik";
 import * as Yup from 'yup';
 import InputField from "../../../shared/components/InputField";
 import { useNavigate } from "react-router";
@@ -7,47 +6,45 @@ import usersService from "../../../services/usersService";
 import { User } from "../../../shared/interfaces/user";
 import { login } from "../../../modules/userSlice";
 import Banner from "../../../shared/components/Banner";
-import useCompany from "../../../shared/hooks/useCompany";
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
+interface LoginFormI {
+    email: string,
+    password: string,
+}
+
+const schema = Yup.object({
+    email: Yup.string().required('Email không được để trống.').email('Vui lòng nhập email hợp lệ'),
+    password: Yup.string().required('Mật khẩu không được để trống').min(6, 'Độ dài mật khẩu ít nhất 6 kí tự'),
+}).required();
 
 function Login() {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const company = useCompany()
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginFormI>({
+        resolver: yupResolver(schema)
+    });
 
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            password: ''
-        },
-        validationSchema: Yup.object({
-            email: Yup.string().required('Email không được để trống').email('Vui lòng nhập đúng email'),
-            password: Yup.string().required("Mật khẩu không được để trống.").min(6, "Độ dài kí tự mật khẩu phải trên 6 kí tự"),
-        }),
-        onSubmit: (values) => {
-            handleLogin(values)
-        }
-    })
+    const handleLogin = handleSubmit(async data => {
+        const { email, password } = data;
 
-    const handleLogin = async (values: any) => {
-        const { email, password } = values
-
-        const users: User[] = await usersService.getUsers()
+        const users: User[] = await usersService.getUsers();
         if (users) {
-            const user = users.find(user => user.email === email && user.password === password)
+            const user = users.find(user => user.email === email && user.password === password);
             if (user) {
-                navigate('/')
-                dispatch(login({ ...user }))
-                toast.success('Đăng nhập thành công')
+                navigate('/');
+                dispatch(login({ ...user }));
+                toast.success('Đăng nhập thành công');
             }
-            else{
-                toast.error('Đăng nhập thất bại')
+            else {
+                toast.error('Đăng nhập thất bại');
             }
         }
+    });
 
-    }
 
     return (
         <section className="login">
@@ -55,32 +52,31 @@ function Login() {
                 current="Đăng Nhập"
                 title="Đăng Nhập"
             />
-            <div className="container mt-5">
+            <div className="container my-5">
 
                 <form onSubmit={(e) => {
                     e.preventDefault()
-                    formik.handleSubmit()
+                    handleLogin()
                 }} className="login__form">
                     <div className="mb-3">
                         <InputField
-                            err={formik.touched.email && formik.errors.email}
-                            errMessage={formik.errors.email}
-                            frmField={formik.getFieldProps('email')}
+                            errMessage={errors.email?.message}
+                            register = {register('email')}
+                            input = {true}
+                            placeholder = "Email"
                             id="email"
                             labelClass="d-none"
-                            placeholder="Email"
-                            input={true}
                         />
+
                     </div>
                     <div className="mb-3">
                         <InputField
-                            err={formik.touched.password && formik.errors.password}
-                            errMessage={formik.errors.password}
-                            frmField={formik.getFieldProps('password')}
+                            errMessage={errors.password?.message}
+                            register = {register('password')}
+                            input = {true}
+                            placeholder = "Mật khẩu"
                             id="password"
                             labelClass="d-none"
-                            placeholder="Mật khẩu"
-                            input={true}
                         />
                     </div>
                     <div className="login__form-btn d-flex justify-content-between align-items-center">
@@ -91,7 +87,7 @@ function Login() {
                         <button type="submit">Đăng Nhập</button>
                     </div>
                     <p className="my-3 login__form-separate">Hoặc đăng nhập với</p>
-                    <div className="row g-3">
+                    <div className="row">
                         <div className="col">
                             <button className="login__form-login-btn facebook mb-4">
                                 <img
@@ -119,7 +115,7 @@ function Login() {
                             </button>
                         </div>
                         <div className="col">
-                            <button className="col login__form-login-btn  apple">
+                            <button className="col login__form-login-btn apple">
                                 <img
                                     className="login__form-login-btn-icon"
                                     src="https://s1.vnecdn.net/myvne/i/v64/ls/icons/app_ico.svg"
@@ -131,9 +127,6 @@ function Login() {
 
                             </button>
                         </div>
-
-
-
                     </div>
                 </form>
             </div>

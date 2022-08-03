@@ -1,16 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import DefaultLayout from './views/containers/DefaultLayout';
 
 
 function App() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   return (
-     <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<DefaultLayout />} />
-        </Routes>
-      </BrowserRouter>
-      
+    <Routes>
+      <Route path="/*" element={<DefaultLayout />} />
+    </Routes>
+
   );
 }
 
