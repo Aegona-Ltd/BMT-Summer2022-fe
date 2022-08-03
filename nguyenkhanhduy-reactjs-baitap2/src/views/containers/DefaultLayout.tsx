@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import { ToastContainer } from "react-toastify";
 import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import routes from "../../routes";
@@ -15,6 +16,9 @@ function DefaultLayout() {
                 }
             </Routes>
             <Footer/>
+            <ToastContainer 
+                    position="top-right"
+                />
             
         </>
     );

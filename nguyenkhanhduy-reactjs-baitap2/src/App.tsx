@@ -10,6 +10,7 @@ function App() {
           <Route path="/*" element={<DefaultLayout />} />
         </Routes>
       </BrowserRouter>
+      
   );
 }
 

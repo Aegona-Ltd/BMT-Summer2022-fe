@@ -11,7 +11,7 @@ function LinkNav(props: PropLink) {
     const { to, children } = props
     const location = useLocation()
 
-    const match = location.pathname.includes(to)
+    const match = location.pathname.match(to)
 
     const classLink = `linkNav__item d-flex align-items-center py-4 ${match ? 'active' :''}`
 

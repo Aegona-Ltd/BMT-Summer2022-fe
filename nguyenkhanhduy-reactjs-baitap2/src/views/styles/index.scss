@@ -2,8 +2,11 @@
 @import './varriable';
 @import './base';
 @import './mixin';
+@import "./reset-bootstrap.scss";
 @import './layout-style/header.scss';
 @import './component-style/LinkNav.scss';
 @import "./main-style/home.scss";
 @import "./layout-style/footer.scss";
+@import './main-style/contact.scss';
+@import "./main-style/login.scss";
 

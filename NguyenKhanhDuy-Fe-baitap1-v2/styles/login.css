@@ -140,6 +140,7 @@
     width: 35%;
 
 }
+
 .login__other::before{
     content: "";
     z-index: 1;

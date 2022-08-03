@@ -4,6 +4,7 @@ import banner2 from './banner2.png';
 import banner3 from './banner3.png';
 import banner4 from './banner4.png';
 import banner5 from './banner5.png';
+import bannerShop from './bannerShop.jpg';
 import mobile from './mobile.png';
 import pc from './pc.png';
 import whiteImage from './white-image.png';
@@ -28,5 +29,6 @@ export const images = {
     map,
     earth,
     bg2,
-    bg1
+    bg1,
+    bannerShop
 }
