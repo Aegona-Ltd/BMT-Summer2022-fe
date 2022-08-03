@@ -1,0 +1,117 @@
+.footer{
+    margin-top: 200px;
+    background-color: $bg-primary;
+    &__top{
+        border-bottom: 1px solid $color-border;
+        &-card{
+
+            &.b-r{
+                border-right: 1px solid $color-border;
+            }
+            &-icon{
+
+            }
+            &-title{
+                color: #fff;
+                font-size: 0.94rem;
+            }
+            &-des{
+                font-size: 0.94rem;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+
+    &__bottom{
+
+        &-wrapper{
+            border-top: 1px solid $color-border;
+        }
+
+        &-text{
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.87rem;
+        }
+    }
+
+    &__center{
+        &-logo{
+            padding: 0 0 10px 0;
+            line-height: 34px;
+        }
+        &-text{
+            margin-left: 10px;
+            color: rgba(255, 255, 255, 0.92);
+
+            font-size: 0.9rem;
+        }
+
+        &-list{
+
+        }
+        &-item{
+
+            &-link{
+                display: block;
+                position: relative;
+                color: #fff;
+                font-size: 0.9rem;
+                transition: all ease .3s;
+
+                &:hover{
+                    color: rgba(255, 255, 255, 0.6);
+                }
+
+                &::after{
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -5%;
+                    width: 8px;
+                    border-radius: 50%;
+                    height: 8px;
+                    background-color: $color-yellow;
+                }
+            }
+        }
+
+        &-title{
+            position: relative;
+            color: #fff;
+            line-height: 25px;
+            font-size: 1.2rem;
+            padding: 0 0 10px 0;
+
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                background-color: $color-yellow;
+                width: 32%;
+            }
+        }
+
+        &-input{
+            display: block;
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+        &-btn{
+            background-color: $color-yellow;
+            color: #000;
+            font-weight: 600;
+            outline: none;
+            border: none;
+            font-size: 0.96rem;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+    }
+}

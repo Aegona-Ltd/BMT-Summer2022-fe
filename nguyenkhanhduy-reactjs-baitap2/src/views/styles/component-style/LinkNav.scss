@@ -1,0 +1,36 @@
+.linkNav{
+    height: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 15px;
+
+
+
+    &__item{
+        display: flex;
+        
+        color:rgba(255, 255, 255, 0.87);
+        height: 100%;
+        font-size: 0.9rem;
+        transition: all ease .3s;
+        
+        &:hover{
+            color: #fff;
+        }
+
+        &.active{
+            color: #fff;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                border-radius: 2px 2px 0 0;
+                background-color: $color-yellow;
+            }
+        }
+    }
+}

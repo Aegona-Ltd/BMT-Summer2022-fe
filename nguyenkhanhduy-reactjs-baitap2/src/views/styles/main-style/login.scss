@@ -1,0 +1,115 @@
+.login {
+    margin-top: 110px;
+
+    &__form {
+        width: 450px;
+        margin: 0 auto;
+        &-separate{
+            position: relative;
+            color: $color-title;
+            font-size: 0.9rem;
+            text-align: center;
+
+            &::after{
+                content: "";
+                z-index: 1;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 0.5px;
+                background-color: #ccc;
+                width: 25%;
+            }
+            &::before{
+                content: "";
+                z-index: 1;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 0.5px;
+                background-color: #ccc;
+                width: 25%;
+            }
+        }
+        &-login {
+            &-btn {
+                position: relative;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 3px;
+                padding: 0;
+                height: 48px;
+                line-height: 48px;
+                font-size: 15px;
+                font-weight: 700;
+                background-color: transparent;
+                outline: none;
+
+                &.facebook {
+                    color: #3b5999;
+                    border: 1px solid #3b5999;
+                }
+                &.google {
+                    color: #4688f1;
+                    border: 1px solid #4688f1;
+                }
+
+                &.apple {
+                    color: #222;
+                    border: 1px solid #222222;
+                }
+
+                &-text {
+                }
+                &-icon {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 12px;
+
+                    @include responsive(md-screen) {
+                        left: 17px;
+                        transform: translateX(0);
+                        top: 12px;
+                    }
+                }
+            }
+        }
+
+        &-field {
+            position: relative;
+
+            &-input {
+                width: 100%;
+                padding: 10px 15px !important;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+            }
+            &-input:focus &-label {
+                top: 0;
+            }
+            &-label {
+                position: absolute;
+                top: 50%;
+                font-size: 0.93rem;
+                transform: translateY(-50%);
+                left: 10px;
+            }
+        }
+
+        &-btn {
+            & button {
+                outline: none;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: $color-yellow;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
