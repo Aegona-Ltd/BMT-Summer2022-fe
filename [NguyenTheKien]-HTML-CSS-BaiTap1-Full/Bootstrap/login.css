@@ -2,68 +2,142 @@ body{
   padding-top:4.2rem;
 padding-bottom:4.2rem;
 background:rgba(0, 0, 0, 0.76);
-  }
-  a{
-   text-decoration:none !important;
-   }
-   h1,h2,h3{
-   font-family: 'Kaushan Script', cursive;
-   }
-    .myform{
-position: relative;
-display: -ms-flexbox;
-display: flex;
-padding: 1rem;
--ms-flex-direction: column;
-flex-direction: column;
-width: 100%;
-pointer-events: auto;
-background-color: #fff;
-background-clip: padding-box;
-border: 1px solid rgba(0,0,0,.2);
-border-radius: 1.1rem;
-outline: 0;
-max-width: 500px;
 }
-   .tx-tfm{
-   text-transform:uppercase;
-   }
-   .mybtn{
-   border-radius:50px;
-   }
-  
-   .login-or {
-   position: relative;
-   color: #aaa;
-   margin-top: 10px;
-   margin-bottom: 10px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   }
-   .span-or {
-   display: block;
-   position: absolute;
-   left: 50%;
-   top: -2px;
-   margin-left: -25px;
-   background-color: #fff;
-   width: 50px;
-   text-align: center;
-   }
-   .hr-or {
-   height: 1px;
-   margin-top: 0px !important;
-   margin-bottom: 0px !important;
-   }
-   .google {
-   color:#666;
-   width:100%;
-   height:40px;
-   text-align:center;
-   outline:none;
-   border: 1px solid lightgrey;
-   }
-    form .error {
-   color: #ff0000;
-   }
-   #second{display:none;}
+a{
+  text-decoration:none !important;
+}
+h1,h2,h3{
+  font-family: 'Kaushan Script', cursive;
+}
+.myform{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 1.1rem;
+  outline: 0;
+  max-width: 500px;
+}
+.tx-tfm{
+  text-transform:uppercase;
+}
+.mybtn{
+  border-radius:50px;
+}
+
+.login-or {
+  position: relative;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  margin-left: -25px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center;
+}
+.hr-or {
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.google {
+  color:#666;
+  width:100%;
+  height:40px;
+  text-align:center;
+  outline:none;
+  border: 1px solid lightgrey;
+}
+form .error {
+  color: #ff0000;
+}
+#second{display:none;}
+
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (min-width : 46.25em) and (max-width : 64.9375em){
+  div.col.md-5.mx-auto {
+    max-width: 980px;
+  }
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div.myform.form{
+    width: 500px;
+  }
+  div.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (max-width : 2346px){
+  /* div.col.md-5.mx-auto {
+    max-width: 980px;
+    margin-top: 500px;
+    
+  } */
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  div.myform.form{
+    width: 500px;
+  }
+  div.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 400px;
+  }
+}
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (max-width : 46.25em){
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  div.myform.form{
+    width: 100%;
+  }
+  div.row{
+    width: 1790px;
+    height: 1790px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 400px;
+  }
+  div.container{
+    width: 100%;
+    height: 100%;
+  }
+}
