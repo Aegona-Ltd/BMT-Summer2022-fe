@@ -1,7 +1,7 @@
 body{
   padding-top:4.2rem;
 padding-bottom:4.2rem;
-background:rgba(0, 0, 0, 0.76);
+background:rgba(207, 207, 207, 0.76);
 }
 a{
   text-decoration:none !important;
@@ -67,7 +67,11 @@ form .error {
   color: #ff0000;
 }
 #second{display:none;}
-
+div.col-md-12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* tablet width >= 740px và width < 1024px */
 @media only screen and (min-width : 46.25em) and (max-width : 64.9375em){

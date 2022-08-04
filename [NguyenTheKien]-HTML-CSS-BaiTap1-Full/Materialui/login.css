@@ -1,66 +1,47 @@
-/**
- * Body CSS
- */
- html,
- body {
-   height: 100%;
- }
- 
- html,
- body,
- input,
- textarea,
- button {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
- }
- 
- 
- /**
-  * Header CSS
-  */
- header {
-   position: fixed;
-   top: 0;
-   right: 0;
-   left: 0;
-   z-index: 2;
- }
- 
- header ul.mui-list--inline {
-   margin-bottom: 0;
- }
- 
- header a {
-   color: white;
- }
- 
- header table {
-   width: 100%;
- }
- 
- 
- /**
-  * Content CSS
-  */
- #content-wrapper {
-   min-height: 100%;
- 
-   /* sticky footer */
-   box-sizing: border-box;
-   margin-bottom: -100px;
-   padding-bottom: 100px;
- }
- 
- 
- /**
-  * Footer CSS
-  */
- footer {
-   box-sizing: border-box;
-   height: 100px;
-   background-color: #eee;
-   border-top: 1px solid #e0e0e0;
-   padding-top: 35px;
- }
+.text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+h5{
+  color: #26A69A;
+}
+
+.App-logo{
+	height: 8vmin;
+	pointer-events: none;
+	padding-right: 10px;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+div#user-login.row{
+  margin-top: 100px;
+}
+
+div.col.s6.z-depth-6.card-panel{
+  margin-left: 295px;
+  margin-top: 18px;
+}
+
+label.Subject{
+  font-size: 18px;
+}
+textarea{
+  margin-top: 20px;
+}
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (min-width : 46.25em) and (max-width : 64.9375em){
+  div.col.s6.z-depth-6.card-panel{
+    width: 600px;
+    height: auto;
+    margin-left: 145px;
+  }
+  }
