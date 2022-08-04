@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User } from '../shared/interfaces/user';
-
 interface UserProps {
     currentUser: User
 }

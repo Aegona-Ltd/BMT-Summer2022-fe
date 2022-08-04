@@ -29,9 +29,13 @@ function HeaderNav() {
                             <LinkNav to="/ve-chung-toi">
                                 Về chúng tôi
                             </LinkNav>
+                            <LinkNav to="/san-pham">
+                                Sản phẩm
+                            </LinkNav>
                             <LinkNav to="/lien-he">
                                 Liên hệ
                             </LinkNav>
+
                         </ul>
                     </div>
                     <div className="col-auto">
