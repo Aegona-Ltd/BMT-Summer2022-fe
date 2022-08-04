@@ -1,5 +1,5 @@
 const forms = document.querySelector(".forms"),
-      links = document.querySelectorAll(".link");    
+      links = document.querySelectorAll(".link");   
 
 //Chuyển trang đăng ký
 links.forEach(link => {
@@ -22,13 +22,13 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
+	const isCaptchaChecked = (grecaptcha && grecaptcha.getResponse().length !== 0);
 	const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
     const numbers = /[0-9]/g;
     const upperCaseLetters = /[A-Z]/g;
     const lowerCaseLetters = /[a-z]/g;
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
-	
 	if(emailValue === '') {
 		setErrorFor(email, 'Please enter your e-mail');
 	} else if (!isEmail(emailValue)) {
@@ -41,7 +41,7 @@ function checkInputs() {
 		setErrorFor(password, 'Please enter your password');
 	} else if(!passwordValue.match(numbers)) {
         setErrorFor(password, 'Please enter your number');
-        console.log('s' , passwordValue.match(numbers));
+        // console.log('s' , passwordValue.match(numbers));
 	}else if(!passwordValue.match(lowerCaseLetters)) {
         setErrorFor(password, 'Please enter lowercase characters (abc)');
 	}else if(!passwordValue.match(upperCaseLetters)) {
@@ -50,11 +50,15 @@ function checkInputs() {
         setErrorFor(password, 'Your password is not have special character');
 	}else if(passwordValue.length <=8) {
         setErrorFor(password, 'Your password must be at least 8 characters');
+	}else if(isCaptchaChecked == false) {
+		setSuccessFor(password);
+		var x = document.getElementById("snackbar");
+		x.className = "show";
+		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 	}else{
-        setSuccessFor(password);
-        window.location.href = './contact/contact.html'
+				window.location.href = './contact/index.html';
     }
-
+	
 }
 
 function SignUp(){
@@ -68,27 +72,52 @@ function SignUp(){
     const lowerCaseLetters = /[a-z]/g;
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
 
-    if(emailsignupValue === '') {
-		alert('email rỗng');
-	} else if (!isEmail(emailsignupValue)) {
-		alert('email sai định dạng');
-	} else if(pwsignupValue === '') {
-		alert('Pass rỗng rồi fen');
-	} else if(!pwsignupValue.match(numbers)) {
-        alert('Pass phải có số nha');
-	}else if(!pwsignupValue.match(lowerCaseLetters)) {
-        alert('Fen không viết chữ thường à');
-	}else if(!pwsignupValue.match(upperCaseLetters)) {
-        alert('Ơ kìa ! viết thường thì phải viết HOA chứ ');
-	}else if(!pwsignupValue.match(format)) {
-        alert('thêm ký tự đặc biệt cho khó nhớ nè');
-	}else if(pwsignupValue.length <=8) {
-        alert('Hình như ký tự hơi ít , nhập 8 ký tự thử xem');
-	}else if(pwsignupValue != pwsignup1Value) {
-        alert('Fen thử xem kỹ nhập lại mật khẩu đúng chưa');
-	}else{
-       alert('Success')
-    }
+	const Url = 'https://private-62265-kienjerry.apiary-mock.com/dev';
+	const Data ={
+		name : emailsignupValue,
+		pass : pwsignup1Value
+	};
+	const aa = {
+		headers:{
+			"content-type":"application/json; charset=UTF-8"
+		},
+		body:Data,
+		method:"POST"
+	};
+
+	fetch(Url, aa)
+		.then(data =>{return data.json()})
+		.then(res => {console.log(res);})
+		.catch(error => console.error(error))
+    // if(emailsignupValue === '') {
+	// 	alert('email rỗng');
+	// } else if (!isEmail(emailsignupValue)) {
+	// 	alert('email sai định dạng');
+	// } else if(pwsignupValue === '') {
+	// 	alert('Pass rỗng rồi fen');
+	// } else if(!pwsignupValue.match(numbers)) {
+    //     alert('Pass phải có số nha');
+	// }else if(!pwsignupValue.match(lowerCaseLetters)) {
+    //     alert('Fen không viết chữ thường à');
+	// }else if(!pwsignupValue.match(upperCaseLetters)) {
+    //     alert('Ơ kìa ! viết thường thì phải viết HOA chứ ');
+	// }else if(!pwsignupValue.match(format)) {
+    //     alert('thêm ký tự đặc biệt cho khó nhớ nè');
+	// }else if(pwsignupValue.length <=8) {
+    //     alert('Hình như ký tự hơi ít , nhập 8 ký tự thử xem');
+	// }else if(pwsignupValue != pwsignup1Value) {
+    //     alert('Fen thử xem kỹ nhập lại mật khẩu đúng chưa');
+	// }else{
+		// alert('Kiểm tra log đi fen');
+		// const Http = new XMLHttpRequest();
+		// const url='https://private-62265-kienjerry.apiary-mock.com/dev';
+		// Http.open("GET", url);
+		// Http.send();
+
+		// Http.onreadystatechange = (e) => {
+		// 	console.log(Http.response);
+		// }
+    // }
 }
 
 function setErrorFor(input, message) {

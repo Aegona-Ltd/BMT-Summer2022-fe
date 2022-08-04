@@ -15,7 +15,7 @@
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
-                    <form id="form">
+                    <form id="form" disabled>
                               <div class="form-control">
                                   <div class="icon"></div>
                                   <input class="text-input" type="email" placeholder="E-mail address" id="email" ></input>
@@ -27,8 +27,8 @@
                                   <i class='bx bx-hide eye-icon'></i>
                                   <small>Error message</small>
                               </div>
-                        <div class="g-recaptcha" id="recaptcha" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
-
+                        <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
+                        <div id="snackbar">Chấp nhận captcha đi fen</div>
                         <div class="form-link">
                             <a href="#" class="forgot-pass">Forgot password?</a>
                         </div>
@@ -38,8 +38,8 @@
                         </div>
                     </form>
 
-                    <div class="form-link">
-                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    <div class="form-link" disabled>
+                        <span>Don't have an account? <a href="#" class="link signup-link" disabled>Signup</a></span>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
                             <option value="usa">Khac</option>
                         </select>
 
-                        <div class="g-recaptcha" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
+                        <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"></div>
 
                         <div class="field button-field">
                             <button onclick="SignUp()">Signup</button>
@@ -121,5 +121,10 @@
         </section>
         <script src="script.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
     </body>
 </html>
