@@ -18,6 +18,7 @@ function DefaultLayout() {
             <Footer />
             <ToastContainer
                 position="top-right"
+                autoClose={2000}
             />
 
         </>

@@ -3,6 +3,7 @@ import axios from 'axios';
 const url = {
     baseUrl : 'https://62ea194c01787ec712210761.mockapi.io',
     users : '/users',
+    products: '/products'
 }
 
 const instance = axios.create({
