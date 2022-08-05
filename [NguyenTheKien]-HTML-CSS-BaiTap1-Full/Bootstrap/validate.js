@@ -21,7 +21,7 @@ $("form[name='login']").validate({
 	
 	},
 	submitHandler: function(form) {
-		window.location.href = './contact.html'
+		window.location.href = './index.html'
 	}
 });
 });

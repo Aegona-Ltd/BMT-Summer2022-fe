@@ -28,26 +28,9 @@ $(document)
                 prompt : 'Please enter a valid e-mail'
               }
             ]
-        },
-        phone: {
-            identifier  : 'phone',
-            rules: [
-            {
-                type   : 'empty',
-                prompt : 'Please enter your number'
-            },
-            {
-                type   : 'length[10]',
-                prompt : 'Your UserName must be at least 10-11 characters'
-            }
-            ]
-        },
+        }
 	  }
 	})
   ;
 })
 ;
-
-function name(params) {
-    
-}

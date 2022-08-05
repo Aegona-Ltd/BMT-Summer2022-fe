@@ -50,8 +50,11 @@ function checkInputs() {
         setErrorFor(password, 'Your password is not have special character');
 	}else if(passwordValue.length <=8) {
         setErrorFor(password, 'Your password must be at least 8 characters');
+	}else if(!isEmail(emailValue)) {
+        setErrorFor(email, 'Please enter a valid e-mail');
 	}else if(isCaptchaChecked == false) {
 		setSuccessFor(password);
+		setSuccessFor(email);
 		var x = document.getElementById("snackbar");
 		x.className = "show";
 		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
