@@ -92,7 +92,7 @@ function SignUp(){
 	// }else if(pwsignupValue != pwsignup1Value) {
     //     alert('Fen thử xem kỹ nhập lại mật khẩu đúng chưa');
 	// }else{
-		alert('Kiểm tra log đi fen');
+		alert('check log');
 		// const Http = new XMLHttpRequest();
 		// const url='https://private-62265-kienjerry.apiary-mock.com/test';
 		// Http.open("GET", url);
