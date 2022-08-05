@@ -119,7 +119,7 @@ div.col-md-12{
   }
 }
 
-/* tablet width >= 740px và width < 1024px */
+/* tablet width >= 740px và  width < 1024px */
 @media only screen and (max-width : 46.25em){
   body{
     display: flex;
