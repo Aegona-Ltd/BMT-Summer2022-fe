@@ -31,7 +31,7 @@
 				      		<div id="form-message-success" class="mb-4">
 				            Your message was sent, thank you!
 				      		</div>
-									<form method="POST" id="contactForm" name="contactForm">
+									<form id="contactForm" name="contactForm" action="https://jsonplaceholder.typicode.com/posts" method="post">
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
@@ -117,25 +117,6 @@
 	src="https://code.jquery.com/jquery-3.4.1.min.js"
 	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	crossorigin="anonymous"></script>
-	<script>
-		$(document).ready(function(){
-			const Url='https://private-62265-kienjerry.apiary-mock.com/test';
-			$('.btn').click(function(){
-				$.ajax({
-					url:Url,
-					type:"GET",
-					// data : Data,
-					// dataType: "JSON",
-					success:function(result){
-						console.log(result);
-			},
-				error:function(error){
-					console.log(`Error${error}`)
-				}
-				})
-			})
-		})
-	</script>
 	</body>
 </html>
 

@@ -41,7 +41,6 @@ function checkInputs() {
 		setErrorFor(password, 'Please enter your password');
 	} else if(!passwordValue.match(numbers)) {
         setErrorFor(password, 'Please enter your number');
-        // console.log('s' , passwordValue.match(numbers));
 	}else if(!passwordValue.match(lowerCaseLetters)) {
         setErrorFor(password, 'Please enter lowercase characters (abc)');
 	}else if(!passwordValue.match(upperCaseLetters)) {
@@ -74,24 +73,6 @@ function SignUp(){
     const upperCaseLetters = /[A-Z]/g;
     const lowerCaseLetters = /[a-z]/g;
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
-
-	const Url = 'https://private-62265-kienjerry.apiary-mock.com/dev';
-	const Data ={
-		name : emailsignupValue,
-		pass : pwsignup1Value
-	};
-	const aa = {
-		headers:{
-			"content-type":"application/json; charset=UTF-8"
-		},
-		body:Data,
-		method:"POST"
-	};
-
-	fetch(Url, aa)
-		.then(data =>{return data.json()})
-		.then(res => {console.log(res);})
-		.catch(error => console.error(error))
     // if(emailsignupValue === '') {
 	// 	alert('email rỗng');
 	// } else if (!isEmail(emailsignupValue)) {
@@ -111,9 +92,9 @@ function SignUp(){
 	// }else if(pwsignupValue != pwsignup1Value) {
     //     alert('Fen thử xem kỹ nhập lại mật khẩu đúng chưa');
 	// }else{
-		// alert('Kiểm tra log đi fen');
+		alert('Kiểm tra log đi fen');
 		// const Http = new XMLHttpRequest();
-		// const url='https://private-62265-kienjerry.apiary-mock.com/dev';
+		// const url='https://private-62265-kienjerry.apiary-mock.com/test';
 		// Http.open("GET", url);
 		// Http.send();
 
@@ -121,6 +102,12 @@ function SignUp(){
 		// 	console.log(Http.response);
 		// }
     // }
+
+	const url='https://private-62265-kienjerry.apiary-mock.com/test';
+	fetch(url)
+		.then(dataa => {return dataa.json()})  // khi lấy được dữ liệu từ Url thì sẽ gắn vào json 
+		.then(res => {console.log(res)}) //khi chuyển dữ liệu từ url -> json thì sẽ log ra res
+
 }
 
 function setErrorFor(input, message) {

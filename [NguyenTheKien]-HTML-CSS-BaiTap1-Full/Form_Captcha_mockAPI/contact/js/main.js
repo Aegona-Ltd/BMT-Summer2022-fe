@@ -27,54 +27,24 @@
 				},
 				/* submit via ajax */
 				
-				submitHandler: function(form) {		
-					var $submit = $('.submitting'),
-						waitText = 'Submitting...';
+				submitHandler: function() {	
+					var frm = $('#contactForm');	
+					frm.submit(function (e) {
 
-					$.ajax({   	
-				      type: "POST",
-				      url: "https://private-62265-kienjerry.apiary-mock.com/test",
-				      data: $(form).serialize(),
-
-				      beforeSend: function() { 
-				      	$submit.css('display', 'block').text(waitText);
-				      },
-				      success: function(msg) {
-		               if (msg == 'OK') {
-		               	$('#form-message-warning').hide();
-				            setTimeout(function(){
-		               		$('#contactForm').fadeIn();
-		               	}, 1000);
-				            setTimeout(function(){
-				               $('#form-message-success').fadeIn();   
-		               	}, 1400);
-
-		               	setTimeout(function(){
-				               $('#form-message-success').fadeOut();   
-		               	}, 8000);
-
-		               	setTimeout(function(){
-				               $submit.css('display', 'none').text(waitText);  
-		               	}, 1400);
-
-		               	setTimeout(function(){
-		               		$( '#contactForm' ).each(function(){
-											    this.reset();
-											});
-		               	}, 1400);
-			               
-			            } else {
-			               $('#form-message-warning').html(msg);
-				            $('#form-message-warning').fadeIn();
-				            $submit.css('display', 'none');
-			            }
-				      },
-				      error: function() {
-				      	$('#form-message-warning').html("Something went wrong. Please try again.");
-				         $('#form-message-warning').fadeIn();
-				         $submit.css('display', 'none');
-				      }
-			      });    		
+						e.preventDefault();
+			
+						$.ajax({
+							type: frm.attr('method'),
+							url: frm.attr('action'),
+							data: frm.serialize(),
+							success: function (data) {
+								console.log(data);
+							},
+							error: function (data) {
+								console.log(data);
+							},
+						});
+					});
 		  		} // end submitHandler
 
 			});
