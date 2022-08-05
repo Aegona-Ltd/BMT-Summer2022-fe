@@ -2,7 +2,7 @@ import { images } from "../../../shared/assets/images";
 import HomeBanner from "./HomeBanner";
 import HomeContact from "./HomeContact";
 import HomeGeneral from "./HomeGeneral";
-import HomeItem from "./HomeItem";
+
 
 function Home() {
     return ( 
@@ -11,7 +11,7 @@ function Home() {
             <HomeGeneral/>
             
             <HomeContact/>
-            <div className="homeBanner__bg" style={{backgroundImage:`url(${images.bg1})`}}></div>
+            <div className="homeBanner__bg d-lg-block d-none" style={{backgroundImage:`url(${images.bg1})`}}></div>
         </section>
      );
 }

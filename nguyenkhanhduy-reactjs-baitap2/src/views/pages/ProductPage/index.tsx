@@ -166,8 +166,8 @@ function ProductPage() {
     return (
         <section className="product mt-110">
             <div className="container py-5">
-                <div className="row mb-3">
-                    <div className="col-3">
+                <div className="row mb-3 g-3">
+                    <div className="col-lg-3">
                         <InputSearch
                             onChangeValue={(value) => handleSearchCategory(value, 1)}
                             valueInput=""
@@ -176,7 +176,7 @@ function ProductPage() {
                     <div className="col d-flex justify-content-end">
                         <button
                             onClick={() => handleShowModal(-1)}
-                            className="btn btn-primary">
+                            className="btn btn-primary product__btn">
                             <AiOutlinePlus /> Thêm sản phẩm
                         </button>
                     </div>

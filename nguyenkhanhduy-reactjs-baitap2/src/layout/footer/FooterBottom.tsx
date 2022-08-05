@@ -6,13 +6,13 @@ function FooterBottom() {
         <article className="footer__bottom">
             <div className="container">
                 <div className="footer__bottom-wrapper py-3">
-                    <div className="row">
+                    <div className="row g-3">
                         <div className="col">
                             <span className="footer__bottom-text">
                                 Coppyright &copy; 2020 EngStar - All Rights Reserved
                             </span>
                         </div>
-                        <div className="col-auto">
+                        <div className="col-lg-auto col-12">
                             <div className="row g-5">
                                 <div className="col b-r">
                                     <div className="d-flex align-items-center">

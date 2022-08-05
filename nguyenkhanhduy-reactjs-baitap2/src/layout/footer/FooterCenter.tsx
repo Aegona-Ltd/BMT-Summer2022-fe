@@ -8,7 +8,7 @@ function FooterCenter() {
     return (
         <article className="footer__center py-5">
             <div className="container">
-                <div className="row g-5">
+                <div className="row g-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
                     <div className="col">
                         <img src={logo} alt="" className="footer__center-logo d-block mb-4" />
                         <div className="d-flex mb-2">

@@ -8,12 +8,49 @@ body{
     font-family: 'Montserrat', 'Aprial',sans-serif;
 }
 
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn ease .3s;
+
+    &.active{
+        display: block;
+    }
+}
+
+.product__btn{
+    width: 100%;
+
+    @include responsive(xl-screen){
+        width: auto;
+    }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 a{
     text-decoration: none;
     &:hover{
         color: #000;
     }
 }
+
+#root{
+    overflow: hidden;
+}
+
 li{
     list-style: none;
 }
@@ -55,5 +92,9 @@ ul{
 }
 
 .mt-110{
-    margin-top: 110px;
+    margin-top: 50px;
+
+    @include responsive(lg-screen){
+        margin-top: 110px;
+    }
 }

@@ -12,9 +12,9 @@ function HomeItem() {
             <div className="homeGeneral__circle-2">
                 <img className="w-100" src={images.circles} alt="" />
             </div>
-            <div className="row ">
+            <div className="row">
 
-                <div className="col homeGeneral__card-wrapper position-relative">
+                <div className="col-12 homeGeneral__card-wrapper position-relative">
                     <article className="homeGeneral__card">
                         <span className="homeGeneral__card-icon">
                             <WritingIcon />

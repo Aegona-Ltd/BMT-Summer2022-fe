@@ -5,7 +5,7 @@ import Clock from "../../shared/assets/icon/Clock";
 
 function HeaderTop() {
     return (
-        <article className="header__top py-2">
+        <article className="header__top d-lg-block d-none py-2">
             <div className="container h-100">
                 <div className="row justify-content-between align-items-center h-100">
                     <div className="col-auto">

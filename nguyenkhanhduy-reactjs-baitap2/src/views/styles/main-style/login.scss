@@ -1,8 +1,12 @@
 .login {
-    margin-top: 110px;
+    margin-top: 50px;
+    @include responsive(xl-screen){
+        margin-top: 110px;
+    }
 
     &__form {
         width: 450px;
+        max-width: 100%;
         margin: 0 auto;
         &-separate{
             position: relative;

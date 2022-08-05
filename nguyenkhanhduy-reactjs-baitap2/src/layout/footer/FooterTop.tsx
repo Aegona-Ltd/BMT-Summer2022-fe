@@ -6,7 +6,7 @@ function FooterTop() {
     return (
         <article className="footer__top">
             <div className="container">
-                <div className="row">
+                <div className="row row-cols-1 row-cols-lg-3">
                     <div className="col b-r py-4">
                         <div className="footer__top-card">
                             <span className="footer__top-card-icon">
@@ -20,7 +20,7 @@ function FooterTop() {
                             </span>
                         </div>
                     </div>
-                    <div className="col d-flex justify-content-center b-r py-4">
+                    <div className="col d-flex justify-content-lg-center justify-content-start b-r py-4">
                         <div className="footer__top-card">
                             <span className="footer__top-card-icon">
                                 <Vector />
@@ -33,7 +33,7 @@ function FooterTop() {
                             </span>
                         </div>
                     </div>
-                    <div className="col d-flex justify-content-end py-4">
+                    <div className="col d-flex justify-content-lg-end justify-content-start py-4">
                         <div className="footer__top-card">
                             <span className="footer__top-card-icon">
                                 <Clock />

@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import { images } from "../../../shared/assets/images";
 import { CgDanger } from "react-icons/cg"
 import { FaCheckCircle } from "react-icons/fa";
-import { AiOutlineEdit } from 'react-icons/ai'
 import WritingIcon from "../../../shared/assets/icon/WritingIcon";
 import StudyIcon from "../../../shared/assets/icon/StudyIcon";
 import PieChartIcon from "../../../shared/assets/icon/PieChartIcon";
@@ -19,14 +17,14 @@ function HomeGeneral() {
                 <h2 className="homeGeneral__title">
                     Các Vấn Đề Của Người Học<br /> Và Giải Pháp Của AEGONA
                 </h2>
-                <div className="row">
+                <div className="row g-3">
                     <div className="col d-flex justify-content-start">
                         <div className="homeGeneral__image">
-                            <img src={images.pc} alt="" className="homeGeneral__image-pc" />
+                            <img src={images.pc} alt="" className="homeGeneral__image-pc w-100" />
                             <img src={images.mobile} alt="" className="homeGeneral__image-mobile" />
                         </div>
                     </div>
-                    <div className="col-5">
+                    <div className="col-lg-5">
                         <div className="homeGeneral__content">
                             <h3 className="homeGeneral__content-title">
                                 Các vấn đề của người học
@@ -118,7 +116,7 @@ function HomeGeneral() {
                         <img className="w-100" src={images.circles} alt="" />
                     </div>
                     <div className="homeGeneral__row">
-                        <div className="row ">
+                        <div className="row row-cols-1 row-cols-lg-3 g-3">
 
                             <div className="col homeGeneral__card-wrapper position-relative">
                                 <article className="homeGeneral__card">
@@ -169,31 +167,31 @@ function HomeGeneral() {
                 <h3 className="homeGeneral__about-title my-5 py-4">
                     Hình Ảnh Về AEGONA
                 </h3>
-                <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+                <div className="row g-3 row-cols-1 row-cols-md-2 row-cols-xl-4">
                     <div className="col">
                         <img
-                            className="homeGeneral__about-img"
+                            className="homeGeneral__about-img w-100"
                             src={images.whiteImage}
                             alt=""
                         />
                     </div>
                     <div className="col">
                         <img
-                            className="homeGeneral__about-img"
+                            className="homeGeneral__about-img w-100"
                             src={images.whiteImage}
                             alt=""
                         />
                     </div>
                     <div className="col">
                         <img
-                            className="homeGeneral__about-img"
+                            className="homeGeneral__about-img w-100"
                             src={images.whiteImage}
                             alt=""
                         />
                     </div>
                     <div className="col">
                         <img
-                            className="homeGeneral__about-img"
+                            className="homeGeneral__about-img w-100"
                             src={images.whiteImage}
                             alt=""
                         />
