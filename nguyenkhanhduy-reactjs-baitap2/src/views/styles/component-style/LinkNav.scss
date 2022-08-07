@@ -2,17 +2,23 @@
     height: 100%;
     text-transform: uppercase;
     font-weight: 500;
-    margin: 0 15px;
+    margin: 0 0;
 
-
+    @include responsive(xl-screen){
+        margin: 0 15px;
+    }
 
     &__item{
         display: flex;
-        
         color:rgba(255, 255, 255, 0.87);
         height: 100%;
         font-size: 0.9rem;
+        padding: 0 15px;
         transition: all ease .3s;
+
+        @include responsive(xl-screen){
+            padding: 0 0;
+        }
         
         &:hover{
             color: #fff;
@@ -21,8 +27,17 @@
         &.active{
             color: #fff;
             position: relative;
+            background-color: $color-yellow;
+
+            @include responsive(xl-screen){
+                background-color: transparent;
+            }
             &::after{
                 content: "";
+                display: none;
+                @include responsive(xl-screen){
+                    display: block;
+                }
                 position: absolute;
                 bottom: 0;
                 left: 0;

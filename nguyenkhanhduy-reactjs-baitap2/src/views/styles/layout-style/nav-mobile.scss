@@ -1,0 +1,15 @@
+.navMobile{
+    @include position(fixed, 0, none, 0, 0);
+    background-color: $bg-primary;
+    width: 75vw;
+    transform: translateX(-100%);
+    transition: all ease .3s;
+
+    &.active{
+        transform: translateX(0);
+    }
+
+    &__close{
+        @include position(absolute, 10px, 10px, none, none);
+    }
+}

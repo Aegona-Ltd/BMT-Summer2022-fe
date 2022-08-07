@@ -6,11 +6,11 @@ import { images } from "../../../shared/assets/images";
 function HomeContact() {
     return (
         <section className="homeContact">
-            <div className="container">
+            <div className="container homeContact__container">
                 <h3 className="homeGeneral__about-title my-5 py-4">
                     Liên Hệ Với AEGONA
                 </h3>
-                <div className="row align-items-center">
+                <div className="row row-cols-lg-2 row-cols-1 align-items-center">
                     <div className="col">
                         <div className="d-flex flex-column justify-content-between">
                             <div className="row">

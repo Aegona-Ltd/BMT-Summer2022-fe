@@ -102,7 +102,7 @@ function Login() {
                             </button>
                         </div>
                         <div className="col">
-                            <button className="col login__form-login-btn mx-md-0 mx-3 google mb-4">
+                            <button className="col login__form-login-btn google">
                                 <img
                                     className="login__form-login-btn-icon"
                                     src="https://s1.vnecdn.net/myvne/i/v64/ls/icons/google_ico.svg"

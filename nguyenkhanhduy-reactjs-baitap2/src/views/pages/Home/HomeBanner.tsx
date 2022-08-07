@@ -5,7 +5,7 @@ function HomeBanner() {
     return (
         <article className="homeBanner">
             <div className="container">
-                <div className="row align-items-center">
+                <div className="row g-3 row-cols-lg-2 row-cols-1 align-items-center">
                     <div className="col homeBanner__col">
                         <div className="homeBanner__title">
                             <h2>Giới thiệu chung</h2>
@@ -22,13 +22,13 @@ function HomeBanner() {
                                 Dùng thử miễn phí
                             </button>
                         </div>
-                        <div className="homeBanner__circle">
+                        <div className="homeBanner__circle d-lg-block d-none">
                             <img src = {images.circles} alt = ""/>
                         </div>
                     </div>
                     <div className="col d-flex justify-content-end">
                         <div className="homeBanner__image ">
-                            <img src={images.banner1} alt="" className="d-block homeBanner__image-1"/>
+                            <img src={images.banner1} alt="" className="d-block homeBanner__image-1 w-100"/>
                             <button className="homeBanner__image-btn">
                                 <PlayIcon/>
                             </button>

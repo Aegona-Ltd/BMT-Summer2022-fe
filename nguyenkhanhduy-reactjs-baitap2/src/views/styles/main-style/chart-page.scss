@@ -1,0 +1,32 @@
+.chartPage{
+
+    &__card{
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+
+        &-header{
+            border: none;
+            font-weight: 600;
+        }
+    }
+    &__general {
+        border-radius: 1.75rem;
+        background-color: #fff;
+        padding: 1.5rem;
+        box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+
+        &-data {
+            &-text {
+                color: #000;
+            }
+        }
+
+        &-icon {
+            @include flex-center();
+            border-radius: 20px;
+            padding: 1.2rem;
+            background-color: #ccc;
+            color: white;
+        }
+    }
+}

@@ -1,11 +1,15 @@
 .home {
     position: relative;
-    padding-top: 200px;
+    padding-top: 100px;
+
+    @include responsive(xl-screen) {
+        padding-top: 200px;
+    }
 }
 .homeBanner {
     position: relative;
     z-index: 2;
-   
+
     &__circle {
         position: absolute;
         top: 4%;
@@ -14,7 +18,7 @@
         left: 19%;
         z-index: 1;
 
-        & img{
+        & img {
             width: 100%;
             height: auto;
         }
@@ -53,23 +57,38 @@
 
         &-2 {
             position: absolute;
-            bottom: -20%;
+            bottom: -40%;
             z-index: 2;
-            right: -10%;
+            right: 0%;
+
+            @include responsive(xl-screen){
+                right: -10%;
+                bottom: -20%;
+            }
         }
 
         &-3 {
             position: absolute;
             bottom: -35%;
             z-index: 2;
-            left: 20%;
+            left: 17%;
+
+            @include responsive(xl-screen){
+                left: 20%;
+                bottom: -35%;
+            }
         }
 
         &-4 {
             position: absolute;
-            bottom: -75%;
-            left: 40%;
+            bottom: -104%;
+            left: 12%;
             z-index: 3;
+
+            @include responsive(xl-screen){
+                left: 40%;
+                bottom: -75%;
+            }
         }
 
         &-btn {
@@ -88,8 +107,12 @@
         border: 1px solid $color-yellow;
         outline: none;
         font-weight: 600;
-        padding: 10px 20px;
+        padding: 10px 10px;
         background-color: $color-yellow;
+
+        @include responsive(xl-screen) {
+            padding: 10px 20px;
+        }
 
         &-free {
             background-color: #fff;
@@ -111,7 +134,7 @@
         margin-top: 150px;
     }
 
-    &__row{
+    &__row {
         position: relative;
         z-index: 2;
         background-color: #fff;
@@ -137,7 +160,7 @@
         height: 80px;
         right: -5%;
 
-        & img{
+        & img {
             height: 100%;
         }
     }
@@ -155,8 +178,12 @@
             left: 0;
             height: 5px;
             border-radius: 100px;
-            width: 14%;
+            width: 30%;
             background-color: $color-yellow;
+
+            @include responsive(xl-screen) {
+                width: 14%;
+            }
         }
     }
 
@@ -174,15 +201,19 @@
                 transform: translateX(-50%);
                 height: 5px;
                 background-color: $color-yellow;
-                width: 10%;
+                width: 30%;
                 border-radius: 100px;
+
+                @include responsive(xl-screen) {
+                    width: 10%;
+                }
             }
         }
     }
 
-    &__content{
+    &__content {
         position: relative;
-        &-bg{
+        &-bg {
             height: 800px;
             background-size: cover;
             background-position: center top;
@@ -241,8 +272,19 @@
         position: relative;
         &-mobile {
             position: absolute;
-            bottom: -20%;
+            bottom: -40%;
             right: 0;
+            transform: scale(0.7);
+
+            @include responsive(lg-screen){
+                transform: scale(0.8);
+                bottom: -30%;
+            }
+
+            @include responsive(xl-screen) {
+                transform: scale(1);
+                bottom: -20%;
+            }
         }
     }
 
@@ -296,6 +338,12 @@
 .homeContact {
     position: relative;
     margin-bottom: 200px;
+
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+
     &__icon {
         @include flex-center();
         background-color: #fff;
@@ -319,6 +367,10 @@
             height: 100%;
         }
         &-background {
+            @include responsive(xl-screen) {
+                opacity: 1;
+            }
+            opacity: 0.6;
             position: absolute;
             width: 460px;
             height: 600px;
