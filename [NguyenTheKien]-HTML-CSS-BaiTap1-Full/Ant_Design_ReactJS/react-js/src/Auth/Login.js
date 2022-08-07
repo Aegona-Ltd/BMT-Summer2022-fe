@@ -1,11 +1,15 @@
-import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip } from "antd";
+import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip ,message} from "antd";
 import { LoginOutlined, FacebookOutlined, GooglePlusOutlined, GithubOutlined } from "@ant-design/icons";
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios'
 import 'antd/dist/antd.min.css';
-import React from 'react';
+import React, {useState} from 'react';
+import get from "lodash/get";
 import '../styles/Login.css';
 const { Title } = Typography;
 export default function Login() {
   const [form] = Form.useForm();
+  const [Recc , setRecc] = useState();
   const numbers = /[0-9]/g;
   const upperCaseLetters = /[A-Z]/g;
   const lowerCaseLetters = /[a-z]/g;
@@ -46,13 +50,39 @@ export default function Login() {
       message: "Your password is not have special character.",
     },
   ]
+  
+  //Hàm Captcha
+  var Recaptcha = (value) => {
+    setRecc(value);
+  }
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+//btn Login
+  const onFinish = async (values) => {
+    let key = 'check_key';
+     if(Recc === '' || Recc === undefined || Recc === null){  //Check captcha
+        message.error({
+          content: 'No captchas yet .',
+          key,
+          duration: 1,   //time
+        });
+      return ;
+     }else{
+        const payload = {
+          email: get(values, "email"),
+          password: get(values, "password"),
+        };
+  
+        const Url = 'https://jsonplaceholder.typicode.com/posts';
+        axios({
+          method: 'post',
+          url: Url,
+          data:{
+            payload
+          }
+        })
+        .then(data => console.log(data.data))
+        .catch(err => console.error(err));
+     }
   };
 
   return (
@@ -64,7 +94,6 @@ export default function Login() {
           remember: false,
         }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
         <div className="zzz">
@@ -139,6 +168,11 @@ export default function Login() {
               Forgot password?
             </a>
           </Form.Item>
+
+          <ReCAPTCHA className="ReCAPTCHA"
+            sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"
+            onChange={Recaptcha}
+          />
 
           <Button
             htmlType="submit"
