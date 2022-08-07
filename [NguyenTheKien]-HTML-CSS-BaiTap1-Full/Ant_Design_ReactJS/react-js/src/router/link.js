@@ -1,5 +1,6 @@
 import NotFound from "../views/containers/NotFound";
 import Login from "../Auth/Login";
+import SignUp from "../Auth/SignUp";
 
 //Dùng trong Router khi không login vẫn public được
 const publicRouter = [
@@ -8,6 +9,7 @@ const publicRouter = [
     { path : "/users" , component:Users },
     { path : "/*" , component:NotFound},
     { path : "/login" , component:Login},
+    { path : "/signUp" , component:SignUp},
 ]
 
 //Dùng trong Router khi login mới có thể vô 

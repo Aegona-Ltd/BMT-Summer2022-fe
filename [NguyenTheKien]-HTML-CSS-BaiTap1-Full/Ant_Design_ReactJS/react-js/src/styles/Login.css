@@ -2,6 +2,7 @@
 
 .text-center {
     text-align: center;
+    color: #38ef7d;
 }
 
 .auth-page-wrapper {
@@ -199,20 +200,84 @@ button.ghost {
     border-color: #fff !important;
 }
 
-.overlay-right {
-    right: 0;
-    transform: translateX(0)
-}
-
-
-.overlay-left {
-    transform: translateX(-20%)
-}
-
 .ant-form-item-control-input-content {
     justify-content: space-between;
     display: flex;
     font-size: 14px;
 }
 
+.full{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
 
+Form{
+    border-width: 5px;
+    border-radius: 10px;
+    width: 30%;
+    height: 600px;
+    box-shadow: 5px 10px 18px  #888888;
+}
+
+.zzz{
+    width: 96%;
+    margin-top: 20px;
+    margin-left: 2%;
+}
+
+/* tablet width >= 740px và width < 1024px */
+@media only screen and (min-width : 46.25em) and (max-width : 64.9375em){
+   
+.full{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+Form{
+    border-width: 5px;
+    border-radius: 10px;
+    width: 90%;
+    height: 600px;
+    box-shadow: 5px 10px 18px  #888888;
+}
+.zzz{
+    width: 96%;
+    margin-top: 20px;
+    margin-left: 2%;
+}
+  }
+
+  /* phone width < 740px */
+@media only screen and (max-width : 46.25em){
+    .full{
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+    }
+    Form{
+        border-width: 5px;
+        border-radius: 10px;
+        width: 90%;
+        height: 600px;
+        box-shadow: 5px 10px 18px  #888888;
+    }
+    .zzz{
+        width: 96%;
+        margin-top: 20px;
+        margin-left: 2%;
+    }
+    }
+  
