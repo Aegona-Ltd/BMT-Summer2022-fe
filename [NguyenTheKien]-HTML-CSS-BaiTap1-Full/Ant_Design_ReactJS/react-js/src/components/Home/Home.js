@@ -9,8 +9,8 @@ import Bottom from './comp_home/Bottom';
     return (
       <div className='full_page'>
        <Header></Header>
-       {/* <Footer></Footer>
-       <Bottom></Bottom> */}
+       <Footer></Footer>
+       <Bottom></Bottom>
       </div>
     );
   };

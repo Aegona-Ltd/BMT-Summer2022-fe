@@ -4,8 +4,8 @@ import '../../../styles/Home.css';
 
   const Bottom = () => {
     return (
-      <div className='full_page'>
-        <div className='header'>Bottom</div>
+      <div >
+        <div >Bottom</div>
       </div>
     );
   };

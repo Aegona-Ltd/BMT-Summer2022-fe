@@ -4,8 +4,8 @@ import '../../../styles/Home.css';
 
   const Footer = () => {
     return (
-      <div className='full_page'>
-        <div className='header'>Footer</div>
+      <div >
+        <div >Footer</div>
       </div>
     );
   };
