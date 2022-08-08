@@ -8,7 +8,7 @@ import useCurrentUser from "../../shared/hooks/useCurrentUser";
 import NavMobile from "../NavMobile";
 
 function HeaderNav() {
-    const [showNav, setShowNav] = useState<boolean>(true)
+    const [showNav, setShowNav] = useState<boolean>(false)
     const navigate = useNavigate()
     const currentUser = useCurrentUser()
 
