@@ -1,6 +1,8 @@
 import NotFound from "../views/containers/NotFound";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
+import Contact from "../components/Home/Contact";
+import Home from "../components/Home/Home";
 
 //Dùng trong Router khi không login vẫn public được
 const publicRouter = [
@@ -10,6 +12,7 @@ const publicRouter = [
     { path : "/*" , component:NotFound},
     { path : "/login" , component:Login},
     { path : "/signUp" , component:SignUp},
+    { path : "/contact" , component:Contact},
 ]
 
 //Dùng trong Router khi login mới có thể vô 
@@ -20,10 +23,6 @@ const provateRouter = [
 export {
     publicRouter , provateRouter
 }
-
-function Home() {
-    return <h2>Home</h2>;
-  }
   
   function About() {
     return <h2>About</h2>;

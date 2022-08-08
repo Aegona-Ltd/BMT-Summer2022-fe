@@ -3,11 +3,14 @@ import { LoginOutlined, FacebookOutlined, GooglePlusOutlined, GithubOutlined } f
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 import 'antd/dist/antd.min.css';
-import React, {useState} from 'react';
+import React, {useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import get from "lodash/get";
 import '../styles/Login.css';
 const { Title } = Typography;
+
 export default function Login() {
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const [Recc , setRecc] = useState();
   const numbers = /[0-9]/g;
@@ -67,7 +70,7 @@ export default function Login() {
         });
       return ;
      }else{
-        const payload = {
+        const Account = {
           email: get(values, "email"),
           password: get(values, "password"),
         };
@@ -77,17 +80,22 @@ export default function Login() {
           method: 'post',
           url: Url,
           data:{
-            payload
+            Account
           }
         })
-        .then(data => console.log(data.data))
+        .then(data =>{
+          return (
+            console.log(data.data),
+            navigate("/contact")
+          )
+        })
         .catch(err => console.error(err));
      }
   };
 
   return (
     <Layout className="full">
-      <Form
+      <Form className="form_login"
         name="signin"
         form={form}
         initialValues={{
