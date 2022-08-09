@@ -1,5 +1,5 @@
 import 'antd/dist/antd.min.css';
-import { Row, Col, AutoComplete, Button, Tooltip} from "antd";
+import { Row, Col, AutoComplete, Button, Tooltip } from "antd";
 import { MailOutlined, EnvironmentOutlined, PhoneOutlined, FieldTimeOutlined, FacebookOutlined, LinkedinOutlined, GooglePlusOutlined } from "@ant-design/icons";
 import React from 'react';
 import '../../../styles/Home.scss';
@@ -106,46 +106,46 @@ const Bottom = () => {
         </Col>
       </Row>
       <div className='bottom_x1'>
-      <Row className='bottom_x2'>
-        <Col className='bottom_x2_v1' span={9}>Copyright © 2020 EngStar - All Rights Reserved</Col>
-        
-        <Col className='bottom_x2_v2' span={9}>
-        <div className="social-container">
-                <Tooltip
-                  title="Google+"
-                  placement="bottom"
-                  color="#db4a39"
-                  key="#db4a39"
-                >
-                  <div className="social linkedin" style={{ width: '23px', height: '23px' }} >
-                    <GooglePlusOutlined />
-                  </div>
-                </Tooltip>
+        <Row className='bottom_x2'>
+          <Col className='bottom_x2_v1' span={9}>Copyright © 2020 EngStar - All Rights Reserved</Col>
 
-                <Tooltip
-                  title="Facebook"
-                  placement="bottom"
-                  color="#4267B2"
-                  key="#4267B2"
-                >
-                  <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                    <FacebookOutlined />
-                  </div>
-                </Tooltip>
+          <Col className='bottom_x2_v2' span={9}>
+            <div className="social-container">
+              <Tooltip
+                title="Google+"
+                placement="bottom"
+                color="#db4a39"
+                key="#db4a39"
+              >
+                <div className="social linkedin" style={{ width: '23px', height: '23px' }} >
+                  <GooglePlusOutlined />
+                </div>
+              </Tooltip>
 
-                <Tooltip
-                  title="linkedin"
-                  placement="bottom"
-                  color="#0e76a8"
-                  key="#0e76a8"
-                >
-                  <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                    <LinkedinOutlined />
-                  </div>
-                </Tooltip>
-              </div>
-          |  Điều khoản & chính sách</Col>
-      </Row>
+              <Tooltip
+                title="Facebook"
+                placement="bottom"
+                color="#4267B2"
+                key="#4267B2"
+              >
+                <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
+                  <FacebookOutlined />
+                </div>
+              </Tooltip>
+
+              <Tooltip
+                title="linkedin"
+                placement="bottom"
+                color="#0e76a8"
+                key="#0e76a8"
+              >
+                <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
+                  <LinkedinOutlined />
+                </div>
+              </Tooltip>
+            </div>
+            |  Điều khoản & chính sách</Col>
+        </Row>
       </div>
     </div>
   );
