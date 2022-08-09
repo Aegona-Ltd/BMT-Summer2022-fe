@@ -187,7 +187,7 @@ export default function Login() {
             type="primary"
             icon={<LoginOutlined />}
             size="large"
-            style={{ backgroundColor: '#22B080' }}>
+            style={{ backgroundColor: '#1478E7' }}>
             Sign In
           </Button>
         </div>

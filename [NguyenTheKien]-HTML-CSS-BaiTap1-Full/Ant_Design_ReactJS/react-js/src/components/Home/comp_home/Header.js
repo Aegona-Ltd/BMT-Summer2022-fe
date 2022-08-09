@@ -1,9 +1,9 @@
 import 'antd/dist/antd.min.css';
-import { Tooltip, Row, Col } from "antd";
-import { FacebookOutlined, GooglePlusOutlined, LinkedinOutlined, PhoneOutlined, FieldTimeOutlined } from "@ant-design/icons";
+import { Tooltip, Row, Col, Button } from "antd";
+import { UserOutlined, FacebookOutlined, GooglePlusOutlined, LinkedinOutlined, PhoneOutlined, FieldTimeOutlined } from "@ant-design/icons";
 import React from 'react';
-import '../../../styles/Home.css';
-
+import '../../../styles/Home.scss';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className='full_page'>
@@ -42,7 +42,7 @@ const Footer = () => {
                   key="#0e76a8"
                 >
                   <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                  <LinkedinOutlined />
+                    <LinkedinOutlined />
                   </div>
                 </Tooltip>
               </div>
@@ -66,17 +66,23 @@ const Footer = () => {
 
       {/* header 2 */}
       <div className='header2'>
-      <Row className='header2_v1'>
-      <Col className='aegona' span={4}>AEGO<span>NA</span></Col>
-      <Col span={12}>
-      <ul>
-        <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
-        <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
-        <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
-      </ul>
-      </Col>
-      <Col span={1}>col-8</Col>
-    </Row>
+        <Row className='header2_v1'>
+          <Col className='aegona' span={4}>AEGO<span>NA</span></Col>
+          <Col span={14}>
+            <ul>
+              <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
+              <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
+              <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
+            </ul>
+          </Col>
+          <Col span={1}>
+            <Link to="/login">
+              <Button type="primary" icon={<UserOutlined />} className='btn_Login'>
+                Login
+              </Button>
+            </Link>
+          </Col>
+        </Row>
       </div>
     </div>
 

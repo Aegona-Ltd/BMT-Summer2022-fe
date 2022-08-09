@@ -1,10 +1,10 @@
 import 'antd/dist/antd.min.css';
 import React from 'react';
-import '../../../styles/Home.css';
+import '../../../styles/Home.scss';
 
   const Footer = () => {
     return (
-      <div >
+      <div className='dev_Footer'>
         <div >Footer</div>
       </div>
     );
