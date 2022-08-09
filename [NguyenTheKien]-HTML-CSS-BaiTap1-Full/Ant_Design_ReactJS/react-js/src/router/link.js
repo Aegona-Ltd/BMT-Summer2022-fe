@@ -4,7 +4,6 @@ import SignUp from "../Auth/SignUp";
 import Contact from "../components/Home/Contact";
 import Home from "../components/Home/Home";
 
-//Dùng trong Router khi không login vẫn public được
 const publicRouter = [
     { path : "/" , component:Home },
     { path : "/about" , component:About },
@@ -15,13 +14,9 @@ const publicRouter = [
     { path : "/contact" , component:Contact},
 ]
 
-//Dùng trong Router khi login mới có thể vô 
-const provateRouter = [
-    
-]
 
 export {
-    publicRouter , provateRouter
+    publicRouter 
 }
   
   function About() {
