@@ -112,9 +112,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className='Footer_center2_Col_bg1'>
-              <div className='Footer_center2_Col_bg1_icon'>
+                <div className='Footer_center2_Col_bg1_icon'>
                   <div className='phone_1'>
-                  <MailOutlined />
+                    <MailOutlined />
                   </div>
                 </div>
                 <div className='Footer_center2_Col_bg1_text'>
@@ -123,9 +123,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className='Footer_center2_Col_bg1'>
-              <div className='Footer_center2_Col_bg1_icon'>
+                <div className='Footer_center2_Col_bg1_icon'>
                   <div className='phone_1'>
-                  <EnvironmentOutlined />
+                    <EnvironmentOutlined />
                   </div>
                 </div>
                 <div className='Footer_center2_Col_bg1_text'>
@@ -135,7 +135,29 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col className='Footer_center2_Col' span={11}></Col>
+          <Col className='Footer_center2_Col1' span={11}>
+            <div className='Footer_center2_Col2_background_map1'>
+              <div className='Footer_center2_Col2_background_map'></div>
+              <div className='Footer_center2_Col2_background_map_icon'>
+                <div className='phone_2'>
+                  <EnvironmentOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon1'>
+                <div className='phone_2'>
+                  <MailOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon2'>
+                <div className='phone_2'>
+                  <PhoneOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon3'></div>
+              <div className='Footer_center2_Col2_background_map_icon4'></div>
+            </div>
+            <div className='Footer_center2_Col2_map'></div>
+          </Col>
         </Row>
       </div>
     </div>
