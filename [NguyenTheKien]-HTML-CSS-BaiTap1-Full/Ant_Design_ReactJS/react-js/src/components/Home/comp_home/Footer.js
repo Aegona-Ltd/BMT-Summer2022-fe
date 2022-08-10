@@ -1,5 +1,7 @@
 import 'antd/dist/antd.min.css';
 import { Row, Col, Button } from "antd";
+import { MailOutlined, PhoneOutlined, EnvironmentOutlined } from "@ant-design/icons";
+
 import React from 'react';
 import '../../../styles/Home.scss';
 
@@ -77,6 +79,63 @@ const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </Col>
+        </Row>
+      </div>
+      <div className='Footer_center2'>
+        <div className='Footer_center2_text'>hình ảnh Về AEGONA
+          <div className='Footer_center2_dot'></div>
+        </div>
+        <Row className='Footer_center2_Row'>
+          <Col className='Footer_center2_Col' span={5}></Col>
+          <Col className='Footer_center2_Col' span={5}></Col>
+          <Col className='Footer_center2_Col' span={5}></Col>
+          <Col className='Footer_center2_Col' span={5}></Col>
+        </Row>
+      </div>
+
+      <div className='Footer_center2'>
+        <div className='Footer_center2_text'>Liên hệ với AEGONA
+          <div className='Footer_center2_dot'></div>
+        </div>
+        <Row className='Footer_center2_Row'>
+          <Col className='Footer_center2_Col1' span={11}>
+            <div>
+              <div className='Footer_center2_Col_bg1'>
+                <div className='Footer_center2_Col_bg1_icon'>
+                  <div className='phone_1'>
+                    <PhoneOutlined />
+                  </div>
+                </div>
+                <div className='Footer_center2_Col_bg1_text'>
+                  <div>HOTLINE</div>
+                  <div className='Footer_center2_Col_bg1_text1'>028 7109 2939</div>
+                </div>
+              </div>
+              <div className='Footer_center2_Col_bg1'>
+              <div className='Footer_center2_Col_bg1_icon'>
+                  <div className='phone_1'>
+                  <MailOutlined />
+                  </div>
+                </div>
+                <div className='Footer_center2_Col_bg1_text'>
+                  <div>EMAIL</div>
+                  <div className='Footer_center2_Col_bg1_text1'>contact@aegona.com</div>
+                </div>
+              </div>
+              <div className='Footer_center2_Col_bg1'>
+              <div className='Footer_center2_Col_bg1_icon'>
+                  <div className='phone_1'>
+                  <EnvironmentOutlined />
+                  </div>
+                </div>
+                <div className='Footer_center2_Col_bg1_text'>
+                  <div>ĐỊA CHỈ</div>
+                  <div className='Footer_center2_Col_bg1_text1'>Tòa nhà QTSC 9, Khu Phần mềm Quang Trung, P. Tân Chánh Hiệp, Quận 12, TP.HCM</div>
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col className='Footer_center2_Col' span={11}></Col>
         </Row>
       </div>
     </div>

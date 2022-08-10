@@ -161,7 +161,7 @@ li {
 }
 
 .dev_Bottom {
-    margin-top: 700px;
+    margin-top: 3000px;
     position: absolute;
     width: 100%;
     height: 556px;
@@ -702,7 +702,7 @@ div.h1_1 {
 
 .cac_van_de_ng_hoc_1 {
     position: absolute;
-    width: 436px;
+    width: 512px;
     height: 180px;
     left: 873px;
     top: 1289px;
@@ -840,4 +840,122 @@ div.h1_1 {
     border-radius: 4px 4px 0px 0px;
     margin-top: -5px;
     background: url('../img/17.png');
+}
+
+.Footer_center2 {
+    width: 100%;
+    height: 328px;
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+}
+
+.Footer_center2_text {
+    left: 426px;
+    top: 0px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: 0.005em;
+    text-transform: capitalize;
+
+    color: #001D3D;
+}
+
+.Footer_center2_dot {
+    width: 160px;
+    height: 8px;
+    margin-left: 100px;
+    margin-top: 30px;
+    background: rgba(255, 204, 0, 0.72);
+    border-radius: 100px;
+}
+
+.Footer_center2_Row {
+    position: absolute;
+    width: 90%;
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+}
+
+.Footer_center2_Col {
+    width: 282px;
+    height: 150px;
+    top: 30px;
+    background: #E8E8E8;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Footer_center2_Col_bg1 {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 10px;
+}
+
+.Footer_center2_Col_bg1_icon {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 12px rgba(4, 24, 57, 0.06);
+    border-radius: 4px;
+}
+
+.phone_1 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    color: #0060CC;
+    text-align: right;
+    font-size: 28px;
+}
+
+.Footer_center2_Col1 {
+    width: 282px;
+    height: 200px;
+    top: 30px;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Footer_center2_Col_bg1_text {
+    position: absolute;
+    left: 80px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+    letter-spacing: 0.12px;
+
+    color: #041839;
+}
+
+.Footer_center2_Col_bg1_text1 {
+    position: absolute;
+    width: 530px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+    color: rgba(4, 24, 57, 0.87);
 }
