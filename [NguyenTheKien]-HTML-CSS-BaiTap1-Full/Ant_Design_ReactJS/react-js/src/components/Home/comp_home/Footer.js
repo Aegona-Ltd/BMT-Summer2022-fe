@@ -26,7 +26,9 @@ import '../../../styles/Home.scss';
               </Button>
           </Col>
           <Col span={12}>
-            <div className='background_Footer_top_Col_2_circle'></div>
+            <div className='background_Footer_top_Col_2_circle'>
+            <div className='background_Footer_top_Col_2_circle1'></div>
+            </div>
             <div className='background_Footer_top_Col_2'>
             <div className='background_Footer_top_Col_2_v1'></div>
             </div>

@@ -535,12 +535,28 @@ border-radius: 4px;
 
 .background_Footer_top_Col_2_circle{
     box-sizing: border-box;
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    left: 85px;
+    border: 2px solid #E8E8E8;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-position: absolute;
-width: 800px;
-height: 791.47px;
-left: 328px;
-top: 136px;
-
-border: 1px solid #db0000;
+.background_Footer_top_Col_2_circle1{
+    box-sizing: border-box;
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border: 2px solid #E8E8E8;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-top: 0;
 }
