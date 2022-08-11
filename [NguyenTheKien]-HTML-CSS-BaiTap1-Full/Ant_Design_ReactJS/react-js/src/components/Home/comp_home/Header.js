@@ -10,8 +10,8 @@ const Footer = () => {
       <div className='header'>
         <Row gutter={24}>
           {/* Icon */}
-          <Col className="gutter-row" md={12} sm={12}>
-            <Col className="gutter-row" md={12} sm={12}>
+          <Col className="gutter-row" md={12} sm={24}>
+            <Col className="gutter-row1" md={12} sm={24}>
               <div className="social-container">
                 <Tooltip
                   title="Google+"
@@ -55,10 +55,10 @@ const Footer = () => {
                 <PhoneOutlined />
               </div>
               <div className='hotline'>Hotline<span>1900 2021</span></div>
-              <div className='phone'>
+              <div className='phone_111'>
                 <FieldTimeOutlined />
               </div>
-              <div className='hotline'>Giờ làm việc<span>Thứ 2 - Thứ 6 : 08:00 - 17:00</span></div>
+              <div className='hotline_111'>Giờ làm việc<span>Thứ 2 - Thứ 6 : 08:00 - 17:00</span></div>
             </div>
           </Col>
         </Row>
@@ -66,9 +66,10 @@ const Footer = () => {
 
       {/* header 2 */}
       <div className='header2'>
+        
         <Row className='header2_v1'>
-          <Col className='aegona' span={4}>AEGO<span>NA</span></Col>
-          <Col span={14}>
+          <Col className='aegona' md={4} sm={24}>AEGO<span>NA</span></Col>
+          <Col md={14} sm={24}>
             <ul>
               <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
               <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
