@@ -10,8 +10,8 @@ const Footer = () => {
       <div className='header'>
         <Row gutter={24}>
           {/* Icon */}
-          <Col className="gutter-row" span={12}>
-            <Col className="gutter-row" span={12}>
+          <Col className="gutter-row" md={12} sm={12}>
+            <Col className="gutter-row" md={12} sm={12}>
               <div className="social-container">
                 <Tooltip
                   title="Google+"
@@ -49,7 +49,7 @@ const Footer = () => {
             </Col>
           </Col>
           {/* header1_v2 */}
-          <Col className="gutter-row" span={12}>
+          <Col className="gutter-row" md={12} sm={24}>
             <div className='header1_v2'>
               <div className='phone'>
                 <PhoneOutlined />

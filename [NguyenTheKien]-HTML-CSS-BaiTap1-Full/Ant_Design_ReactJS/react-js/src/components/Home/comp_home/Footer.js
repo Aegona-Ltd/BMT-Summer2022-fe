@@ -10,7 +10,7 @@ const Footer = () => {
     <div className='dev_Footer'>
       <div className='Footer_top'>
         <Row >
-          <Col className='Footer_top_Col_1' span={12}>
+          <Col className='Footer_top_Col_1' md={12} sm={24}>
             <div className='h1_1'></div>
             <div className='Footer_top_Col_1_text'>
               Giới thiệu chung
@@ -26,7 +26,7 @@ const Footer = () => {
               Dùng thử miễn phí
             </Button>
           </Col>
-          <Col span={12}>
+          <Col md={12} sm={24}>
             <div className='background_Footer_top_Col_2_circle'>
               <div className='background_Footer_top_Col_2_circle1'></div>
             </div>

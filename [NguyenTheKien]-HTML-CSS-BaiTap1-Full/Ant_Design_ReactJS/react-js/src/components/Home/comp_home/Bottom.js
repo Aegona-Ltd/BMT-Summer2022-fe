@@ -8,19 +8,19 @@ const Bottom = () => {
   return (
     <div className='dev_Bottom'>
       <Row className='emailBot'>
-        <Col className='emailBot_Col' span={9}>
+        <Col className='emailBot_Col' md={9} sm={24}>
           <div className='phone'>
             <MailOutlined />
           </div>
           <div className='hotline'>Email<span>contact@aegona.com</span></div>
         </Col>
-        <Col className='emailBot_Col' span={6}>
+        <Col className='emailBot_Col' md={6} sm={24}>
           <div className='phone'>
             <PhoneOutlined />
           </div>
           <div className='hotline'>Hotline<span>1900 2021</span></div>
         </Col>
-        <Col className='emailBot_Col' span={9}>
+        <Col className='emailBot_Col' md={9} sm={24}>
           <div className='phone'>
             <FieldTimeOutlined />
           </div>
@@ -28,8 +28,8 @@ const Bottom = () => {
         </Col>
       </Row>
       <Row className='dev_bottom_center'>
-        <Col className='emailBot_Col1' span={6}>
-          <div>
+        <Col className='emailBot_Col1' md={6} sm={24} xs={24}>
+          <div className='res_bot'>
             <div className='aegona_bottom'>AEGO<span>NA</span></div>
             <div className='bottom_center_v1'>
               <div className='phone'>
@@ -52,8 +52,8 @@ const Bottom = () => {
 
           </div>
         </Col>
-        <Col className='emailBot_Col1' span={6}>
-          <div>
+        <Col className='emailBot_Col1' md={6} sm={24} xs={24}>
+          <div className='res_bot'>
             <div className='aegona_bottom1'>ABC</div>
             <div className='bottom_center_v1'>
               <li className='bottom_ul'>Thông tin học thuật</li>
@@ -69,8 +69,8 @@ const Bottom = () => {
             </div>
           </div>
         </Col>
-        <Col className='emailBot_Col1' span={6}>
-          <div>
+        <Col className='emailBot_Col1' md={6} sm={24} xs={24}>
+          <div className='res_bot'>
             <div className='aegona_bottom1'>CDF</div>
             <div className='bottom_center_v1'>
               <li className='bottom_ul'>Thông tin học thuật</li>
@@ -86,8 +86,8 @@ const Bottom = () => {
             </div>
           </div>
         </Col>
-        <Col className='emailBot_Col1' span={6}>
-          <div>
+        <Col className='emailBot_Col1' md={6} sm={24} xs={24}>
+          <div className='res_bot'>
             <div className='aegona_bottom2'>Liên Hệ Tư Vấn</div>
             <div className='bottom_center_v1'>
               <AutoComplete
@@ -107,9 +107,9 @@ const Bottom = () => {
       </Row>
       <div className='bottom_x1'>
         <Row className='bottom_x2'>
-          <Col className='bottom_x2_v1' span={9}>Copyright © 2020 EngStar - All Rights Reserved</Col>
+          <Col className='bottom_x2_v1' md={9} sm={24} xs={24}>Copyright © 2020 EngStar - All Rights Reserved</Col>
 
-          <Col className='bottom_x2_v2' span={9}>
+          <Col className='bottom_x2_v2' md={9} sm={24} xs={24}>
             <div className="social-container">
               <Tooltip
                 title="Google+"
