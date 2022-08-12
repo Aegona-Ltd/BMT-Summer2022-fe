@@ -5,6 +5,16 @@ import React from 'react';
 import '../../../styles/Home.scss';
 import { Link } from 'react-router-dom';
 const Footer = () => {
+
+  //Menu responsive
+  const myFunction = () => {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "menuuuu") {
+      x.className += " responsive";
+    } else {
+      x.className = "menuuuu";
+    }
+  }
   return (
     <div className='full_page'>
       <div className='header'>
@@ -51,10 +61,10 @@ const Footer = () => {
           {/* header1_v2 */}
           <Col className="gutter-row" md={12} sm={24}>
             <div className='header1_v2'>
-              <div className='phone'>
+              <div className='phone_header'>
                 <PhoneOutlined />
               </div>
-              <div className='hotline'>Hotline<span>1900 2021</span></div>
+              <div className='hotline_header'>Hotline<span>1900 2021</span></div>
               <div className='phone_111'>
                 <FieldTimeOutlined />
               </div>
@@ -66,25 +76,28 @@ const Footer = () => {
 
       {/* header 2 */}
       <div className='header2'>
-        
+
         <Row className='header2_v1'>
           <Col className='aegona' md={4} sm={24}>AEGO<span>NA</span></Col>
           <Col md={14} sm={24}>
-            <ul>
-              <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
-              <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
-              <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
-              <li><a className='navbarr' href="/#users">LIÊN HỆ</a></li>
-            </ul>
-          </Col>
-          <Col span={1}>
-            <Link to="/login">
-              <Button type="primary" icon={<UserOutlined />} className='btn_Login'>
-                Login
-              </Button>
-            </Link>
+            <div className='menuuuu' id="myTopnav">
+              <ul className='nav-item'>
+                <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
+                <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
+                <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
+                <li><a className='navbarr' href="/#users">LIÊN HỆ</a></li>
+                <a href='/#' className="icon" onClick={() => myFunction()}>
+                  <i className="fa fa-bars"></i>
+                </a>
+              </ul>
+            </div>
           </Col>
         </Row>
+        <Link to="/login">
+          <Button type="primary" icon={<UserOutlined />} className='btn_Login'>
+            Login
+          </Button>
+        </Link>
       </div>
     </div>
 
