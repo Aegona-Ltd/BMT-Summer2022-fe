@@ -74,6 +74,13 @@ div.ant-col.ant-col-12.gutter-row {
     margin-left: 7px;
     color: #fff;
 }
+
+.hotline span {
+    color: #a0bddf;
+    margin-left: 10px;
+    margin-right: 50px;
+    
+}
 .hotline_111 {
     margin-left: 10px;
     color: #fff;
@@ -1146,7 +1153,7 @@ div.h1_1 {
     }
 
     .dev_Bottom {
-        margin-top: 4200px;
+        margin-top: 5200px;
         position: absolute;
         width: 100%;
         height: 1356px;
@@ -1318,10 +1325,12 @@ div.h1_1 {
 
     .background_Footer_top_Col_3_v2_1 {
         position: absolute;
-        width: 676.59px;
-        height: 488px;
-        left: 6px;
-        top: 1719px;
+        left: 30px;
+        top: 1739px;
+        width:322px;
+        height:230px;
+        background: url('../img/11_res.png');
+        
     }
 
     .background_Footer_top_Col_2_v4 {
@@ -1350,8 +1359,8 @@ div.h1_1 {
         position: absolute;
         width: 160px;
         height: 8px;
-        left: 120px;
-        top: 1005px;
+        left: 10px;
+        top: 1675px;
     
         background: rgba(255, 204, 0, 0.72);
         border-radius: 100px;
@@ -1361,17 +1370,60 @@ div.h1_1 {
             width: 160px;
         }
     }
+    .cac_van_de_ng_hoc {
+        position: absolute;
+        width: 286px;
+        height: 118px;
+        left: 3px;
+        top: 2090px;
+        background: url('../img/12_res.png');
+    }
+    
+    .cac_van_de_ng_hoc_1 {
+        position: absolute;
+        width: 286px;
+        height: 105px;
+        left: 3px;
+        top: 2259px;
+        background: url('../img/13_res.png');
+    }
 
-
-
-
-
-
+    .Footer_center_dot {
+        position: absolute;
+        width: 152px;
+        height: 88px;
+        left: 217px;
+        top: 2384px;
+        background: url('../img/dot2.png');
+    }
+    
+    .Footer_center_dot2 {
+        position: absolute;
+        width: 152px;
+        height: 88px;
+        left: 1px;
+        top: 3384px;
+        background: url('../img/dot2.png');
+    }
 
     .Footer_center {
         width: 100%;
         height: 394px;
-        margin-top: 1530px;
+        margin-top: 1370px;
+    }
+
+
+
+
+
+
+
+    .Footer_center2 {
+        width: 100%;
+        height: 328px;
+        margin-top: 430px;
+        display: flex;
+        justify-content: center;
     }
     
     
@@ -1403,7 +1455,7 @@ div.h1_1 {
     }
 
     .dev_Bottom {
-        margin-top: 4200px;
+        margin-top: 5200px;
         position: absolute;
         width: 100%;
         height: 1356px;

@@ -12,19 +12,19 @@ const Bottom = () => {
           <div className='phone'>
             <MailOutlined />
           </div>
-          <div className='hotline'>Email<span>contact@aegona.com</span></div>
+          <div className='hotline'>Email <span>contact@aegona.com</span></div>
         </Col>
         <Col className='emailBot_Col' md={6} sm={24}>
           <div className='phone'>
             <PhoneOutlined />
           </div>
-          <div className='hotline'>Hotline<span>1900 2021</span></div>
+          <div className='hotline'>Hotline <span>1900 2021</span></div>
         </Col>
         <Col className='emailBot_Col' md={9} sm={24}>
           <div className='phone'>
             <FieldTimeOutlined />
           </div>
-          <div className='hotline'>Giờ làm việc<span>Thứ 2 - Thứ 6 : 08:00 - 17:00</span></div>
+          <div className='hotline'>Giờ làm việc <span>Thứ 2 - Thứ 6 : 08:00 - 17:00</span></div>
         </Col>
       </Row>
       <Row className='dev_bottom_center'>
