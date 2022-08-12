@@ -86,10 +86,10 @@ const Footer = () => {
           <div className='Footer_center2_dot'></div>
         </div>
         <Row className='Footer_center2_Row'>
-          <Col className='Footer_center2_Col' span={5}></Col>
-          <Col className='Footer_center2_Col' span={5}></Col>
-          <Col className='Footer_center2_Col' span={5}></Col>
-          <Col className='Footer_center2_Col' span={5}></Col>
+          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
+          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
+          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
+          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
         </Row>
       </div>
 
@@ -98,8 +98,8 @@ const Footer = () => {
           <div className='Footer_center2_dot'></div>
         </div>
         <Row className='Footer_center2_Row'>
-          <Col className='Footer_center2_Col1' span={11}>
-            <div>
+          <Col className='Footer_center2_Col1' md={11} sm={24}>
+            <div className='Footer_center2_BG_Full'>
               <div className='Footer_center2_Col_bg1'>
                 <div className='Footer_center2_Col_bg1_icon'>
                   <div className='phone_1'>
@@ -135,7 +135,7 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col className='Footer_center2_Col1' span={11}>
+          <Col className='Footer_center2_Col1' md={11} sm={24}>
             <div className='Footer_center2_Col2_background_map1'>
               <div className='Footer_center2_Col2_background_map'></div>
               <div className='Footer_center2_Col2_background_map_icon'>
