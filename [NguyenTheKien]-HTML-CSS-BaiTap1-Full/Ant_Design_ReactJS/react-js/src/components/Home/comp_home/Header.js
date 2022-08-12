@@ -74,6 +74,7 @@ const Footer = () => {
               <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
               <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
               <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
+              <li><a className='navbarr' href="/#users">LIÊN HỆ</a></li>
             </ul>
           </Col>
           <Col span={1}>
