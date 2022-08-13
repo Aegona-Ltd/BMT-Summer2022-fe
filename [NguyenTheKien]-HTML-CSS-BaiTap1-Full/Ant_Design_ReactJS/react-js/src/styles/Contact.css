@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-.zzzz{
-    margin-top: 200px;
-}
 .text-center {
     text-align: center;
     color: #38ef7d;
@@ -227,10 +224,10 @@ button.ghost {
     scrollbar-width: none;
 }
 
-Form {
+.form_login {
     border-width: 5px;
     border-radius: 10px;
-    width: 90%;
+    width: 30%;
     height: auto;
     box-shadow: 5px 10px 18px #888888;
 }
@@ -263,7 +260,7 @@ Form {
         margin-top: 30px;
     }
 
-    Form {
+    .form_login {
         border-width: 5px;
         border-radius: 10px;
         width: 90%;
@@ -296,7 +293,7 @@ Form {
         margin-top: 30px;
     }
 
-    Form {
+    .form_login {
         border-width: 5px;
         border-radius: 10px;
         width: 90%;
@@ -310,7 +307,13 @@ Form {
         margin-left: 2%;
         padding-bottom: 35px;
     }
-    .ReCAPTCHA {
-        padding-bottom: 10px;
-    }
+
+}
+
+.bg_contact_full{
+    margin-bottom: 70px;
+}
+
+.introduction{
+    width: 100%;
 }

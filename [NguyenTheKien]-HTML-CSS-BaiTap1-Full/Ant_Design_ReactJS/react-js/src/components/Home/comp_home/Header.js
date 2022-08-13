@@ -82,11 +82,11 @@ const Footer = () => {
           <Col md={14} sm={24}>
             <div className='menuuuu' id="myTopnav">
               <ul className='nav-item'>
-                <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
+                <li><a className='navbarr' href="/">TRANG CHỦ</a></li>
                 <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
                 <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
                 <li><a className='navbarr' href="/contact">LIÊN HỆ</a></li>
-                <a href='/#' className="icon" onClick={() => myFunction()}>
+                <a  className="icon" onClick={() => myFunction()}>
                   <i className="fa fa-bars"></i>
                 </a>
               </ul>
