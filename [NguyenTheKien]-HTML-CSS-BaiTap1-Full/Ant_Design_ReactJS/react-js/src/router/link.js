@@ -11,7 +11,7 @@ const publicRouter = [
     { path : "/*" , component:NotFound},
     { path : "/login" , component:Login},
     { path : "/signUp" , component:SignUp},
-    { path : "/contact" , component:Contact},
+    { path : "/contact" , component:Contact , layout:null},
 ]
 
 
@@ -24,5 +24,10 @@ export {
   }
   
   function Users() {
-    return <h2>Users</h2>;
+    return (
+      <div>
+        <About></About>
+        <div>Users</div>
+      </div>
+    );
   }

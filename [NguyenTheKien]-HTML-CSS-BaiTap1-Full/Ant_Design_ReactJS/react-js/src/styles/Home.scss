@@ -415,6 +415,7 @@ li.bottom_ul {
 }
 
 .Footer_top_Col_1_text {
+    z-index: 1;
     position: absolute;
     width: 564px;
     height: 96px;
@@ -438,6 +439,7 @@ li.bottom_ul {
 }
 
 .Footer_top_Col_1_text span {
+    z-index: 1;
     color: #FFC600;
 }
 
@@ -1653,18 +1655,27 @@ div.h1_1 {
 
     .menuuuu.responsive {
         position: relative;
+        inset: 0 0 auto 0;
+        top: 65px;
+        left: -40px;
+        background-color: #0060CC!important;
+        z-index: 99 !important;
     }
 
     .menuuuu.responsive .icon {
         position: absolute;
-        right: 0;
         top: 0;
+        right: 60px;
+        margin-top: -45px;
     }
 
-    .menuuuu.responsive a {
+    .menuuuu.responsive .navbarr {
+        width: 100%;
         float: none;
         display: block;
         text-align: left;
+        margin-top: 15px;
+        margin-left: 40px;
     }
 
 }
@@ -1751,6 +1762,7 @@ div.h1_1 {
     }
 
     .Footer_top_Col_1_text {
+        z-index: 1;
         position: absolute;
         width: 364px;
         height: 96px;

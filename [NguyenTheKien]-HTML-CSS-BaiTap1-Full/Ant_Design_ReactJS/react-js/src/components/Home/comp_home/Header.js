@@ -85,7 +85,7 @@ const Footer = () => {
                 <li><a className='navbarr' href="/#">TRANG CHỦ</a></li>
                 <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
                 <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
-                <li><a className='navbarr' href="/#users">LIÊN HỆ</a></li>
+                <li><a className='navbarr' href="/contact">LIÊN HỆ</a></li>
                 <a href='/#' className="icon" onClick={() => myFunction()}>
                   <i className="fa fa-bars"></i>
                 </a>
@@ -100,6 +100,7 @@ const Footer = () => {
         </Link>
       </div>
     </div>
+    
 
   );
 };

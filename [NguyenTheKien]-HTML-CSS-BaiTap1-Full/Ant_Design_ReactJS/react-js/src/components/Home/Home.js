@@ -7,7 +7,7 @@ import Bottom from './comp_home/Bottom';
 
   const Home = () => {
     return (
-      <div className='test'>
+      <div>
        <Header></Header>
        <Footer></Footer>
        <Bottom></Bottom>

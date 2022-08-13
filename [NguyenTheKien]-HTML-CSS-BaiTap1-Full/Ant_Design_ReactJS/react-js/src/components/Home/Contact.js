@@ -32,7 +32,7 @@ const layout = {
     };
   
     return (
-      <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+      <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages} className={'zzzz'}>
         <Form.Item
           name={['user', 'name']}
           label="Name"
