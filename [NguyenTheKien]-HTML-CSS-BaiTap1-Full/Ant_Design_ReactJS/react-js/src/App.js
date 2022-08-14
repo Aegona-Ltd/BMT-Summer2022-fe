@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import  {publicRouter} from './router/link';
-import {DefaultLayout} from "./components/Layout/";
+import {DefaultLayout } from "./components/Layout";
 
 export default function App() {
   return (

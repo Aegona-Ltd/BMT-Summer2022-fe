@@ -1,4 +1,4 @@
-import { Form, Input, Button, InputNumber , Checkbox, Typography, Layout, Tooltip ,message} from "antd";
+import { Form, Input, Button, Typography, Layout} from "antd";
 import { LoginOutlined } from "@ant-design/icons";
 import 'antd/dist/antd.min.css';
 import React from 'react';
