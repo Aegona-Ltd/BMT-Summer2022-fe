@@ -90,9 +90,9 @@ const Bottom = () => {
           <div className='res_bot'>
             <div className='aegona_bottom2'>Liên Hệ Tư Vấn</div>
             <div className='bottom_center_v1'>
-              <AutoComplete
+              <AutoComplete className='input-mail'
                 style={{
-                  width: 220,
+                  width: 190,
                 }}
                 placeholder="Email của bạn"
               />

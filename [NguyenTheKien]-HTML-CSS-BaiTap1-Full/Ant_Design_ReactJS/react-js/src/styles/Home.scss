@@ -1181,12 +1181,8 @@ div.h1_1 {
     }
 
     .dev_Bottom {
-        margin-top: 5300px;
-        position: absolute;
         width: 100%;
         height: 1356px;
-        left: 0px;
-        top: 0px;
 
         background: #006CE5;
     }
@@ -1479,6 +1475,10 @@ div.h1_1 {
         left: 136px;
     }
 
+    .dev_Footer {
+        margin-bottom: 490px;
+    }
+
     .Footer_center_Col_Background_img_3 {
         position: absolute;
         left: 136px;
@@ -1703,12 +1703,16 @@ div.h1_1 {
     }
 
     .dev_bottom_center {
-        margin-top: 200px;
         height: 401px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin-top: -60px;
+    }
+
+    .input-mail{
+        width: 220;
     }
 
     .res_bot {
@@ -1716,18 +1720,14 @@ div.h1_1 {
     }
 
     .dev_Bottom {
-        margin-top: 5300px;
-        position: absolute;
         width: 100%;
-        height: 1356px;
         left: 0px;
         top: 0px;
-
         background: #006CE5;
     }
 
     .bottom_x2 {
-        margin-top: 550px;
+        margin-top: 50px;
         border-top-style: solid;
         border-width: 1px;
         border-top-color: #2984E9;
@@ -1828,41 +1828,41 @@ div.h1_1 {
     .background_Footer_top_Col_2_circle {
         box-sizing: border-box;
         position: absolute;
-        width: 350px;
-        height: 400px;
-        left: 0px;
-        margin-top: 130px;
+        width: 450px;
+        height: 450px;
+        left: -60px;
+        margin-top: 170px;
 
     }
 
     .background_Footer_top_Col_2_circle1 {
         position: absolute;
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
     }
 
     .background_Footer_top_Col_2 {
         position: absolute;
         width: 100%;
-        height: 351px;
+        height: 551px;
         left: 0px;
-        margin-top: 100px;
+        margin-top: -3px;
     }
 
     .background_Footer_top_Col_2_v2 {
         position: absolute;
-        width: 292px;
-        height: 190px;
-        left: 50px;
-        top: 188px;
+        width: 352px;
+        height: 230px;
+        left: -25px;
+        top: 158px;
     }
 
     .background_Footer_top_Col_2_v3 {
         position: absolute;
         width: 200px;
         height: 144px;
-        left: 100px;
-        top: 422px;
+        left: 190px;
+        top: 322px;
     }
 
     .background_Footer_top_Col_2_v1 {
@@ -1870,23 +1870,22 @@ div.h1_1 {
         width: 105px;
         height: 268px;
         left: 150px;
-        top: 36px;
+        top: 80px;
     }
 
     .background_Footer_top_Col_2_circle2 {
         position: absolute;
         width: 500px;
         height: 500px;
-        left: -250px;
-        top: 1496px;
+        left: -100px;
     }
 
     .Footer_top_Col_1_text_2 {
         position: absolute;
-        width: 321px;
+        width: 421px;
         height: 96px;
-        top: 1525px;
         left: 5px;
+        margin-top: -90px;
 
         font-family: 'Montserrat';
         font-style: normal;
@@ -1898,11 +1897,11 @@ div.h1_1 {
 
     .background_Footer_top_Col_3_v2_1 {
         position: absolute;
-        left: 30px;
-        top: 1739px;
-        width: 322px;
-        height: 230px;
-        background: url('../img/11_res.png');
+        left: -10px;
+        width: 483px;
+        height: 382px;
+        margin-top: -100px;
+        background: url('../img/11_tablet.png');
 
     }
 
@@ -1910,16 +1909,16 @@ div.h1_1 {
         position: absolute;
         width: 120px;
         height: 88px;
-        left: 138px;
-        top: 582px;
+        left: 2px;
+        top: 402px;
     }
 
     .background_Footer_top_Col_2_v5 {
         position: absolute;
         width: 268px;
-        height: 160px;
+        height: 140px;
         left: 58px;
-        top: 692px;
+        top: 452px;
     }
 
     .background_Footer_top_Col_2_v2_2 {
@@ -1927,7 +1926,7 @@ div.h1_1 {
         width: 152px;
         height: 88px;
         left: 85px;
-        top: 1523px;
+        margin-top: -100px;
     }
 
     .background_Footer_top_Rec_1 {
@@ -1935,7 +1934,7 @@ div.h1_1 {
         width: 160px;
         height: 8px;
         left: 10px;
-        top: 1675px;
+        margin-top: -90px;
 
         background: rgba(255, 204, 0, 0.72);
         border-radius: 100px;
@@ -1948,28 +1947,28 @@ div.h1_1 {
 
     .cac_van_de_ng_hoc {
         position: absolute;
-        width: 286px;
-        height: 118px;
-        left: 3px;
-        top: 2090px;
-        background: url('../img/12_res.png');
+        width: 436px;
+        height: 180px;
+        left: 153px;
+        margin-top: 300px;
+        background: url('../img/12.png');
     }
 
     .cac_van_de_ng_hoc_1 {
         position: absolute;
-        width: 286px;
-        height: 105px;
-        left: 3px;
-        top: 2259px;
-        background: url('../img/13_res.png');
+        width: 512px;
+        height: 180px;
+        left: 153px;
+        margin-top: 300px;
+        background: url('../img/13.png');
     }
 
     .Footer_center_dot {
         position: absolute;
         width: 152px;
         height: 88px;
-        left: 207px;
-        top: 2384px;
+        left: 607px;
+        margin-top: 300px;
         background: url('../img/dot2.png');
     }
 
@@ -1977,8 +1976,8 @@ div.h1_1 {
         position: absolute;
         width: 152px;
         height: 88px;
-        left: 1px;
-        top: 3384px;
+        left: 120px;
+        margin-top: 700px;
         background: url('../img/dot2.png');
     }
 
@@ -2127,7 +2126,7 @@ div.h1_1 {
     .Footer_center2 {
         width: 100%;
         height: 328px;
-        margin-top: 700px;
+        margin-top: 450px;
         display: flex;
         justify-content: center;
     }
@@ -2188,18 +2187,17 @@ div.h1_1 {
     .menuuuu.responsive {
         position: relative;
         inset: 0 0 auto 0;
-        top: 50px;
+        top: 65px;
         left: 60px;
         background-color: #0060CC!important;
         z-index: 99 !important;
-        padding-bottom: 300px;
     }
 
     .menuuuu.responsive .icon {
         position: absolute;
         top: 0;
         right: 60px;
-        margin-top: -45px;
+        margin-top: -60px;
     }
 
     .menuuuu.responsive .navbarr {
@@ -2209,5 +2207,9 @@ div.h1_1 {
         text-align: left;
         margin-top: 15px;
         margin-left: 40px;
+    }
+
+    .Footer_center_Row{
+       margin-top: -500px;
     }
 }

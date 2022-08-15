@@ -55,7 +55,7 @@ const Footer = () => {
         <div className='Footer_center_dot'></div>
         <div className='Footer_center_dot2'></div>
         <Row className='Footer_center_Row'>
-          <Col className='Footer_center_Col' md={6} sm={24}>
+          <Col className='Footer_center_Col' xl={6} md={10} sm={24}>
             <div className='Footer_center_Col_Background_dot'></div>
             <div className='Footer_center_Col_Background_img_1'></div>
             <div className='Footer_center_Col_Background_text_1'>Học bài</div>
@@ -63,7 +63,7 @@ const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </Col>
-          <Col className='Footer_center_Col' md={6} sm={24}>
+          <Col className='Footer_center_Col' xl={6} md={10} sm={24}>
             <div className='Footer_center_Col_Background_dot'></div>
             <div className='Footer_center_Col_Background_img_2'></div>
             <div className='Footer_center_Col_Background_text_1'>Ôn bài</div>
@@ -71,7 +71,7 @@ const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </Col>
-          <Col className='Footer_center_Col' md={6} sm={24}>
+          <Col className='Footer_center_Col' xl={6} md={10} sm={24}>
             <div className='Footer_center_Col_Background_dot'></div>
             <div className='Footer_center_Col_Background_img_3'></div>
             <div className='Footer_center_Col_Background_text_1'>Tiến Độ</div>
@@ -86,10 +86,10 @@ const Footer = () => {
           <div className='Footer_center2_dot'></div>
         </div>
         <Row className='Footer_center2_Row'>
-          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
-          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
-          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
-          <Col className='Footer_center2_Col' md={5} sm={24}></Col>
+          <Col className='Footer_center2_Col' xl={5} md={10} sm={24}></Col>
+          <Col className='Footer_center2_Col' xl={5} md={10} sm={24}></Col>
+          <Col className='Footer_center2_Col' xl={5} md={10} sm={24}></Col>
+          <Col className='Footer_center2_Col' xl={5} md={10} sm={24}></Col>
         </Row>
       </div>
 
