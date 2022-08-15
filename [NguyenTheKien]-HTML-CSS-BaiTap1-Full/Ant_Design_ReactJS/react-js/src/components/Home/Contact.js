@@ -6,6 +6,46 @@ import '../../styles/Contact.css';
 const { Title } = Typography;
 
   const Contact = () => {
+    const a = 0 ;
+    const numbers = /[0-9]/g;
+    const upperCaseLetters = /[A-Z]/g;
+    const lowerCaseLetters = /[a-z]/g;
+    const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+    const check_name = [
+      {
+        required: true,
+        message: "Bạn không được bỏ trống ở trường này.",
+      },
+      {
+        min: 8,
+        message: "Tên ít nhất 8 ký tự.",
+      },
+    ]
+    const check_mail = [
+      {
+        required: true,
+        message: "Bạn không được bỏ trống ở trường này.",
+      },
+      {
+        type: "email",
+        message: "Email sai định dạng.",
+      },
+    ]
+    const check_phone = [
+      {
+        required: true,
+        message: "Bạn không được bỏ trống ở trường này.",
+      },
+      {
+        pattern: new RegExp(/^[0-9]+$/i),
+        message: "Số điện thoại không hợp lệ",
+      },
+      {
+        min: 9,
+        message: "Số ít nhất 9 ký tự.",
+      },
+      
+    ]
   
     return (
       
@@ -33,12 +73,7 @@ const { Title } = Typography;
             label="Họ & Tên"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-            // rules={check_mail}
+            rules={check_name}
           >
             <Input placeholder="Nhập tên của bạn" size="large" />
           </Form.Item>
@@ -49,7 +84,7 @@ const { Title } = Typography;
             label="Email"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
-            // rules={check_mail}
+            rules={check_mail}
           >
             <Input placeholder="Nhập Email của bạn" size="large" />
           </Form.Item>
@@ -60,7 +95,7 @@ const { Title } = Typography;
             label="Số Điện Thoại"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
-            // rules={check_mail}
+            rules={check_phone}
           >
             <Input placeholder="Nhập SĐT của bạn" size="large" />
           </Form.Item>
@@ -71,7 +106,10 @@ const { Title } = Typography;
             label="Thông Tin"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
-            // rules={check_mail}
+            rules={[  {
+              required: true,
+              message: "Bạn không được bỏ trống ở trường này.",
+            }]}
           >
             <Input.TextArea className="introduction" placeholder="Nhập thông tin cần tư vấn" size="large" />
           </Form.Item>

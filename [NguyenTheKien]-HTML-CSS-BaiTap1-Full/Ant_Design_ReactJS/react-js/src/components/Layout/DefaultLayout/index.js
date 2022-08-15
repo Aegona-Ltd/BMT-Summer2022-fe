@@ -3,7 +3,6 @@ import Bottom from '../../Home/comp_home/Bottom';
 import '../../../styles/Defautl.css';
 
 function DefaultLayout({ children}) {
-    console.log(children);
     return (
         <div>
             <Header></Header>

@@ -1652,6 +1652,7 @@ div.h1_1 {
         font-size: 18px;
         margin-top: 20px;
         margin-left: 35px;
+        z-index: 99 ;
     }
 
     .menuuuu.responsive {
@@ -1669,6 +1670,7 @@ div.h1_1 {
         top: 0;
         right: 60px;
         margin-top: -45px;
+        z-index: 99 ;
     }
 
     .menuuuu.responsive .navbarr {
@@ -1678,6 +1680,7 @@ div.h1_1 {
         text-align: left;
         margin-top: 15px;
         margin-left: 40px;
+        z-index: 99 ;
     }
 
 }
@@ -2173,6 +2176,7 @@ div.h1_1 {
 
     //menu
     .menuuuu a.navbarr {
+        z-index: 99 ;
         display: none;
     }
 
@@ -2182,6 +2186,7 @@ div.h1_1 {
         color: #000;
         font-size: 24px;
         margin-right: 125px;
+        z-index: 99 !important;
     }
 
     .menuuuu.responsive {
@@ -2198,6 +2203,7 @@ div.h1_1 {
         top: 0;
         right: 60px;
         margin-top: -60px;
+        z-index: 99 !important;
     }
 
     .menuuuu.responsive .navbarr {
@@ -2207,6 +2213,7 @@ div.h1_1 {
         text-align: left;
         margin-top: 15px;
         margin-left: 40px;
+        z-index: 99 !important;
     }
 
     .Footer_center_Row{
