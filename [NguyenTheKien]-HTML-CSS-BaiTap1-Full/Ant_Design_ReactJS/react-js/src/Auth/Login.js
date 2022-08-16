@@ -1,5 +1,5 @@
 import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip ,message} from "antd";
-import { LoginOutlined, FacebookOutlined, GooglePlusOutlined, GithubOutlined } from "@ant-design/icons";
+import { LoginOutlined, GooglePlusOutlined, GithubOutlined } from "@ant-design/icons";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 import 'antd/dist/antd.min.css';
@@ -7,6 +7,8 @@ import React, {useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import get from "lodash/get";
 import '../styles/Login.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {  faFacebookF } from '@fortawesome/free-brands-svg-icons';
 const { Title } = Typography;
 
 export default function Login() {
@@ -94,8 +96,8 @@ export default function Login() {
   };
 
   return (
-    <Layout className="full">
-      <Form className="form_login"
+    <Layout className="fullbg">
+      <Form className="form_login1"
         name="signin"
         form={form}
         initialValues={{
@@ -103,7 +105,7 @@ export default function Login() {
         }}
         onFinish={onFinish}
         autoComplete="off"
-      >
+      > 
         <div className="zzz">
           <Title level={2} className="text-center" style={{ color: '#284D66', fontWeight: "bold", }}>
             Sign in
@@ -127,7 +129,7 @@ export default function Login() {
               key="#4267B2"
             >
               <div className="social facebook">
-                <FacebookOutlined />
+              <FontAwesomeIcon icon={faFacebookF} className="icon1" />
               </div>
             </Tooltip>
 

@@ -1,9 +1,11 @@
 import 'antd/dist/antd.min.css';
 import { Tooltip, Row, Col, Button } from "antd";
-import { UserOutlined, FacebookOutlined, GooglePlusOutlined, LinkedinOutlined, PhoneOutlined, FieldTimeOutlined } from "@ant-design/icons";
+import { UserOutlined, GooglePlusOutlined, PhoneOutlined, FieldTimeOutlined } from "@ant-design/icons";
 import React from 'react';
 import '../../../styles/Home.scss';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
 
   //Menu responsive
@@ -41,7 +43,7 @@ const Footer = () => {
                   key="#4267B2"
                 >
                   <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                    <FacebookOutlined />
+                    <FontAwesomeIcon icon={faFacebookF} className="icon1" />
                   </div>
                 </Tooltip>
 
@@ -52,7 +54,7 @@ const Footer = () => {
                   key="#0e76a8"
                 >
                   <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                    <LinkedinOutlined />
+                    <FontAwesomeIcon icon={faLinkedinIn} className="icon1" />
                   </div>
                 </Tooltip>
               </div>
@@ -78,7 +80,9 @@ const Footer = () => {
       <div className='header2'>
 
         <Row className='header2_v1'>
-          <Col className='aegona' md={4} sm={24}>AEGO<span>NA</span></Col>
+          <Link to="/">
+            <Col className='aegona' md={4} sm={24}>AEGO<span>NA</span></Col>
+          </Link>
           <Col md={14} sm={24}>
             <div className='menuuuu' id="myTopnav">
               <ul className='nav-item'>
@@ -86,7 +90,7 @@ const Footer = () => {
                 <li><a className='navbarr' href="/#about">HỌC & ÔN</a></li>
                 <li><a className='navbarr' href="/#users">VỀ CHÚNG TÔI</a></li>
                 <li><a className='navbarr' href="/contact">LIÊN HỆ</a></li>
-                <a  className="icon" onClick={() => myFunction()}>
+                <a className="icon" onClick={() => myFunction()}>
                   <i className="fa fa-bars"></i>
                 </a>
               </ul>
@@ -101,7 +105,7 @@ const Footer = () => {
       </div>
       {/* <div className='zxcvbn'></div> */}
     </div>
-    
+
 
   );
 };

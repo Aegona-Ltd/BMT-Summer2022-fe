@@ -948,8 +948,8 @@ div.h1_1 {
 
     &:hover {
         border-color: #0060CC;
-        border-style: double;
-        border-width: 5px;
+        border-style: solid;
+        border-width: 3px;
     }
 }
 
@@ -1639,6 +1639,11 @@ div.h1_1 {
         padding: 5px 5px;
     }
 
+    div.ant-row{
+        width: 100%;
+       
+    }
+
 
     //menu
     .menuuuu a.navbarr {
@@ -2229,4 +2234,8 @@ div.h1_1 {
     inset: 0;
     margin-left: 200px;
    
+}
+
+.icon1{
+    font-size: 16px;
 }

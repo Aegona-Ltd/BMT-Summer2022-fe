@@ -45,7 +45,7 @@
     margin-bottom: 10px;
 }
 
-.auth-container {
+/* .auth-container {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -54,7 +54,7 @@
     width: 992px;
     max-width: 100%;
     min-height: 660px;
-}
+} */
 
 .form-container form {
     background: #fff;
@@ -209,13 +209,13 @@ button.ghost {
     font-size: 14px;
 }
 
-.full {
-    background-color: #fff;
+.fullbg {
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: flex-start;
     margin-top: 30px;
 }
 
@@ -224,12 +224,13 @@ button.ghost {
     scrollbar-width: none;
 }
 
-.form_login {
+.form_login1 {
     border-width: 5px;
     border-radius: 10px;
     width: 30%;
     height: auto;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px #d2cdcd;
+    margin-bottom: 30px;
 }
 
 .zzz {
@@ -260,14 +261,6 @@ button.ghost {
         margin-top: 30px;
     }
 
-    .form_login {
-        border-width: 5px;
-        border-radius: 10px;
-        width: 90%;
-        height: auto;
-        box-shadow: 5px 10px 18px #888888;
-    }
-
     .zzz {
         width: 96%;
         margin-top: 20px;
@@ -293,14 +286,6 @@ button.ghost {
         margin-top: 30px;
     }
 
-    .form_login {
-        border-width: 5px;
-        border-radius: 10px;
-        width: 90%;
-        height: auto;
-        box-shadow: 5px 10px 18px #888888;
-    }
-
     .zzz {
         width: 96%;
         margin-top: 20px;
@@ -311,4 +296,8 @@ button.ghost {
     .ReCAPTCHA {
         padding-bottom: 10px;
     }
+}
+
+.icon1{
+    font-size: 16px;
 }

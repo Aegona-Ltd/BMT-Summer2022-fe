@@ -156,7 +156,7 @@ const Footer = () => {
               <div className='Footer_center2_Col2_background_map_icon3'></div>
               <div className='Footer_center2_Col2_background_map_icon4'></div>
             </div>
-            <div className='Footer_center2_Col2_map'></div>
+            <div className='Footer_center2_Col2_map'> </div>
           </Col>
         </Row>
       </div>

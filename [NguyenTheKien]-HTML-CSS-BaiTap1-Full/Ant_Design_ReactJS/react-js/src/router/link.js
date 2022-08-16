@@ -9,7 +9,7 @@ const publicRouter = [
     { path : "/about" , component:About },
     { path : "/users" , component:Users },
     { path : "/*" , component:NotFound},
-    { path : "/login" , component:Login },
+    { path : "/login" , component:Login , layout:null},
     { path : "/signUp" , component:SignUp},
     { path : "/contact" , component:Contact , layout:null},
 ]
