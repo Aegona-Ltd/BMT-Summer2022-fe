@@ -1,16 +1,13 @@
 import { Form, Input, Button, Typography, Layout} from "antd";
 import { LoginOutlined } from "@ant-design/icons";
+import axios from 'axios';
 import 'antd/dist/antd.min.css';
+import get from "lodash/get";
 import React from 'react';
 import '../../styles/Contact.css';
 const { Title } = Typography;
 
   const Contact = () => {
-    const a = 0 ;
-    const numbers = /[0-9]/g;
-    const upperCaseLetters = /[A-Z]/g;
-    const lowerCaseLetters = /[a-z]/g;
-    const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
     const check_name = [
       {
         required: true,
@@ -44,8 +41,31 @@ const { Title } = Typography;
         min: 9,
         message: "Số ít nhất 9 ký tự.",
       },
-      
     ]
+
+    //btn_submit
+    const Submit = (value) => {
+
+      const Url = 'https://jsonplaceholder.typicode.com/posts';
+      axios({
+        method: 'post',
+        url: Url,
+        data:{
+          email: get(value, "email"),
+          name: get(value, "Name"),
+          phone: get(value, "phone"),
+          introduction: get(value, "Introduction"),
+        }
+      })
+      .then(data =>{
+        return (
+          console.log(data.data)
+        )
+      })
+      .catch(err => console.error(err));
+   }
+    
+
   
     return (
       
@@ -53,11 +73,10 @@ const { Title } = Typography;
         <Layout className="full">
       <Form className="form_login"
         name="signin"
-        // form={form}
         initialValues={{
           remember: false,
         }}
-        // onFinish={onFinish}
+        onFinish={Submit}
         autoComplete="off"
       >
         <div className="zzz">
