@@ -3,6 +3,8 @@ import { Row, Col, AutoComplete, Button, Tooltip } from "antd";
 import { MailOutlined, EnvironmentOutlined, PhoneOutlined, FieldTimeOutlined, FacebookOutlined, LinkedinOutlined, GooglePlusOutlined } from "@ant-design/icons";
 import React from 'react';
 import '../../../styles/Home.scss';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Bottom = () => {
   return (
@@ -129,7 +131,7 @@ const Bottom = () => {
                 key="#4267B2"
               >
                 <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                  <FacebookOutlined />
+                <FontAwesomeIcon icon={faFacebookF} className="icon1" />
                 </div>
               </Tooltip>
 
@@ -140,7 +142,7 @@ const Bottom = () => {
                 key="#0e76a8"
               >
                 <div className="social linkedin" style={{ width: '23px', height: '23px' }}>
-                  <LinkedinOutlined />
+                <FontAwesomeIcon icon={faLinkedinIn} className="icon1" />
                 </div>
               </Tooltip>
             </div>
