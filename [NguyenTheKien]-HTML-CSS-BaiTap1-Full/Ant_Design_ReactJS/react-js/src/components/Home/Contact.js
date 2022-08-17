@@ -5,6 +5,7 @@ import 'antd/dist/antd.min.css';
 import get from "lodash/get";
 import React from 'react';
 import '../../styles/Contact.css';
+import { MailOutlined, PhoneOutlined, EnvironmentOutlined } from "@ant-design/icons";
 const { Title } = Typography;
 
   const Contact = () => {
@@ -144,6 +145,29 @@ const { Title } = Typography;
         </div>
       </Form>
     </Layout>
+    <div className="map_contact">
+    <div className='Footer_center2_Col2_background_map1'>
+              <div className='Footer_center2_Col2_background_map'></div>
+              <div className='Footer_center2_Col2_background_map_icon'>
+                <div className='phone_2'>
+                  <EnvironmentOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon1'>
+                <div className='phone_2'>
+                  <MailOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon2'>
+                <div className='phone_2'>
+                  <PhoneOutlined />
+                </div>
+              </div>
+              <div className='Footer_center2_Col2_background_map_icon3'></div>
+              <div className='Footer_center2_Col2_background_map_icon4'></div>
+            </div>
+            <iframe className='Footer_center2_Col2_map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.442335757664!2d106.62410211477214!3d10.853922192268977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752963982e3445%3A0xff1227c46772895d!2sAegona%20Co.%2C%20Ltd!5e0!3m2!1svi!2s!4v1660705574741!5m2!1svi!2s"></iframe>
+    </div>
       </div>
     );
   };

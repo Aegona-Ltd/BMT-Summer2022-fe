@@ -558,6 +558,14 @@ div.h1_1 {
 
 }
 
+.map_contact{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 350px;
+    margin-right: 80px;
+}
+
 .background_Footer_top_Col_2_v2_1 {
     position: absolute;
     width: 64px;
@@ -1150,6 +1158,10 @@ div.h1_1 {
 @media only screen and (max-width : 46.25em) {
     .social-container{
         padding-left: 10px;
+    }
+    .map_contact{
+        margin-top: 800px;
+        margin-right: 30px;
     }
     .header {
         height: 75px;
@@ -2016,6 +2028,10 @@ div.h1_1 {
         left: 120px;
         margin-top: 700px;
         background: url('../img/dot2.png');
+    }
+    .map_contact{
+        margin-top: 800px;
+        margin-right: 200px;
     }
 
     .Footer_center {

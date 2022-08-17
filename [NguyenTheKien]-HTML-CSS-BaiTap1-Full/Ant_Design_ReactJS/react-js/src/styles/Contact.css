@@ -229,7 +229,8 @@ button.ghost {
     border-radius: 10px;
     width: 30%;
     height: auto;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px #c8c4c4;
+    margin-right: 300px;
 }
 
 .zzz {
@@ -258,6 +259,7 @@ button.ghost {
         align-items: center;
         text-align: center;
         margin-top: 30px;
+        margin-bottom: 450px;
     }
 
     .form_login {
@@ -265,7 +267,8 @@ button.ghost {
         border-radius: 10px;
         width: 90%;
         height: auto;
-        box-shadow: 5px 10px 18px #888888;
+        box-shadow: 5px 10px 18px #c4bdbd;
+        margin-left: 300px;
     }
 
     .zzz {
@@ -291,6 +294,7 @@ button.ghost {
         align-items: center;
         text-align: center;
         margin-top: 30px;
+        margin-bottom: 450px;
     }
 
     .form_login {
@@ -298,7 +302,8 @@ button.ghost {
         border-radius: 10px;
         width: 90%;
         height: auto;
-        box-shadow: 5px 10px 18px #888888;
+        box-shadow: 5px 10px 18px #dad4d4;
+        margin-left: 300px;
     }
 
     .zzz {
@@ -306,6 +311,11 @@ button.ghost {
         margin-top: 20px;
         margin-left: 2%;
         padding-bottom: 35px;
+        
+    }
+
+    .map_contact{
+        margin-top: 800px;
     }
 
 }
