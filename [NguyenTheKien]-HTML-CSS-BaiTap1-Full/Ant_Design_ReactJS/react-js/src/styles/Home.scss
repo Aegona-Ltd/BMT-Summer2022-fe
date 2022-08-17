@@ -1134,7 +1134,7 @@ div.h1_1 {
     width: 560px;
     height: 280px;
 
-    background: url('../img/map.png');
+    // background: url('../img/map.png');
     filter: drop-shadow(12px 20px 32px rgba(4, 24, 57, 0.1));
     border-radius: 4px;
     margin-top: -20px;
@@ -1148,23 +1148,45 @@ div.h1_1 {
 
 /* phone width < 740px */
 @media only screen and (max-width : 46.25em) {
+    .social-container{
+        padding-left: 10px;
+    }
     .header {
         height: 75px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        height: 57px;
+        left: -13px;
+        width: 100%;
+        background: #0060CC;
+        .ant-row{
+             background-color: #0060CC;
+             height: 75px;
+        }
     }
 
     .emailBot_Col {
         width: 100%;
         height: 89px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        justify-content: left;
+        align-items: left;
+        text-align: left;
         border-color: rgba(255, 255, 255, 0.16);
         border-style: solid;
         border-width: 0.1px;
+        padding-left: 15px;
+    }
+
+    .emailBot_Col1{ 
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            text-align: left;
+            margin-bottom: 100px;  
+            padding-left: 15px;
     }
 
     .dev_bottom_center {
@@ -1222,7 +1244,7 @@ div.h1_1 {
         position: absolute;
         width: 364px;
         height: 96px;
-        margin-left: 1px;
+        margin-left: 10px;
         margin-top: 93px;
 
         font-family: 'Montserrat';
@@ -1253,9 +1275,9 @@ div.h1_1 {
     .Footer_top_Col_1_text1 {
 
         position: absolute;
-        width: 375px;
+        width: 355px;
         height: 48px;
-        left: 1px;
+        left: 10px;
         top: 224px;
 
         font-family: 'Montserrat';
@@ -1347,7 +1369,7 @@ div.h1_1 {
         width: 321px;
         height: 96px;
         top: 1525px;
-        left: 5px;
+        left: 15px;
 
         font-family: 'Montserrat';
         font-style: normal;
@@ -1411,7 +1433,7 @@ div.h1_1 {
         position: absolute;
         width: 286px;
         height: 118px;
-        left: 3px;
+        left: 15px;
         top: 2090px;
         background: url('../img/12_res.png');
     }
@@ -1420,7 +1442,7 @@ div.h1_1 {
         position: absolute;
         width: 286px;
         height: 105px;
-        left: 3px;
+        left: 15px;
         top: 2259px;
         background: url('../img/13_res.png');
     }
@@ -1537,6 +1559,10 @@ div.h1_1 {
         margin-left: 50px;
     }
 
+    .full_page{
+        width: 100%;
+    }
+
     .Footer_center2_Col2_background_map1 {
         box-sizing: border-box;
 
@@ -1613,12 +1639,13 @@ div.h1_1 {
     .phone_111 {
         position: absolute;
         font-size: 18px;
-        left: -20px;
+        left: -10px;
         margin-top: -30px;
     }
 
     .hotline_111 {
-        margin-left: 50px;
+
+        margin-left: 60px;
         margin-top: -30px;
     }
 
@@ -1640,8 +1667,10 @@ div.h1_1 {
     }
 
     div.ant-row{
-        width: 100%;
-       
+        element.style {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
     }
 
 
@@ -1653,7 +1682,7 @@ div.h1_1 {
     .menuuuu a.icon {
         float: right;
         display: block;
-        color: #000;
+        color: #fff;
         font-size: 18px;
         margin-top: 20px;
         margin-left: 35px;
@@ -1769,7 +1798,7 @@ div.h1_1 {
         position: absolute;
         width: 364px;
         height: 96px;
-        margin-left: 1px;
+        margin-left: 10px;
         margin-top: 93px;
 
         font-family: 'Montserrat';
@@ -2187,7 +2216,7 @@ div.h1_1 {
     .menuuuu a.icon {
         float: right;
         display: block;
-        color: #000;
+        color: #fff;
         font-size: 24px;
         margin-right: 125px;
         z-index: 99 !important;
