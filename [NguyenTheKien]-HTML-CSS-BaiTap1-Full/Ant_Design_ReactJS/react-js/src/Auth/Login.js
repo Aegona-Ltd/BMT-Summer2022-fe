@@ -14,7 +14,7 @@ const { Title } = Typography;
 export default function Login() {
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const [Recc , setRecc] = useState();
+  const [Recc , setRecc] = useState('');
   const numbers = /[0-9]/g;
   const upperCaseLetters = /[A-Z]/g;
   const lowerCaseLetters = /[a-z]/g;
@@ -58,6 +58,7 @@ export default function Login() {
   
   //Hàm Captcha
   var Recaptcha = (value) => {
+    // console.log('Captcha : ', value);
     setRecc(value);
   }
 
