@@ -29,12 +29,15 @@ export default function MainHome() {
           </Col>
           <Col lg={12} md={24} xs={24}>
             <div className={styles.main_top_text_right_bg}>
-              <div className={styles.main_top_text_right_bg_color}>
-              <div className={styles.test}>sâd</div>
-              <div>sâd</div>
-              <div>sâd</div>
+              <div className={styles.main_top_text_right_bg_circle}>
+                <div className={styles.main_top_text_right_bg_circle_v1}>
+                  <div className={styles.main_top_text_right_bg_color}>
+                    <div className={styles.test}>sâd</div>
+                    <div>sâd</div>
+                    <div>sâd</div>
+                  </div>
+                </div>
               </div>
-
             </div>
           </Col>
         </Row>

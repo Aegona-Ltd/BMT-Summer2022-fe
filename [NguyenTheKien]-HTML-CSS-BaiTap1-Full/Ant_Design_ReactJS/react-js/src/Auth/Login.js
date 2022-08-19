@@ -76,6 +76,7 @@ export default function Login() {
         const Account = {
           email: get(values, "email"),
           password: get(values, "password"),
+          captcha:Recc,
         };
   
         const Url = 'https://jsonplaceholder.typicode.com/posts';

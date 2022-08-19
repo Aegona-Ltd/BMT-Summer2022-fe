@@ -167,13 +167,35 @@
             }
         }
         .main_top_text_right_bg{
-            background-color: red;
-            .main_top_text_right_bg_color{
-                position: absolute;
-                width: 528px;
-                height: 691px;
-                background: #ECF4FD;
-                margin-left: 172px;
+            // background-color: red;
+            .main_top_text_right_bg_circle{
+                border: 1px solid #d6d6d6;
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+                width: 750px;
+                height: 750px;
+                margin-left: -52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .main_top_text_right_bg_circle_v1{
+                    border: 1px solid #d6d6d6;
+                    border-top-left-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                    width: 600px;
+                    height: 600px;
+                    left: 799px;
+                    top: 92.47px;
+                    .main_top_text_right_bg_color{
+                        position: absolute;
+                        width: 581px;
+                        height: 691px;
+                        background: #ECF4FD;
+                        margin-left: 93.5px;
+                        margin-top: -76px;
+                    }
+                }
             }
             
         }
