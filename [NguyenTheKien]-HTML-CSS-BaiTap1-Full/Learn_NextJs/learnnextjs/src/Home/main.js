@@ -10,6 +10,7 @@ import Link from 'next/dist/client/link';
 export default function MainHome() {
   return (
     <div className={styles.main_full}>
+      {/*  */}
       <div className={styles.main_top}>
         <Row>
           <Col lg={12} md={24} xs={24}>
@@ -34,17 +35,36 @@ export default function MainHome() {
                   <div className={styles.main_top_text_right_bg_color}>
                     <div className={styles.main_top_text_right_bg_dot}>
                       <div className={styles.main_top_text_right_img_1}>
+                        <div className={styles.main_top_text_right_img_play}></div>
                         <div className={styles.main_top_text_right_img_2}></div>
                       </div>
-                      {/* <div className={styles.main_top_text_right_img_3}>
+                      <div className={styles.main_top_text_right_img_3}>
                         <div className={styles.main_top_text_right_img_4}></div>
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </Col>
+        </Row>
+      </div>
+
+      {/*  */}
+      <div className={styles.main_top_1}>
+        <Row>
+          <Col lg={12} md={24} xs={24}>
+            <div className={styles.main_top_1_left_bg}>
+              <div className={styles.main_top_1_left_bg_circle}></div>
+              <div className={styles.main_top_1_left_bg_dot}></div>
+                <div className={styles.main_top_1_left_bg_text}>
+                  Các vấn đề của người học & Giải pháp của AEGONA
+                </div>
+                <div className={styles.main_top_1_left_bg_border}></div>
+                <div className={styles.main_top_1_left_bg_img}></div>
+            </div>
+          </Col>
+          <Col lg={12} md={24} xs={24}>abc</Col>
         </Row>
       </div>
     </div>

@@ -217,6 +217,15 @@
                                 background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../src/img/1.svg');
                                 border-radius: 4px;
                                 margin-left: -307px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .main_top_text_right_img_play {
+                                    width: 64px;
+                                    height: 64px;
+                                    background: url('../src/img/play.png');
+                                }
 
                                 .main_top_text_right_img_2 {
                                     position: absolute;
@@ -252,6 +261,61 @@
                 }
             }
 
+        }
+    }
+
+    .main_top_1 {
+        margin-top: 20px;
+
+        .main_top_1_left_bg {
+            padding-left: 120px;
+
+            .main_top_1_left_bg_circle {
+                box-sizing: border-box;
+                position: absolute;
+                width: 800px;
+                height: 800px;
+                margin-left: -300px;
+                margin-top: -260px;
+                border: 1px solid #d5d5d5;
+                border-radius: 50%;
+            }
+
+            .main_top_1_left_bg_dot {
+                margin-left: -50px;
+                margin-top: -50px;
+                width: 152px;
+                height: 88px;
+                background: url('../src/img/dot.svg');
+            }
+
+            .main_top_1_left_bg_text {
+                margin-top: -50px;
+                width: 451px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 48px;
+                letter-spacing: 0.005em;
+                text-transform: capitalize;
+                color: #001D3D;
+            }
+            .main_top_1_left_bg_border{
+                width: 160px;
+                height: 8px;
+                background-color: #FFCC00;
+                border-radius: 50px;
+                margin-top: 10px;
+            }
+            .main_top_1_left_bg_img{
+                position: absolute;
+                left: 56px;
+                margin-top: 50px;
+                width: 680px;
+                height: 448px;
+                background: url('../src/img/5.png');
+            }
         }
     }
 }
@@ -319,6 +383,12 @@
             padding-right: 10px;
 
             div {
+                button {
+                    span {
+                        width: 15px;
+                    }
+                }
+
                 a {
                     font-family: 'Montserrat';
 
@@ -367,71 +437,75 @@
                     }
                 }
             }
+
             .main_top_text_right_bg {
                 margin-top: 40px;
-                padding-bottom: 400px;
+                padding-bottom: 450px;
+
                 .main_top_text_right_bg_circle {
                     position: absolute;
                     right: 0;
                     width: 370px;
                     height: 370px;
                     margin-left: -115px;
-    
+
                     .main_top_text_right_bg_circle_v1 {
                         width: 300px;
                         height: 300px;
-    
+
                         .main_top_text_right_bg_color {
                             width: 281px;
                             height: 391px;
                             margin-left: 53px;
                             margin-top: -46px;
-    
+
                             .main_top_text_right_bg_dot {
                                 width: 152px;
                                 height: 288px;
                                 margin-left: 54px;
                                 margin-top: 56px;
-    
+
                                 .main_top_text_right_img_1 {
                                     width: 280px;
                                     height: 175px;
                                     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../src/img/1_res_mobile.png');
                                     margin-left: -107px;
-    
+
+                                    .main_top_text_right_img_play {
+                                        width: 32px;
+                                        height: 32px;
+                                        background: url('../src/img/play_res_mobile.png');
+                                    }
+
                                     .main_top_text_right_img_2 {
                                         width: 150px;
                                         height: 108px;
                                         top: 182px;
                                         left: 120px;
                                         background: url('../src/img/2_res_mobile.png');
-                                        border-radius: 4px;
                                     }
                                 }
-    
+
                                 .main_top_text_right_img_3 {
-                                    width: 268px;
-                                    height: 160px;
+                                    width: 180px;
+                                    height: 107px;
                                     background: url('../src/img/4.png');
                                     border-radius: 4px;
-                                    margin-top: 140px;
-                                    margin-left: -80px;
-    
+                                    margin-top: 90px;
+                                    margin-left: -30px;
+
                                     .main_top_text_right_img_4 {
-                                        position: absolute;
                                         width: 120px;
                                         height: 88px;
-                                        background: url('../src/img/3.png');
-                                        border-radius: 4px;
-                                        left: 50px;
-                                        top: 570px;
+                                        left: -40px;
+                                        top: 270px;
                                     }
                                 }
                             }
                         }
                     }
                 }
-    
+
             }
         }
     }
@@ -524,6 +598,17 @@
                         margin-left: 20px;
                     }
                 }
+            }
+
+            .main_top_text_right_bg {
+                margin-top: 50px;
+                padding-bottom: 800px;
+
+                .main_top_text_right_bg_circle {
+                    position: absolute;
+                    right: 0;
+                }
+
             }
         }
     }
