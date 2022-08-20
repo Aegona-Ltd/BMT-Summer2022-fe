@@ -32,9 +32,14 @@ export default function MainHome() {
               <div className={styles.main_top_text_right_bg_circle}>
                 <div className={styles.main_top_text_right_bg_circle_v1}>
                   <div className={styles.main_top_text_right_bg_color}>
-                    <div className={styles.test}>sâd</div>
-                    <div>sâd</div>
-                    <div>sâd</div>
+                    <div className={styles.main_top_text_right_bg_dot}>
+                      <div className={styles.main_top_text_right_img_1}>
+                        <div className={styles.main_top_text_right_img_2}></div>
+                      </div>
+                      {/* <div className={styles.main_top_text_right_img_3}>
+                        <div className={styles.main_top_text_right_img_4}></div>
+                      </div> */}
+                    </div>
                   </div>
                 </div>
               </div>
