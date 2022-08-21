@@ -7,6 +7,33 @@ import { GooglePlusOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 export default function HeaderHome() {
+
+  const link = [
+    {
+      id: 1,
+      name: "TRANG CHỦ",
+      href: "/",
+      className: 'nav-link',
+    },
+    {
+      id: 2,
+      name: "HỌC & ÔN",
+      href: "#",
+      className: 'nav-link',
+    },
+    {
+      id: 3,
+      name: "VỀ CHÚNG TÔI",
+      href: "#",
+      className: 'nav-link',
+    },
+    {
+      id: 4,
+      name: "LIÊN HỆ",
+      href: "#",
+      className: 'nav-link',
+    },
+  ]
   return (
     <div className={styles.header_full}>
       {/* header_top */}
@@ -49,21 +76,16 @@ export default function HeaderHome() {
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
-            <a href='/' className="navbar-brand" style={{ fontFamily: 'Montserrat' }}><div style={{ fontFamily: 'Montserrat' }}>AEGO<span>NA</span></div></a>
+          <a href='/' className="navbar-brand" style={{ fontFamily: 'Montserrat' }}><div style={{ fontFamily: 'Montserrat' }}>AEGO<span>NA</span></div></a>
           <div className="collapse navbar-collapse" id="mynavbar">
             <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#">TRANG CHỦ</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">HỌC & ÔN</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">VỀ CHÚNG TÔI</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">LIÊN HỆ</a>
-              </li>
+              {link.map((a, b) => {
+                return (
+                  <li className="nav-item" key={b}>
+                    <a className={a.className} href={a.href}>{a.name}</a>
+                  </li>
+                )
+              })}
             </ul>
           </div>
           <a href='/login' type="button" className="btn btn-warning">

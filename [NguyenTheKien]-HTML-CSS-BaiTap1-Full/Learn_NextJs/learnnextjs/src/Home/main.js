@@ -64,7 +64,12 @@ export default function MainHome() {
                 <div className={styles.main_top_1_left_bg_img}></div>
             </div>
           </Col>
-          <Col lg={12} md={24} xs={24}>abc</Col>
+          <Col lg={12} md={24} xs={24}>
+            <div className={styles.main_top_1_right_bg}>
+            <Col className={styles.main_top_1_right_bg_img} md={24} xs={24}>1</Col>
+            <Col className={styles.main_top_1_right_bg_img_1} md={24} xs={24}>1</Col>
+            </div>
+          </Col>
         </Row>
       </div>
     </div>
