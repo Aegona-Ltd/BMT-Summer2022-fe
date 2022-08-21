@@ -8,6 +8,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/dist/client/link';
 export default function MainHome() {
+  const list = [
+    {
+      id: 1 , 
+      icon : styles.main_top_2_row_col_circle,
+      name : 'Học Bài',
+      title : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
+    {
+      id: 2 , 
+      icon : styles.main_top_2_row_col_circle_1,
+      name : 'Ôn Bài',
+      title : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
+    {
+      id: 3 , 
+      icon : styles.main_top_2_row_col_circle_2,
+      name : 'Tiến Độ',
+      title : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
+  ]
   return (
     <div className={styles.main_full}>
       {/*  */}
@@ -71,6 +91,29 @@ export default function MainHome() {
             </div>
           </Col>
         </Row>
+      </div>
+
+      {/*  */}
+      <div className={styles.main_top_2}>
+          <div className={styles.main_top_2_row_bg_dot}></div>
+          <div className={styles.main_top_2_row_bg_dot1}></div>
+        <Row className={styles.main_top_2_row}>
+          {list.map((index,key) => {
+            return(
+              <Col lg={7} md={11} xs={24} className={styles.main_top_2_row_col} key = {key}>
+            <div className={styles.main_top_2_row_col_bg_top}></div>
+            <div className={index.icon}></div>
+            <div className={styles.main_top_2_row_col_text}>{index.name}</div> 
+            <div className={styles.main_top_2_row_col_text_1}>{index.title}</div> 
+          </Col> 
+            );
+          })}
+        </Row>
+      </div>
+
+      {/*  */}
+      <div className={styles.main_top_3}>
+        
       </div>
     </div>
   )
