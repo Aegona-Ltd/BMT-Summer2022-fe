@@ -20,7 +20,7 @@ const link = [
     {
       id: 4,
       name: "LIÊN HỆ",
-      href: "#",
+      href: "/contact",
       className: 'nav-link',
     },
   ]
