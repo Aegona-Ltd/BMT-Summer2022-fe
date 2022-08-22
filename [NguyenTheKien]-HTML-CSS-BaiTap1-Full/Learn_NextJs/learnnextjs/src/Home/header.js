@@ -6,34 +6,9 @@ import { Row, Col } from 'antd';
 import { GooglePlusOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import {link} from './Arr_Home/arr_header';
 export default function HeaderHome() {
 
-  const link = [
-    {
-      id: 1,
-      name: "TRANG CHỦ",
-      href: "/",
-      className: 'nav-link',
-    },
-    {
-      id: 2,
-      name: "HỌC & ÔN",
-      href: "#",
-      className: 'nav-link',
-    },
-    {
-      id: 3,
-      name: "VỀ CHÚNG TÔI",
-      href: "#",
-      className: 'nav-link',
-    },
-    {
-      id: 4,
-      name: "LIÊN HỆ",
-      href: "#",
-      className: 'nav-link',
-    },
-  ]
   return (
     <div className={styles.header_full}>
       {/* header_top */}

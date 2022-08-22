@@ -3,48 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styles from '../../styles/home.module.scss';
 import { Row, Col } from 'antd';
+import {list , lienHe} from './Arr_Home/arr_main';
 export default function MainHome() {
-  const list = [
-    {
-      id: 1,
-      icon: styles.main_top_2_row_col_circle,
-      name: 'Học Bài',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
-    },
-    {
-      id: 2,
-      icon: styles.main_top_2_row_col_circle_1,
-      name: 'Ôn Bài',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
-    },
-    {
-      id: 3,
-      icon: styles.main_top_2_row_col_circle_2,
-      name: 'Tiến Độ',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
-    },
-  ]
-
-  const lienHe = [
-    {
-      id: 1,
-      icon: "bi bi-telephone-fill",
-      name: 'HOTLINE',
-      title: '028 7109 2939',
-    },
-    {
-      id: 2,
-      icon: 'bi bi-envelope-fill',
-      name: 'EMAIL',
-      title: 'contact@aegona.com',
-    },
-    {
-      id: 3,
-      icon: 'bi bi-geo-alt-fill',
-      name: 'ĐỊA CHỈ',
-      title: 'Tòa nhà QTSC 9, Khu Phần mềm Quang Trung, P. Tân Chánh Hiệp, Quận 12, TP.HCM',
-    },
-  ]
   return (
     <div className={styles.main_full}>
       {/* Giới thiệu Chung */}
@@ -110,7 +70,7 @@ export default function MainHome() {
         </Row>
       </div>
 
-      {/*  */}
+      {/* Học - Ôn - Tiến Độ */}
       <div className={styles.main_top_2}>
         <div className={styles.main_top_2_row_bg_dot}></div>
         <div className={styles.main_top_2_row_bg_dot1}></div>
@@ -152,7 +112,7 @@ export default function MainHome() {
               return (
                 <Col span={24} className={styles.main_top_4_left_bg_Col} key={key}>
                   <div className={styles.main_top_4_left_bg_Col_border}>
-                    <i class={index.icon}></i>
+                    <i className={index.icon}></i>
                   </div>
                   <div className={styles.main_top_4_left_bg_text}>
                     <div className={styles.main_top_4_left_text_1}>{index.name}</div>
@@ -168,13 +128,13 @@ export default function MainHome() {
                 <div className={styles.main_top_4_right_bg_circle_1_v1}></div>
                 <div className={styles.main_top_4_right_bg_circle_1_v2}></div>
                 <div className={styles.main_top_4_right_bg_circle_img_1_v0}>
-                  <i class="bi bi-geo-alt-fill"></i>
+                  <i className="bi bi-geo-alt-fill"></i>
                 </div>
                 <div className={styles.main_top_4_right_bg_circle_img_1_v1}>
-                  <i class="bi bi-envelope-fill"></i>
+                  <i className="bi bi-envelope-fill"></i>
                 </div>
                 <div className={styles.main_top_4_right_bg_circle_img_1_v2}>
-                  <i class="bi bi-telephone-fill"></i>
+                  <i className="bi bi-telephone-fill"></i>
                 </div>
               </div>
             </div>
