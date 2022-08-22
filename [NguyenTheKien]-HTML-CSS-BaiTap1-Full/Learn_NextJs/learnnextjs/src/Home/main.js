@@ -3,10 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styles from '../../styles/home.module.scss';
 import { Row, Col } from 'antd';
-import { GooglePlusOutlined } from "@ant-design/icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/dist/client/link';
 export default function MainHome() {
   const list = [
     {
@@ -107,8 +103,8 @@ export default function MainHome() {
           </Col>
           <Col lg={12} md={24} xs={24}>
             <div className={styles.main_top_1_right_bg}>
-              <Col className={styles.main_top_1_right_bg_img} md={24} xs={24}>1</Col>
-              <Col className={styles.main_top_1_right_bg_img_1} md={24} xs={24}>1</Col>
+              <Col className={styles.main_top_1_right_bg_img} md={24} xs={24}></Col>
+              <Col className={styles.main_top_1_right_bg_img_1} md={24} xs={24}></Col>
             </div>
           </Col>
         </Row>
@@ -166,7 +162,24 @@ export default function MainHome() {
               );
             })}
           </Col>
-          <Col lg={12} md={24} xs={24}>d</Col>
+          <Col lg={12} md={24} xs={24} className={styles.main_top_4_right}>
+            <div className={styles.main_top_4_right_bg_circle}>
+              <div className={styles.main_top_4_right_bg_circle_1}>
+                <div className={styles.main_top_4_right_bg_circle_1_v1}></div>
+                <div className={styles.main_top_4_right_bg_circle_1_v2}></div>
+                <div className={styles.main_top_4_right_bg_circle_img_1_v0}>
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div className={styles.main_top_4_right_bg_circle_img_1_v1}>
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div className={styles.main_top_4_right_bg_circle_img_1_v2}>
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+              </div>
+            </div>
+            <iframe className={styles.main_top_4_right_map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.442335757664!2d106.62410211477214!3d10.853922192268977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752963982e3445%3A0xff1227c46772895d!2sAegona%20Co.%2C%20Ltd!5e0!3m2!1svi!2s!4v1660705574741!5m2!1svi!2s"></iframe>
+          </Col>
         </Row>
       </div>
 

@@ -4,6 +4,7 @@ export default function FooterHome() {
     <div className={styles.container}>
         <h1 className={styles.title}>
           footer
+       
         </h1>
     </div>
   )

@@ -1,7 +1,10 @@
 .container {
   padding: 0 2rem;
 }
-
+.test_hiden{ 
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 .main {
   min-height: 100vh;
   padding: 4rem 0;
