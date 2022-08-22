@@ -734,7 +734,6 @@
 
         .footer_center {
             display: flex;
-            justify-content: center;
             flex-direction: column;
             align-items: center;
 
@@ -774,12 +773,15 @@
             }
 
             .footer_center_children {
-                margin-top: 26px;
+                margin-top: 25px;
+                padding-left: 100px;
 
                 .footer_center_icon_children {
+                    padding-bottom: 10px;
                     color: #FFC600;
                     width: 251px;
                     margin-left: -30px;
+
                     i {
                         width: 8px;
                         height: 8px;
@@ -797,6 +799,69 @@
                         margin-left: 8px;
                     }
                 }
+            }
+        }
+    }
+
+    .footer_bottom {
+        margin-left: 120px;
+        margin-right: 120px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+
+        .footer_bottom_Col_1 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.012em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer_bottom_Col_2 {
+            display: flex;
+            align-items: center;
+
+            .footer_bottom_Col_2_v1 {
+                display: flex;
+                align-items: center;
+                border-right: 1px solid rgba(255, 255, 255, 0.16);
+                .footer_bottom_Col_2_v1_circle {
+                    margin-left: 10px;
+                    width: 28px;
+                    height: 28px;
+                    background-color: #1f88ff;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    flex-direction: column;
+
+                    i {
+                        color: #fff;
+                    }
+
+                    .icon2 {
+                        width: 16px;
+                        height: 16px;
+                        margin-left: 6px;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .footer_bottom_Col_2_v2 {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: right;
+                letter-spacing: 0.0025em;
+                color: white;
+                padding-left: 10px;
             }
         }
     }
@@ -1203,6 +1268,61 @@
                 padding-bottom: 12px;
             }
         }
+
+        div.footer_center_full {
+            padding-top: 40px;
+            padding-bottom: 20px;
+
+            .footer_center {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 30px;
+
+                .footer_center_text {
+                    padding-left: 10px;
+                }
+
+                .footer_center_text_1 {
+                    padding-left: 10px;
+                }
+
+                .footer_center_border {
+                    width: 120px;
+                    height: 1px;
+                    margin-left: 10px;
+                    background: #FFC600;
+                    border-radius: 100px;
+                }
+
+                .footer_center_children {
+                    margin-top: 15px;
+                    padding-left: 40px;
+                }
+            }
+        }
+        .footer_bottom {
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+            text-align: center;
+    
+            .footer_bottom_Col_2 {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+    
+                .footer_bottom_Col_2_v1 {
+                    display: flex;
+                    align-items: center;
+                    border-right: 1px solid rgba(255, 255, 255, 0.16);
+                    .footer_bottom_Col_2_v1_circle{
+                        margin-right: 10px;
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1452,4 +1572,19 @@
     }
 
     //Footer
+    .footer_full {
+        div.footer_center_full {
+            padding-top: 40px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+
+            .footer_center {
+                padding-bottom: 50px;
+            }
+        }
+        .footer_bottom {
+            margin-left: 80px;
+            margin-right: 70px;
+        }
+    }
 }
