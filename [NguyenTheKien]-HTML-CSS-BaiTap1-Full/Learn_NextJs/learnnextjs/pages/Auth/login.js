@@ -13,7 +13,7 @@ export default function Home() {
               <link rel="icon" href="/favicon.ico" />
             </Head>
         <Header></Header>
-        {/* <Login></Login> */}
+        <Login></Login>
         <h1 style={{textAlign:"center" , padding: '50px'}}>Login</h1>
         <Footer></Footer>
     </div>

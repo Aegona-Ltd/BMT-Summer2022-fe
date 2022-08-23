@@ -13,7 +13,6 @@ export default function Home() {
             </Head>
             <Header/>
           <Table></Table>
-          <Footer/>
     </div>
   )
 }

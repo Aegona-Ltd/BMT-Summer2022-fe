@@ -11,7 +11,7 @@ import {  faFacebookF } from '@fortawesome/free-brands-svg-icons';
 const { Title } = Typography;
 
 export default function Login() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [form] = Form.useForm();
   const [Recc , setRecc] = useState('');
   const numbers = /[0-9]/g;
@@ -88,8 +88,8 @@ export default function Login() {
         })
         .then(data =>{
           return (
-            console.log(data.data),
-            navigate("/contact")
+            console.log(data.data)
+            // navigate("/contact")
           )
         })
         .catch(err => console.error(err));
