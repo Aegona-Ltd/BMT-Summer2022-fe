@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';   //import đường dẫn realtime
 import 'firebase/compat/auth';   //import loginauth
+import 'firebase/compat/storage';
 
 // config
 const config = {
@@ -18,6 +19,7 @@ const config = {
 firebase.initializeApp(config);  //kết nối firebase vs config
 
 export const realtimeDB = firebase.database();   //realtime
+export const storage = firebase.storage();
 
 
 export default firebase;

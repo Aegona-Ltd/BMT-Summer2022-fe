@@ -13,10 +13,13 @@ export default function Table() {
 
   const ref = db.ref("CRUD");
   useEffect(() => {
-    ref.on("value", snapshot => {  // ref.on để lắng nghe sự thay đổi database
+    // ref.on để lắng nghe và đọc dữ liệu của đường dẫn 
+    // đối số "value" để đọc snapshot của nội dung (nôm na khi thay đổi sự kiện thì nó sẽ truy xuất trong snapshot bằng phương thức val)
+    ref.on("value", snapshot => {
       setValue(snapshot.val());
     })
   }, [])
+
   return (
     <div className={styles.table}>
       <div className="container">
@@ -24,15 +27,15 @@ export default function Table() {
           <div className={styles.table_title}>
             <div className="row">
               <div className="col-sm-6">
-                <h2>List <b>Product</b></h2>
+                <h2>Danh Sách <b>FireBase</b></h2>
               </div>
               <div className="col-sm-6">
                 <a className="btn btn-success" onClick={() => setModalOpen(true)}>
                   <i><AddCircleIcon /></i>
-                  <span>Add New Collection</span></a>
+                  <span>Thêm mới</span></a>
                 <a href="#deleteEmployeeModal" className="btn btn-danger" data-toggle="modal">
                   <i><RemoveCircleIcon /></i>
-                  <span>Delete</span></a>
+                  <span>Xoá</span></a>
               </div>
             </div>
           </div>
@@ -45,10 +48,10 @@ export default function Table() {
                       <label htmlFor="selectAll"></label>
                     </span>
                   </th>
-                  <th scope="col">Name</th>
-                  <th scope="col">URL</th>
-                  <th scope="col">Collection</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">Tên</th>
+                  <th scope="col">Hình Ảnh</th>
+                  <th scope="col">Mô tả</th>
+                  <th scope="col">Chức Năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,8 +68,8 @@ export default function Table() {
                       <td >{index.url}</td>
                       <td>{index.collection}</td>
                       <td>
-                        <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className={styles.BuildIcon} title="Edit"><BuildIcon /></i></a>
-                        <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className={styles.RemoveCircleIcon} title="Delete"><RemoveCircleIcon /></i></a>
+                        <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className={styles.BuildIcon} title="Sửa"><BuildIcon /></i></a>
+                        <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className={styles.RemoveCircleIcon} title="Xoá"><RemoveCircleIcon /></i></a>
                       </td>
                     </tr>
                   )
@@ -75,7 +78,7 @@ export default function Table() {
             </table>
         </div>
       </div>
-      {modalOpen && <Create setOpenModal={setModalOpen} />}
+      {modalOpen && <Create setOpenModal={setModalOpen} soluong={value.length} />}
     </div>
   )
 }
