@@ -69,16 +69,16 @@ function Home() {
         <div className={styles.contact_full}>
             <div className={styles.contact_top}>
                  <h3>Xin Chào ! AEGONA có thể giúp gì cho bạn ?</h3>
-                <Layout className="full">
+                <Layout className={styles.full}>
                     <Form className="form_login"
-                        // name="signin"
-                        // initialValues={{
-                        //     remember: false,
-                        // }}
-                        // onFinish={Submit}
-                        // autoComplete="off"
+                        name="signin"
+                        initialValues={{
+                            remember: false,
+                        }}
+                        onFinish={Submit}
+                        autoComplete="off"
                     >
-                        <div className="zzz">
+                        <div className={styles.zzz}>
                             <Form.Item
                                 name="Name"
                                 hasFeedback
@@ -129,7 +129,7 @@ function Home() {
                             <Button
                                 htmlType="submit"
                                 type="primary"
-                                icon={<LoginOutlined />}
+                                // icon={<LoginOutlined />}
                                 size="large"
                                 style={{ backgroundColor: '#1478E7' }}>
                                 Gửi

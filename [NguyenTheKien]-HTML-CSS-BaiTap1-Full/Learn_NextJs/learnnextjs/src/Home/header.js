@@ -63,7 +63,7 @@ export default function HeaderHome() {
               })}
             </ul>
           </div>
-          <a href='/login' type="button" className="btn btn-warning">
+          <a href='/Auth/login' type="button" className="btn btn-warning">
             <i className="bi bi-person-circle"></i> Đăng Nhập
           </a>
         </div>

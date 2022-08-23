@@ -4,16 +4,14 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 import 'antd/dist/antd.min.css';
 import React, {useState } from 'react';
-// import { useNavigate } from "react-router-dom";
-import { useRouter } from 'next/router'
+import { useNavigate } from "react-router-dom";
 import get from "lodash/get";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {  faFacebookF } from '@fortawesome/free-brands-svg-icons';
-
 const { Title } = Typography;
 
 export default function Login() {
-  const navigate = useRouter();
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const [Recc , setRecc] = useState('');
   const numbers = /[0-9]/g;
@@ -91,7 +89,7 @@ export default function Login() {
         .then(data =>{
           return (
             console.log(data.data),
-            navigate.push("/contact")
+            navigate("/contact")
           )
         })
         .catch(err => console.error(err));
