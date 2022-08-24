@@ -2,14 +2,21 @@ import styles from '../../../styles/components/List_CRUD/Table.module.scss';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import BuildIcon from '@mui/icons-material/Build';
-import firebase from "../connectFireBase/config";
+import { Button, Modal } from 'antd';
 import { realtimeDB as db } from "../connectFireBase/config";
 import React, { useEffect, useState } from 'react';
 import Create from '../CRUD/Create';
+import Delele from '../CRUD/Delete';
+import { FirebaseStorage } from 'firebase/storage';
+
+
+import { storage as sr } from "../connectFireBase/config";
 
 export default function Table() {
   const [value, setValue] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalDelete, setModalDelete] = useState(false);
+  const [checkId, setCheckId] = useState("");
 
   const ref = db.ref("CRUD");
   useEffect(() => {
@@ -18,7 +25,13 @@ export default function Table() {
     ref.on("value", snapshot => {
       setValue(snapshot.val());
     })
-  }, [])
+  }, []);
+
+  const DeleteClick = (a) => {
+    setCheckId(a);
+    setModalDelete(true);
+
+  }
 
   return (
     <div className={styles.table}>
@@ -33,7 +46,7 @@ export default function Table() {
                 <a className="btn btn-success" onClick={() => setModalOpen(true)}>
                   <i><AddCircleIcon /></i>
                   <span>Thêm mới</span></a>
-                <a href="#deleteEmployeeModal" className="btn btn-danger" data-toggle="modal">
+                <a className="btn btn-danger">
                   <i><RemoveCircleIcon /></i>
                   <span>Xoá</span></a>
               </div>
@@ -55,7 +68,7 @@ export default function Table() {
                 </tr>
               </thead>
               <tbody>
-                {value.map((index, a) => {
+                {!value ? null  : value.map((index, a) => {
                   return (
                     <tr key={a}>
                       <td>
@@ -65,11 +78,19 @@ export default function Table() {
                         </span>
                       </td>
                       <td>{index.name}</td>
-                      <td >{index.url}</td>
+                      <td >
+                        {!index.url ? null : <img className="card-img-top hover-shadow" src={index.url} alt="" style={{width:"120px", height:"100%"}}/>}
+                      </td>
                       <td>{index.collection}</td>
                       <td>
-                        <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className={styles.BuildIcon} title="Sửa"><BuildIcon /></i></a>
-                        <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className={styles.RemoveCircleIcon} title="Xoá"><RemoveCircleIcon /></i></a>
+                        <a  className="edit" data-toggle="modal"><i className={styles.BuildIcon} title="Sửa"><BuildIcon /></i></a>
+                        <a className="delete" onClick={() => {    
+                              DeleteClick({
+                                id: index.id,
+                                name: index.name,
+                                nameurl : index.nameimg,
+                              })                   
+                        }}><i className={styles.RemoveCircleIcon} title="Xoá"><RemoveCircleIcon /></i></a>
                       </td>
                     </tr>
                   )
@@ -78,7 +99,8 @@ export default function Table() {
             </table>
         </div>
       </div>
-      {modalOpen && <Create setOpenModal={setModalOpen} soluong={value.length} />}
+      {modalOpen && <Create setOpenModal={setModalOpen} soluong={value && value.length || !value && 1} />}
+      {modalDelete && <Delele setOpenModal={setModalDelete} OpenModal={modalDelete} id={checkId}/>}
     </div>
   )
 }

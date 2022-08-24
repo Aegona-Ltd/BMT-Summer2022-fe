@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../styles/components/List_CRUD/Create.module.scss";
 import { realtimeDB as db } from "../connectFireBase/config";
-import { Input, Form, message } from 'antd';
+import { Input, Form, notification, Space } from 'antd';
 import { storage as sr } from "../connectFireBase/config";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
@@ -45,49 +45,82 @@ function Create({ setOpenModal, soluong }) {
 
     //btn Add
     const Add = () => {
-        
-        if(!avatar){
-            let key = 'check_key';
-            message.error({
-                content: 'Chưa có hình ảnh',
-                key,
-                duration: 1,   //time
-              });
-        }else{
-            //Nhập ref từ phiên bản lưu trữ Firebase
-        const storageRef = ref(sr, `/publicImage/${avatar.name}`);
 
-        // Hàm uploadBytesResumable () chấp nhận tham chiếu bộ nhớ và tệp để tải lên
-        const uploadTask = uploadBytesResumable(storageRef, avatar);
-
-        //check trạng thái bằng hàm on
-        uploadTask.on(
-            "state_changed",
-            // check tiến trình tải lên và trạng thái tải lên
-            (snapshot) => {
-                const percent = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                );
-
-                // update progress
-                setPercent(percent);
-            },
-            // Nếu sai sẽ khai báo
-            (err) => console.log(err),
-            //Nếu thành công log ra url
-            () => {
-                // download url
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                    db.ref('CRUD/' + soluong).set({
-                        id: soluong,
-                        name: nameInput,
-                        collection: collection,
-                        url : url
+        if (!avatar) {
+            db.ref('CRUD/' + soluong).set({
+                id: soluong,
+                name: nameInput,
+                collection: collection,
+                url: "",
+                nameimg: "",
+            }, function (error) {
+                if (error) {
+                    notification["error"]({
+                        message: 'Thông báo',
+                        description:
+                            'Lỗi kết nối database.',
                     });
-                    setOpenModal(false)
-                });
+                    return;
+                } else {
+                    return;
+                }
             }
-        );
+            );
+            setOpenModal(false)
+            return;
+        } else {
+            //Nhập ref từ phiên bản lưu trữ Firebase
+            const storageRef = ref(sr, `/publicImage/${avatar.name}`);
+
+            // Hàm uploadBytesResumable () chấp nhận tham chiếu bộ nhớ và tệp để tải lên
+            const uploadTask = uploadBytesResumable(storageRef, avatar);
+
+            //check trạng thái bằng hàm on
+            uploadTask.on(
+                "state_changed",
+                // check tiến trình tải lên và trạng thái tải lên
+                (snapshot) => {
+                    const percent = Math.round(
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    );
+
+                    // update progress
+                    setPercent(percent);
+                },
+                // Nếu sai sẽ khai báo
+                (err) => {
+                    notification["error"]({
+                        message: 'Thông báo Lỗi',
+                        description: err,
+                    })
+                },
+
+                //Nếu thành công log ra url
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                        db.ref('CRUD/' + soluong).set({
+                            id: soluong,
+                            name: nameInput,
+                            collection: collection,
+                            url: url,
+                            nameimg: avatar.name,
+                        });
+                        setOpenModal(false)
+                    }, function (error) {
+                        if (error) {
+                            notification["error"]({
+                                message: 'Thông báo',
+                                description:
+                                    'Lỗi kết nối database.',
+                            });
+                            return;
+                        } else {
+                            return;
+                        }
+                    }
+                    );
+                }
+            );
         }
     }
 
