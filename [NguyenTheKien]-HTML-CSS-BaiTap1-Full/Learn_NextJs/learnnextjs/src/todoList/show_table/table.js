@@ -4,7 +4,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import BuildIcon from '@mui/icons-material/Build';
 import { realtimeDB as db } from "../connectFireBase/config";
 import React, { useEffect, useState } from 'react';
-import { Pagination, AutoComplete } from 'antd';
+import { Pagination, AutoComplete, Input } from 'antd';
 import Create from '../CRUD/Create';
 import Delele from '../CRUD/Delete';
 import Update from '../CRUD/Update';
@@ -39,13 +39,13 @@ export default function Table() {
 
   const options = [
     {
-      value: 'Burns Bay Road',
+      value: 'Thế Kiên',
     },
     {
-      value: 'Downing Street',
+      value: 'Test',
     },
     {
-      value: 'Wall Street',
+      value: 'Kien',
     },
   ];
 
@@ -68,6 +68,14 @@ export default function Table() {
     setPag({ show: pag.all.slice(start, end), all: value, total: value.length });
   }
 
+  const handleSearch = (value) => {
+    console.log("ád" ,value);
+  };
+
+  const onSelect = (value) => {
+    console.log('onSelect', value);
+  };
+
   return (
     <div className={styles.table}>
       <div className="container">
@@ -78,16 +86,18 @@ export default function Table() {
                 <h2>Danh Sách <b>FireBase</b></h2>
               </div>
               <div className={styles.inputSearch}>
+
                 <AutoComplete
                   style={{
-                    width: 200,
+                    width: 250,
                   }}
                   options={options}
-                  placeholder="try to type `b`"
-                  filterOption={(inputValue, option) =>
-                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-                  }
-                />
+                  onSelect={onSelect}
+                  onSearch={handleSearch}
+                >
+                  <Input.Search size="large" placeholder="input here" enterButton />
+                </AutoComplete>
+
               </div>
               <div className="col-sm-6">
                 <a className="btn btn-success" onClick={() => setModalOpen(true)}>
