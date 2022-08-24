@@ -2,20 +2,17 @@ import styles from '../../../styles/components/List_CRUD/Table.module.scss';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import BuildIcon from '@mui/icons-material/Build';
-import { Button, Modal } from 'antd';
 import { realtimeDB as db } from "../connectFireBase/config";
 import React, { useEffect, useState } from 'react';
 import Create from '../CRUD/Create';
 import Delele from '../CRUD/Delete';
-import { FirebaseStorage } from 'firebase/storage';
-
-
-import { storage as sr } from "../connectFireBase/config";
+import Update from '../CRUD/Update';
 
 export default function Table() {
   const [value, setValue] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
+  const [modalUpdate, setModalUpdate] = useState(false);
   const [checkId, setCheckId] = useState("");
 
   const ref = db.ref("CRUD");
@@ -27,10 +24,16 @@ export default function Table() {
     })
   }, []);
 
+  //icon delete
   const DeleteClick = (a) => {
     setCheckId(a);
     setModalDelete(true);
+  }
 
+  //icon update
+  const UpdateClick = (a) => {
+    setCheckId(a);
+    setModalUpdate(true);
   }
 
   return (
@@ -83,7 +86,9 @@ export default function Table() {
                       </td>
                       <td>{index.collection}</td>
                       <td>
-                        <a  className="edit" data-toggle="modal"><i className={styles.BuildIcon} title="Sửa"><BuildIcon /></i></a>
+                        <a  className="edit" onClick={() => {
+                            UpdateClick(index)
+                        }}><i className={styles.BuildIcon} title="Sửa"><BuildIcon /></i></a>
                         <a className="delete" onClick={() => {    
                               DeleteClick({
                                 id: index.id,
@@ -101,6 +106,7 @@ export default function Table() {
       </div>
       {modalOpen && <Create setOpenModal={setModalOpen} soluong={value && value.length || !value && 1} />}
       {modalDelete && <Delele setOpenModal={setModalDelete} OpenModal={modalDelete} id={checkId}/>}
+      {modalUpdate && <Update setOpenModal={setModalUpdate} id={checkId}/>}
     </div>
   )
 }
