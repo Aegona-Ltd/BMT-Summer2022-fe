@@ -3,8 +3,9 @@ import styles from "../../../styles/components/List_CRUD/Create.module.scss";
 import { realtimeDB as db } from "../connectFireBase/config";
 import { Input, Form, notification, Space } from 'antd';
 import { storage as sr } from "../connectFireBase/config";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL, getStorage, deleteObject } from "firebase/storage";
 
+const storage = getStorage();
 const { TextArea } = Input;
 
 function Create({ setOpenModal, id }) {
@@ -33,27 +34,126 @@ function Create({ setOpenModal, id }) {
 
     //btn edit
     const Edit = () => {
+        if (!avatar) {
+            db.ref('CRUD/' + id.id).set({
+                id: id.id,
+                name: nameInput,
+                collection: collection,
+                url: id.url,
+                nameimg: id.nameimg,
+            }, function (error) {
+                if (error) {
+                    notification["error"]({
+                        message: 'Thông báo',
+                        description:
+                            'Lỗi kết nối database.',
+                    });
+                    return;
+                } else {
+                    setnameInput("");
+                    setCollection("");
+                }
+            });
+            setOpenModal(false)
+        } else {
+              //Nếu tên hình ảnh "nameimg" trong database là rỗng thì chạy hàm này để update ảnh 
+            if (!id.nameimg) {
+                const storageRef = ref(sr, `/publicImage/${avatar.name}`);
+                const uploadTask = uploadBytesResumable(storageRef, avatar);
+                uploadTask.on(
+                    "state_changed",
+                    (snapshot) => {
+                        const percent = Math.round(
+                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                        );
+                        setPercent(percent);
+                    },
+                    (err) => {
+                        notification["error"]({
+                            message: 'Thông báo Lỗi Update Ảnh',
+                            description: err,
+                        })
+                    },
+                    () => {
+                        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                            db.ref('CRUD/' + id.id).set({
+                                id: id.id,
+                                name: nameInput,
+                                collection: collection,
+                                url: url,
+                                nameimg: avatar.name,
+                            });
+                            setOpenModal(false)
+                        }, function (error) {
+                            if (error) {
+                                notification["error"]({
+                                    message: 'Thông báo',
+                                    description:
+                                        'Lỗi kết nối database.',
+                                });
+                                return;
+                            } else {
+                                return;
+                            }
+                        }
+                        );
+                    }
+                );
 
-        db.ref('CRUD/' + id.id).set({
-            id: id.id,
-            name: nameInput,
-            collection: collection,
-            url: id.url,
-            nameimg: id.nameimg,
-        }, function (error) {
-            if (error) {
-                notification["error"]({
-                    message: 'Thông báo',
-                    description:
-                        'Lỗi kết nối database.',
-                });
-                return;
             } else {
-                setnameInput("");
-                setCollection("");
+                const desertRef = ref(storage, `/publicImage/${id.nameimg}`);
+                deleteObject(desertRef).then(() => {
+                    const storageRef = ref(sr, `/publicImage/${avatar.name}`);
+                    const uploadTask = uploadBytesResumable(storageRef, avatar);
+                    uploadTask.on(
+                        "state_changed",
+                        (snapshot) => {
+                            const percent = Math.round(
+                                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                            );
+                            setPercent(percent);
+                        },
+                        (err) => {
+                            notification["error"]({
+                                message: 'Thông báo Lỗi Update Ảnh',
+                                description: err,
+                            })
+                        },
+                        () => {
+                            getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                                db.ref('CRUD/' + id.id).set({
+                                    id: id.id,
+                                    name: nameInput,
+                                    collection: collection,
+                                    url: url,
+                                    nameimg: avatar.name,
+                                });
+                                setOpenModal(false)
+                            }, function (error) {
+                                if (error) {
+                                    notification["error"]({
+                                        message: 'Thông báo',
+                                        description:
+                                            'Lỗi kết nối database.',
+                                    });
+                                    return;
+                                } else {
+                                    return;
+                                }
+                            }
+                            );
+                        }
+                    );
+
+                }).catch((error) => {
+                    notification["error"]({
+                        message: 'Thông báo lỗi xoá ảnh',
+                        description: error,
+                    });
+                });
+
             }
-        });
-        setOpenModal(false)
+        }
     }
 
     return (
@@ -86,8 +186,8 @@ function Create({ setOpenModal, id }) {
                             {id.url && <img src={id.url} alt="" style={{ width: '30%' }}></img>}
                             <span style={{ marginLeft: '40px' }}>
                                 {avatar && <span>
-                                    {id.url && avatar && <i class="bi bi-arrow-right"></i>}
-                                    <span style={{marginLeft : "40px"}}>
+                                    {id.url && avatar && <i class="bi bi-arrow-right" style={{ color: 'rgb(230, 173, 50)' }}></i>}
+                                    <span style={{ marginLeft: "40px" }}>
                                         <img src={avatar.preview} alt="" style={{ width: '30%' }}></img>
                                     </span>
                                 </span>}

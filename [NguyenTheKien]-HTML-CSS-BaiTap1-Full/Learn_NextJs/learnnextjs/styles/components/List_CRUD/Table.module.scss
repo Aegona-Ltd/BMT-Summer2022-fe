@@ -18,9 +18,16 @@
                 margin: 5px 0 0;
                 font-size: 24px;
                 color: #d0d7e0;
-                b{
+
+                b {
                     color: rgb(230, 173, 50);
                 }
+            }
+
+            .inputSearch{
+                position: absolute;
+                margin-left: 750px;
+                margin-top: 5px;
             }
 
             a {
@@ -38,27 +45,41 @@
                 }
             }
         }
-            table{
-                table-layout:fixed;
-                td{
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
+
+        table {
+            table-layout: fixed;
+
+            td {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
-        .BuildIcon{
+        }
+
+        .BuildIcon {
             color: rgb(255, 157, 0);
             margin-right: 10px;
         }
-        .RemoveCircleIcon{
+
+        .RemoveCircleIcon {
             color: red;
             margin-left: 10px;
         }
-        .td{
+
+        .td {
             display: -webkit-box;
-           -webkit-line-clamp: 1;  /* số dòng hiển thị */
-           -webkit-box-orient: vertical;
-           overflow: hidden;
-       }
+            -webkit-line-clamp: 1;
+            /* số dòng hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    .Pagination {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding-bottom: 50px;
     }
 }
