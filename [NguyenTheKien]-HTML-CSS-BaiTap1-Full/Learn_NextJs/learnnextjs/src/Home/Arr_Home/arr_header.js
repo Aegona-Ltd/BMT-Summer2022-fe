@@ -23,6 +23,12 @@ const link = [
       href: "/contact",
       className: 'nav-link',
     },
+    {
+      id: 4,
+      name: "PRODUCT",
+      href: "/todolist/product",
+      className: 'nav-link',
+    },
   ]
 
   export {

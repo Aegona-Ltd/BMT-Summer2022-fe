@@ -8,7 +8,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const { TextArea } = Input;
 
 function Create({ setOpenModal, soluong }) {
-    console.log('abc');
     const [nameInput, setnameInput] = useState("");
     const [collection, setCollection] = useState("");
     const [avatar, setAvatar] = useState();
@@ -23,6 +22,18 @@ function Create({ setOpenModal, soluong }) {
 
     //btn img
     const ClickSelectedFile = (e) => {
+
+        // if (e && e[0] && e[0].name.match(/\.(jpg|jpeg|png|gif)$/) ) {
+        //     if(this.files[0].size>1048576) {
+        //         alert('File size is larger than 1MB!');
+        //     }
+        //     else {
+        //         var reader = new FileReader();
+        //         reader.onload = imageIsLoaded;
+        //         reader.readAsDataURL(this.files[0]);
+        //     }
+        // } else alert('This is not an image file!');
+
         const d = new Date();  //hàm tạo ngày và giờ
         // format date
         const datestring = ("0" + d.getDate()).slice(-2) + "_" + ("0" + (d.getMonth() + 1)).slice(-2) + "_" +
@@ -46,6 +57,21 @@ function Create({ setOpenModal, soluong }) {
 
     //btn Add
     const Add = () => {
+        // var allowedExtensions =
+        //             /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        //             if (!allowedExtensions.exec(avatar)) {
+        //                 console.log(!allowedExtensions.exec(avatar));
+        //                 // alert('Invalid file type');
+        //                 // fileInput.value = '';
+        //                 // return false;
+        //             }
+        if(nameInput == "" || collection == ""){
+            notification["error"]({
+                message: 'Thông báo',
+                description:'Bạn chưa nhập dữ liệu trường "TÊN" hoặc "MÔ TẢ"',
+            });
+            return;
+        }
 
         if (!avatar) {
             db.ref('CRUD/' + soluong).set({

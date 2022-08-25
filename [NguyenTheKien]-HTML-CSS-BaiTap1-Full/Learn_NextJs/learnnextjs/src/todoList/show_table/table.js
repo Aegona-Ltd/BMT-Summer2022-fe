@@ -11,7 +11,7 @@ import Update from '../CRUD/Update';
 import { VapingRooms } from '@mui/icons-material';
 
 export default function Table() {
-  const [value, setValue] = useState([]);
+  const [values, setValue] = useState([]);
   const [pag, setPag] = useState({
     show: [],
     all: [],
@@ -25,6 +25,7 @@ export default function Table() {
 
   const ref = db.ref("CRUD");
   useEffect(() => {
+
     // ref.on để lắng nghe và đọc dữ liệu của đường dẫn 
     // đối số "value" để đọc snapshot của nội dung (nôm na khi thay đổi sự kiện thì nó sẽ truy xuất trong snapshot bằng phương thức val)
     ref.on("value", snapshot => {
@@ -39,15 +40,12 @@ export default function Table() {
   }, []);
 
   const options = [
-    {
-      value: 'Thế Kiên',
-    },
-    {
-      value: 'Test',
-    },
-    {
-      value: 'Kien',
-    },
+    {value: 'Kiên Nguyễn '},
+    {value: 'Test file'},
+    {value: 'Nhập lệnh'},
+    {value: 'Test Part 1'},
+    {value: 'new test'},
+    {value: 'Fix Test'},
   ];
 
   //icon delete
@@ -66,10 +64,8 @@ export default function Table() {
   const pagenumberPagination = (page, pageSize) => {
     const start = (page - 1) * pageSize;
     const end = page * pageSize;
-   value && setPag({ show: pag.all.slice(start, end), all: value, total: value.length });
+    values && setPag({ show: pag.all.slice(start, end), all: values, total: values.length });
   }
-
- console.log(searchTeam);
 
   return (
     <div className={styles.table}>
@@ -139,7 +135,7 @@ export default function Table() {
                     </td>
                     <td>{index.name}</td>
                     <td >
-                      {!index.url ? null : <img className="card-img-top hover-shadow" src={index.url} alt="" style={{ width: "120px", height: "100%" }} />}
+                      {!index.url ? null : <img className="card-img-top hover-shadow" src={index.url} alt="" style={{ width: "120px", height: "80px" }} />}
                     </td>
                     <td>{index.collection}</td>
                     <td>
@@ -171,7 +167,7 @@ export default function Table() {
           onChange={pagenumberPagination}
         />
       </div>
-      {modalOpen && <Create setOpenModal={setModalOpen} soluong={value && value.length || !value && 1} />}
+      {modalOpen && <Create setOpenModal={setModalOpen} soluong={values && values.length || !values && 1} />}
       {modalDelete && <Delele setOpenModal={setModalDelete} OpenModal={modalDelete} id={checkId} />}
       {modalUpdate && <Update setOpenModal={setModalUpdate} id={checkId} />}
     </div>

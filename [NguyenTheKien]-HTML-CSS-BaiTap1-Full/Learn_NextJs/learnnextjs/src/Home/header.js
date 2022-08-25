@@ -6,7 +6,8 @@ import { Row, Col } from 'antd';
 import { GooglePlusOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import {link} from './Arr_Home/arr_header';
+import { link } from './Arr_Home/arr_header';
+import Link from 'next/link';
 export default function HeaderHome() {
 
   return (
@@ -51,21 +52,27 @@ export default function HeaderHome() {
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a href='/' className="navbar-brand" style={{ fontFamily: 'Montserrat' }}><div style={{ fontFamily: 'Montserrat' }}>AEGO<span>NA</span></div></a>
+          <Link href="/">
+            <a className="navbar-brand" style={{ fontFamily: 'Montserrat' }}><div style={{ fontFamily: 'Montserrat' }}>AEGO<span>NA</span></div></a>
+          </Link>
           <div className="collapse navbar-collapse" id="mynavbar">
             <ul className="navbar-nav me-auto">
               {link.map((a, b) => {
                 return (
                   <li className="nav-item" key={b}>
-                    <a className={a.className} href={a.href}>{a.name}</a>
+                    <Link href={a.href}>
+                      <a className={a.className}>{a.name}</a>
+                    </Link>
                   </li>
                 )
               })}
             </ul>
           </div>
-          <a href='/Auth/login' type="button" className="btn btn-warning">
-            <i className="bi bi-person-circle"></i> Đăng Nhập
-          </a>
+          <Link href='/Auth/login'>
+            <a type="button" className="btn btn-warning" style={{ backgroundColor: 'white', borderColor: 'white' }}>
+              <i className="bi bi-person-circle"></i> Đăng Nhập
+            </a>
+          </Link>
         </div>
       </nav>
     </div>
