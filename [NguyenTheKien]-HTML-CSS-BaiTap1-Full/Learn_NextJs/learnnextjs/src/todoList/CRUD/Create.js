@@ -8,6 +8,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const { TextArea } = Input;
 
 function Create({ setOpenModal, soluong }) {
+    console.log('abc');
     const [nameInput, setnameInput] = useState("");
     const [collection, setCollection] = useState("");
     const [avatar, setAvatar] = useState();

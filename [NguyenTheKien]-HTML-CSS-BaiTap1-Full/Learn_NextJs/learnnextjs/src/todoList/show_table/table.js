@@ -30,7 +30,7 @@ export default function Table() {
     ref.on("value", snapshot => {
       setValue(snapshot.val());
       const a = snapshot.val();
-      setPag({
+      a && setPag({
         all: a,
         show: a.slice(0, 5),
         total: a.length,
@@ -66,7 +66,7 @@ export default function Table() {
   const pagenumberPagination = (page, pageSize) => {
     const start = (page - 1) * pageSize;
     const end = page * pageSize;
-    setPag({ show: pag.all.slice(start, end), all: value, total: value.length });
+   value && setPag({ show: pag.all.slice(start, end), all: value, total: value.length });
   }
 
  console.log(searchTeam);
