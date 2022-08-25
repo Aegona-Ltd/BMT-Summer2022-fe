@@ -21,6 +21,7 @@ export default function Table() {
   const [modalDelete, setModalDelete] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
   const [checkId, setCheckId] = useState("");
+  const [searchTeam, setSearchTeam] = useState("");
 
   const ref = db.ref("CRUD");
   useEffect(() => {
@@ -68,13 +69,7 @@ export default function Table() {
     setPag({ show: pag.all.slice(start, end), all: value, total: value.length });
   }
 
-  const handleSearch = (value) => {
-    console.log("ád" ,value);
-  };
-
-  const onSelect = (value) => {
-    console.log('onSelect', value);
-  };
+ console.log(searchTeam);
 
   return (
     <div className={styles.table}>
@@ -92,10 +87,10 @@ export default function Table() {
                     width: 250,
                   }}
                   options={options}
-                  onSelect={onSelect}
-                  onSearch={handleSearch}
+                  onSelect={setSearchTeam}
+                  onSearch={setSearchTeam}
                 >
-                  <Input.Search size="large" placeholder="input here" enterButton />
+                  <Input.Search size="large" placeholder="Bạn cần tìm gì" enterButton />
                 </AutoComplete>
 
               </div>
@@ -125,7 +120,15 @@ export default function Table() {
               </tr>
             </thead>
             <tbody>
-              {pag.show && pag.show.length > 0 && pag.show.map((index, a) => {
+              {pag.show.length > 0 && pag.show.filter((index) => {           
+                  if(searchTeam ==""){
+                    return index;
+                  }else if(index.name.toLowerCase().includes(searchTeam.toLowerCase())){
+                    return index;
+                  }else if(searchTeam === undefined){
+                    return;
+                  }
+              }).map((index, a) => {
                 return (
                   <tr key={a}>
                     <td>
