@@ -1,9 +1,10 @@
 import styles from '../../styles/components/contact.module.scss';
-import {Form, Input, Button, Typography, Layout } from 'antd';
-import {LoginOutlined} from "@ant-design/icons";
+import { Form, Input, Button, Typography, Layout, Row, Col } from 'antd';
+import { LoginOutlined } from "@ant-design/icons";
 import axios from 'axios';
 import 'antd/dist/antd.min.css';
 import get from "lodash/get";
+import {arr1} from "./Arr_contact/arr_contact"
 
 function Home() {
 
@@ -67,77 +68,95 @@ function Home() {
 
     return (
         <div className={styles.contact_full}>
-            <div className={styles.contact_top}>
-                 <h3>Xin Chào ! AEGONA có thể giúp gì cho bạn ?</h3>
-                <Layout className={styles.full}>
-                    <Form className="form_login"
-                        name="signin"
-                        initialValues={{
-                            remember: false,
-                        }}
-                        onFinish={Submit}
-                        autoComplete="off"
-                    >
-                        <div className={styles.zzz}>
-                            <Form.Item
-                                name="Name"
-                                hasFeedback
-                                label="Họ & Tên"
-                                labelCol={{ span: 24 }}
-                                wrapperCol={{ span: 24 }}
-                                rules={check_name}
-                            >
-                                <Input placeholder="Nhập tên của bạn" size="large" />
-                            </Form.Item>
+            <Row>
+                <Col lg={12} md={24} xs={24} className={styles.contact_top}>
+                    <h5>Xin Chào ! AEGONA có thể giúp gì cho bạn ?</h5>
+                    <div className={styles.border_text}></div>
+                    <Layout className={styles.full}>
+                        <Form className="form_login"
+                            name="signin"
+                            initialValues={{
+                                remember: false,
+                            }}
+                            onFinish={Submit}
+                            autoComplete="off"
+                        >
+                            <div className={styles.zzz}>
+                                <Form.Item
+                                    name="Name"
+                                    hasFeedback
+                                    label="Họ & Tên"
+                                    labelCol={{ span: 24 }}
+                                    wrapperCol={{ span: 24 }}
+                                    rules={check_name}
+                                >
+                                    <Input placeholder="Nhập tên của bạn" size="large" />
+                                </Form.Item>
 
-                            <Form.Item
-                                name="email"
-                                hasFeedback
-                                label="Email"
-                                labelCol={{ span: 24 }}
-                                wrapperCol={{ span: 24 }}
-                                rules={check_mail}
-                            >
-                                <Input placeholder="Nhập Email của bạn" size="large" />
-                            </Form.Item>
+                                <Form.Item
+                                    name="email"
+                                    hasFeedback
+                                    label="Email"
+                                    labelCol={{ span: 24 }}
+                                    wrapperCol={{ span: 24 }}
+                                    rules={check_mail}
+                                >
+                                    <Input placeholder="Nhập Email của bạn" size="large" />
+                                </Form.Item>
 
-                            <Form.Item
-                                name="phone"
-                                hasFeedback
-                                label="Số Điện Thoại"
-                                labelCol={{ span: 24 }}
-                                wrapperCol={{ span: 24 }}
-                                rules={check_phone}
-                            >
-                                <Input placeholder="Nhập SĐT của bạn" size="large" />
-                            </Form.Item>
+                                <Form.Item
+                                    name="phone"
+                                    hasFeedback
+                                    label="Số Điện Thoại"
+                                    labelCol={{ span: 24 }}
+                                    wrapperCol={{ span: 24 }}
+                                    rules={check_phone}
+                                >
+                                    <Input placeholder="Nhập SĐT của bạn" size="large" />
+                                </Form.Item>
 
-                            <Form.Item
-                                name="Introduction"
-                                hasFeedback
-                                label="Thông Tin"
-                                labelCol={{ span: 24 }}
-                                wrapperCol={{ span: 24 }}
-                                rules={[{
-                                    required: true,
-                                    message: "Bạn không được bỏ trống ở trường này.",
-                                }]}
-                            >
-                                <Input.TextArea className="introduction" placeholder="Nhập thông tin cần tư vấn" size="large" />
-                            </Form.Item>
+                                <Form.Item
+                                    name="Introduction"
+                                    hasFeedback
+                                    label="Thông Tin"
+                                    labelCol={{ span: 24 }}
+                                    wrapperCol={{ span: 24 }}
+                                    rules={[{
+                                        required: true,
+                                        message: "Bạn không được bỏ trống ở trường này.",
+                                    }]}
+                                >
+                                    <Input.TextArea className="introduction" placeholder="Nhập thông tin cần tư vấn" size="large" />
+                                </Form.Item>
 
-                            <Button
-                                htmlType="submit"
-                                type="primary"
-                                // icon={<LoginOutlined />}
-                                size="large"
-                                style={{ backgroundColor: '#1478E7' }}>
-                                Gửi
-                            </Button>
+                                <Button
+                                    htmlType="submit"
+                                    type="primary"
+                                    // icon={<LoginOutlined />}
+                                    size="large"
+                                    style={{ backgroundColor: '#1478E7' }}>
+                                    Gửi
+                                </Button>
+                            </div>
+                        </Form>
+                    </Layout>
+                </Col>
+                <Col lg={12} md={24} xs={24} className={styles.contact_center}>
+                    {arr1.map((index , key) => {
+                        return(
+                    <Col span={24} className={styles.contact_center_bg} key={key}>
+                        <div className={styles.icon}>
+                            <i className={index.icon}></i>
                         </div>
-                    </Form>
-                </Layout>
-            </div>
+                        <div className={styles.contact_center_bg_text}>
+                            <div className={styles.contact_center_text}>{index.name}</div>
+                            {index.text}
+                        </div>
+                    </Col>
+                        );
+                    })}
+                </Col>
+            </Row>
         </div>
     )
 }
