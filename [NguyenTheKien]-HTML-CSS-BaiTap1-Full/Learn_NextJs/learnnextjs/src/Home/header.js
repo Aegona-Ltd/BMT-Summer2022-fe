@@ -8,7 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { link } from './Arr_Home/arr_header';
 import Link from 'next/link';
+import NavBar from './nav_bar_mobile';
+import React, {useState} from 'react';
 export default function HeaderHome() {
+
+  const [hideNavBar , setHideNavBar] = useState(false);
 
   return (
     <>
@@ -50,7 +54,7 @@ export default function HeaderHome() {
       {/* header_navbar */}
       <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
         <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <button className="navbar-toggler" type="button" onClick={() => setHideNavBar(!hideNavBar)}>
             <span className="navbar-toggler-icon"></span>
           </button>
           <Link href="/">
@@ -77,6 +81,7 @@ export default function HeaderHome() {
         </div>
       </nav>
     </div>
+    {hideNavBar ? (<NavBar></NavBar>) : null}
     </>
   )
 }
