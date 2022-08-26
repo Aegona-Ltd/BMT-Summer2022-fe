@@ -20,19 +20,14 @@ function Create({ setOpenModal, soluong }) {
         }
     }, [avatar]) // useEffect sẽ chạy thêm lần nữa khi mục avatar thay đổi
 
+    const isValidFileUploaded = (file) => {
+        const validExtensions = ['png', 'jpeg', 'jpg']
+        const fileExtension = file.type.split('/')[1]
+        return validExtensions.includes(fileExtension)
+    }
+
     //btn img
     const ClickSelectedFile = (e) => {
-
-        // if (e && e[0] && e[0].name.match(/\.(jpg|jpeg|png|gif)$/) ) {
-        //     if(this.files[0].size>1048576) {
-        //         alert('File size is larger than 1MB!');
-        //     }
-        //     else {
-        //         var reader = new FileReader();
-        //         reader.onload = imageIsLoaded;
-        //         reader.readAsDataURL(this.files[0]);
-        //     }
-        // } else alert('This is not an image file!');
 
         const d = new Date();  //hàm tạo ngày và giờ
         // format date
@@ -57,22 +52,13 @@ function Create({ setOpenModal, soluong }) {
 
     //btn Add
     const Add = () => {
-        // var allowedExtensions =
-        //             /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-        //             if (!allowedExtensions.exec(avatar)) {
-        //                 console.log(!allowedExtensions.exec(avatar));
-        //                 // alert('Invalid file type');
-        //                 // fileInput.value = '';
-        //                 // return false;
-        //             }
-        if(nameInput == "" || collection == ""){
+        if (nameInput == "" || collection == "") {
             notification["error"]({
                 message: 'Thông báo',
-                description:'Bạn chưa nhập dữ liệu trường "TÊN" hoặc "MÔ TẢ"',
+                description: 'Bạn chưa nhập dữ liệu trường "TÊN" hoặc "MÔ TẢ"',
             });
             return;
         }
-
         if (!avatar) {
             db.ref('CRUD/' + soluong).set({
                 id: soluong,
@@ -96,59 +82,69 @@ function Create({ setOpenModal, soluong }) {
             setOpenModal(false)
             return;
         } else {
-            //Nhập ref từ phiên bản lưu trữ Firebase
-            const storageRef = ref(sr, `/publicImage/${avatar.name}`);
+            if (isValidFileUploaded(avatar)) {
+                //Nhập ref từ phiên bản lưu trữ Firebase
+                const storageRef = ref(sr, `/publicImage/${avatar.name}`);
 
-            // Hàm uploadBytesResumable () chấp nhận tham chiếu bộ nhớ và tệp để tải lên
-            const uploadTask = uploadBytesResumable(storageRef, avatar);
+                // Hàm uploadBytesResumable () chấp nhận tham chiếu bộ nhớ và tệp để tải lên
+                const uploadTask = uploadBytesResumable(storageRef, avatar);
 
-            //check trạng thái bằng hàm on
-            uploadTask.on(
-                "state_changed",
-                // check tiến trình tải lên và trạng thái tải lên
-                (snapshot) => {
-                    const percent = Math.round(
-                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                    );
+                //check trạng thái bằng hàm on
+                uploadTask.on(
+                    "state_changed",
+                    // check tiến trình tải lên và trạng thái tải lên
+                    (snapshot) => {
+                        const percent = Math.round(
+                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                        );
 
-                    // update progress
-                    setPercent(percent);
-                },
-                // Nếu sai sẽ khai báo
-                (err) => {
-                    notification["error"]({
-                        message: 'Thông báo Lỗi',
-                        description: err,
-                    })
-                },
+                        // update progress
+                        setPercent(percent);
+                    },
+                    // Nếu sai sẽ khai báo
+                    (err) => {
+                        notification["error"]({
+                            message: 'Thông báo Lỗi',
+                            description: err,
+                        })
+                    },
 
-                //Nếu thành công log ra url
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                        db.ref('CRUD/' + soluong).set({
-                            id: soluong,
-                            name: nameInput,
-                            collection: collection,
-                            url: url,
-                            nameimg: avatar.name,
-                        });
-                        setOpenModal(false)
-                    }, function (error) {
-                        if (error) {
-                            notification["error"]({
-                                message: 'Thông báo',
-                                description:
-                                    'Lỗi kết nối database.',
+                    //Nếu thành công log ra url
+                    () => {
+                        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                            db.ref('CRUD/' + soluong).set({
+                                id: soluong,
+                                name: nameInput,
+                                collection: collection,
+                                url: url,
+                                nameimg: avatar.name,
                             });
-                            return;
-                        } else {
-                            return;
+                            setOpenModal(false)
+                        }, function (error) {
+                            if (error) {
+                                notification["error"]({
+                                    message: 'Thông báo',
+                                    description:
+                                        'Lỗi kết nối database.',
+                                });
+                                return;
+                            } else {
+                                return;
+                            }
                         }
+                        );
                     }
-                    );
-                }
-            );
+                );
+                return;
+            } else {
+                notification["error"]({
+                    message: 'Thông báo',
+                    description: 'Ảnh không đúng định dạng (Ảnh phải có đuôi ".jpg" hoặc ".png")',
+                });
+                return;
+            }
         }
+
     }
 
     return (

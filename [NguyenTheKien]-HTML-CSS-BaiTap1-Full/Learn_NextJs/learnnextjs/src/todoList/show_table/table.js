@@ -4,7 +4,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import BuildIcon from '@mui/icons-material/Build';
 import { realtimeDB as db } from "../connectFireBase/config";
 import React, { useEffect, useState } from 'react';
-import { Pagination, AutoComplete, Input } from 'antd';
+import { Pagination, AutoComplete, Input} from 'antd';
 import Create from '../CRUD/Create';
 import Delele from '../CRUD/Delete';
 import Update from '../CRUD/Update';
@@ -85,8 +85,8 @@ export default function Table() {
                   options={options}
                   onSelect={setSearchTeam}
                   onSearch={setSearchTeam}
+                  placeholder="Bạn cần tìm gì ..."
                 >
-                  <Input.Search size="large" placeholder="Bạn cần tìm gì" enterButton />
                 </AutoComplete>
 
               </div>
@@ -94,9 +94,6 @@ export default function Table() {
                 <a className="btn btn-success" onClick={() => setModalOpen(true)}>
                   <i><AddCircleIcon /></i>
                   <span>Thêm mới</span></a>
-                <a className="btn btn-danger">
-                  <i><RemoveCircleIcon /></i>
-                  <span>Xoá</span></a>
               </div>
             </div>
           </div>
@@ -155,9 +152,7 @@ export default function Table() {
               })}
             </tbody>
           </table>
-        </div>
-      </div>
-      <div className={styles.Pagination}>
+          <div className={styles.Pagination}>
         <Pagination
           defaultCurrent={1}
           defaultPageSize={5}
@@ -166,6 +161,8 @@ export default function Table() {
           pageSizeOptions={[5, 10, 15, 20]}
           onChange={pagenumberPagination}
         />
+      </div>
+        </div>
       </div>
       {modalOpen && <Create setOpenModal={setModalOpen} soluong={values && values.length || !values && 1} />}
       {modalDelete && <Delele setOpenModal={setModalDelete} OpenModal={modalDelete} id={checkId} />}

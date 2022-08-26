@@ -204,7 +204,7 @@ function Create({ setOpenModal, id }) {
                     </div>
                     <div className={styles.footer}>
                         <button onClick={() => setOpenModal(false)} className={styles.cancelBtn} > Huỷ </button>
-                        <button onClick={() => Edit()}>SỬa</button>
+                        <button onClick={() => Edit()}>Sửa</button>
                     </div>
                 </div>
             </div>

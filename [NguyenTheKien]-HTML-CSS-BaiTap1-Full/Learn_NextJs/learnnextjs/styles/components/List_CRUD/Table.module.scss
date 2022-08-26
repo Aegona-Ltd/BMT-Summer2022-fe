@@ -3,12 +3,12 @@
         background: #fff;
         padding: 20px 25px;
         margin: 30px 0;
-        border-radius: 3px;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
 
         .table_title {
             padding-bottom: 15px;
-            background: #435d7d;
+            background: #ededed;
             color: #fff;
             padding: 16px 30px;
             margin: -20px -25px 10px;
@@ -17,7 +17,7 @@
             h2 {
                 margin: 5px 0 0;
                 font-size: 24px;
-                color: #d0d7e0;
+                color: #5e5e5e;
 
                 b {
                     color: rgb(230, 173, 50);
@@ -27,8 +27,8 @@
             .inputSearch{
                 width: 250px;
                 position: absolute;
-                margin-left: 740px;
-                margin-top: 0px;
+                margin-left: 850px;
+                margin-top: 5px;
             }
 
             a {
@@ -81,6 +81,6 @@
         justify-content: center;
         text-align: center;
         flex-direction: column;
-        padding-bottom: 50px;
+        margin-left: 20cm;
     }
 }

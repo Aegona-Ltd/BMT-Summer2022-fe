@@ -11,6 +11,7 @@ import Link from 'next/link';
 export default function HeaderHome() {
 
   return (
+    <>
     <div className={styles.header_full}>
       {/* header_top */}
       <div className={styles.header_top}>
@@ -76,5 +77,6 @@ export default function HeaderHome() {
         </div>
       </nav>
     </div>
+    </>
   )
 }
