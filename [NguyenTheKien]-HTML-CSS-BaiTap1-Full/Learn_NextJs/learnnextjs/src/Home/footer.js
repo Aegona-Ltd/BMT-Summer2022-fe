@@ -58,7 +58,7 @@ export default function FooterHome() {
                   <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon2} />
                 </div>
             </Col>
-            <Col lg={6} md={12}>
+            <Col lg={7} md={12}>
               <div className={styles.footer_bottom_Col_2_v2}>Điều khoản & chính sách</div>
             </Col>
           </Col>

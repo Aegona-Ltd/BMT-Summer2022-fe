@@ -1,19 +1,21 @@
-import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip ,message} from "antd";
+import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip, message } from "antd";
 import { LoginOutlined, GooglePlusOutlined, GithubOutlined } from "@ant-design/icons";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 import 'antd/dist/antd.min.css';
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import get from "lodash/get";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {  faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import styles from '../../styles/components/Auth/login.module.css'
+import { style } from "@mui/system";
 const { Title } = Typography;
 
 export default function Login() {
   // const navigate = useNavigate();
   const [form] = Form.useForm();
-  const [Recc , setRecc] = useState('');
+  const [Recc, setRecc] = useState('');
   const numbers = /[0-9]/g;
   const upperCaseLetters = /[A-Z]/g;
   const lowerCaseLetters = /[a-z]/g;
@@ -54,51 +56,51 @@ export default function Login() {
       message: "Your password is not have special character.",
     },
   ]
-  
+
   //Hàm Captcha
   var Recaptcha = (value) => {
     // console.log('Captcha : ', value);
     setRecc(value);
   }
 
-//btn Login
+  //btn Login
   const onFinish = async (values) => {
     let key = 'check_key';
-     if(Recc === '' || Recc === undefined || Recc === null){  //Check captcha
-        message.error({
-          content: 'No captchas yet .',
-          key,
-          duration: 1,   //time
-        });
-      return ;
-     }else{
-        const Account = {
-          email: get(values, "email"),
-          password: get(values, "password"),
-          captcha:Recc,
-        };
-  
-        const Url = 'https://jsonplaceholder.typicode.com/posts';
-        axios({
-          method: 'post',
-          url: Url,
-          data:{
-            Account
-          }
-        })
-        .then(data =>{
+    if (Recc === '' || Recc === undefined || Recc === null) {  //Check captcha
+      message.error({
+        content: 'No captchas yet .',
+        key,
+        duration: 1,   //time
+      });
+      return;
+    } else {
+      const Account = {
+        email: get(values, "email"),
+        password: get(values, "password"),
+        captcha: Recc,
+      };
+
+      const Url = 'https://jsonplaceholder.typicode.com/posts';
+      axios({
+        method: 'post',
+        url: Url,
+        data: {
+          Account
+        }
+      })
+        .then(data => {
           return (
             console.log(data.data)
             // navigate("/contact")
           )
         })
         .catch(err => console.error(err));
-     }
+    }
   };
 
   return (
-    <Layout className="fullbg">
-      <Form className="form_login1"
+    <Layout className={styles.fullbg}>
+      <Form className={styles.form_login1}
         name="signin"
         form={form}
         initialValues={{
@@ -106,47 +108,25 @@ export default function Login() {
         }}
         onFinish={onFinish}
         autoComplete="off"
-      > 
-        <div className="zzz">
+      >
+        <div className={styles.zzz}>
           <Title level={2} className="text-center" style={{ color: '#284D66', fontWeight: "bold", }}>
             Sign in
           </Title>
-          <div className="social-container">
-            <Tooltip
-              title="Google+"
-              placement="bottom"
-              color="#db4a39"
-              key="#db4a39"
-            >
-              <div className="social google" >
-                <GooglePlusOutlined />
-              </div>
-            </Tooltip>
+          <div className={styles.social_container}>
+            <div className={styles.icon}>
+              <i className="bi bi-facebook"></i>
+            </div>
+            <div className={styles.icon}>
+              <i class="bi bi-google" style={{ color: 'red' }}></i>
+            </div>
+            <div className={styles.icon}>
+              <i class="bi bi-github" style={{ color: 'black' }}></i>
+            </div>
 
-            <Tooltip
-              title="Facebook"
-              placement="bottom"
-              color="#4267B2"
-              key="#4267B2"
-            >
-              <div className="social facebook">
-              <FontAwesomeIcon icon={faFacebookF} className="icon1" />
-              </div>
-            </Tooltip>
-
-            <Tooltip
-              title="Github"
-              placement="bottom"
-              color="#0e76a8"
-              key="#0e76a8"
-            >
-              <div className="social linkedin">
-                <GithubOutlined />
-              </div>
-            </Tooltip>
           </div>
 
-          <div className="option-text">or use your account</div>
+          <div className={styles.option_text}>or use your account</div>
 
           <Form.Item
             name="email"
@@ -180,15 +160,15 @@ export default function Login() {
             </a>
           </Form.Item>
 
-          <ReCAPTCHA className="ReCAPTCHA"
+          <ReCAPTCHA className={styles.ReCAPTCHA}
             sitekey="6LdmoUEhAAAAACqtptaVuYqUJ-mV7_vDEk-VKMIP"
             onChange={Recaptcha}
           />
 
           <Button
+            className={styles.buttonn}
             htmlType="submit"
             type="primary"
-            icon={<LoginOutlined />}
             size="large"
             style={{ backgroundColor: '#1478E7' }}>
             Sign In
