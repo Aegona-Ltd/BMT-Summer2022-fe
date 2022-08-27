@@ -1,12 +1,15 @@
 import styles from '../../styles/components/contact.module.scss';
-import { Form, Input, Button, Typography, Layout, Row, Col } from 'antd';
+import { Form, Input, Button, Typography, Layout, Row, Col, notification, Space } from 'antd';
+import { realtimeDB as db } from "../todoList/connectFireBase/config";
 import { LoginOutlined } from "@ant-design/icons";
 import axios from 'axios';
 import 'antd/dist/antd.min.css';
+import React, { useState, useEffect } from "react";
 import get from "lodash/get";
-import {arr1} from "./Arr_contact/arr_contact"
+import {arr1} from "./Arr_contact/arr_contact";
 
 function Home() {
+    const [nameInput, setnameInput] = useState("top");
 
     const check_name = [
         {
@@ -41,28 +44,34 @@ function Home() {
             min: 9,
             message: "Số ít nhất 9 ký tự.",
         },
+        
     ]
 
     //btn_submit
     const Submit = (value) => {
-
-        const Url = 'https://jsonplaceholder.typicode.com/posts';
-        axios({
-            method: 'post',
-            url: Url,
-            data: {
-                email: get(value, "email"),
-                name: get(value, "Name"),
-                phone: get(value, "phone"),
-                introduction: get(value, "Introduction"),
-            }
-        })
-            .then(data => {
-                return (
-                    console.log(data.data)
-                )
-            })
-            .catch(err => console.error(err));
+            db.ref('CONTACT/').push().set({
+                name: value.Name,
+                email: value.email,
+                phone: value.phone,
+                introduction: value.Introduction,
+            }, function(error) {
+                if (error) {
+                    notification['error']({
+                        message: 'Notification Title',
+                        description:
+                          'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+                      });
+                    return;
+                } else {
+                    notification.info({
+                        message: 'Thành công',
+                        description:
+                        'Bạn đã gửi thông tin thành công !',
+                        nameInput,
+                    });
+                    return;
+                }
+              });
     }
 
 

@@ -118,10 +118,10 @@ export default function Login() {
               <i className="bi bi-facebook"></i>
             </div>
             <div className={styles.icon}>
-              <i class="bi bi-google" style={{ color: 'red' }}></i>
+              <i className="bi bi-google" style={{ color: 'red' }}></i>
             </div>
             <div className={styles.icon}>
-              <i class="bi bi-github" style={{ color: 'black' }}></i>
+              <i className="bi bi-github" style={{ color: 'black' }}></i>
             </div>
 
           </div>
