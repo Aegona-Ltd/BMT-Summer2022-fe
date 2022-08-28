@@ -1,0 +1,45 @@
+.list_bg {
+    display: flex;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgb(219, 219, 219);
+
+    .Avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .full_text {
+        padding-top: 5px;
+        padding-left: 15px;
+        padding-bottom: 20px;
+        width: 70%;
+
+        .name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111111;
+        }
+        .text{
+            padding-left: 2px;
+            margin-top: 4px;
+            font-size: 14px;
+            color: rgb(136, 136, 136);
+            
+            display: block;
+            display: -webkit-box;
+            height: 16px*1.3*3;
+            font-size: 16px;
+            line-height: 1.3;
+            -webkit-line-clamp: 3;  /* số dòng hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

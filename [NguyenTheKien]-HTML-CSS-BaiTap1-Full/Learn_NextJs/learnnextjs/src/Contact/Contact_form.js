@@ -10,6 +10,9 @@ import {arr1} from "./Arr_contact/arr_contact";
 
 function Home() {
 
+    const ref = db.ref("CONTACT");
+  const [values, setValue] = useState("");
+
     const check_name = [
         {
             required: true,
@@ -47,9 +50,18 @@ function Home() {
         
     ]
 
+    useEffect(() => {
+        ref.on('value', function (snapshot) {
+            const check = snapshot.val();
+            {check ? null : setValue("1")}
+            {!check ? null : setValue(check.length)}
+      });
+      }, [values]);
+
     //btn_submit
     const Submit = (value) => {
-            db.ref('CONTACT/').push().set({
+            db.ref('CONTACT/' + values).set({
+                id:  values,
                 name: value.Name,
                 email: value.email,
                 phone: value.phone,
