@@ -9,7 +9,6 @@ import get from "lodash/get";
 import {arr1} from "./Arr_contact/arr_contact";
 
 function Home() {
-    const [nameInput, setnameInput] = useState("top");
 
     const check_name = [
         {
@@ -42,7 +41,8 @@ function Home() {
         },
         {
             min: 9,
-            message: "Số ít nhất 9 ký tự.",
+            max: 11,
+            message: "Số khoảng 9 đến 11 ký tự",
         },
         
     ]
@@ -57,17 +57,16 @@ function Home() {
             }, function(error) {
                 if (error) {
                     notification['error']({
-                        message: 'Notification Title',
+                        message: 'Thông báo',
                         description:
-                          'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+                          `Gửi thông tin thất bại ${error} `,
                       });
                     return;
                 } else {
-                    notification.info({
-                        message: 'Thành công',
+                    notification['success']({
+                        message: 'Thông Báo',
                         description:
                         'Bạn đã gửi thông tin thành công !',
-                        nameInput,
                     });
                     return;
                 }

@@ -1,19 +1,15 @@
-import { Form, Input, Button, Checkbox, Typography, Layout, Tooltip, message } from "antd";
-import { LoginOutlined, GooglePlusOutlined, GithubOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Checkbox, Typography, Layout, message } from "antd";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios'
 import 'antd/dist/antd.min.css';
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import get from "lodash/get";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import styles from '../../styles/components/Auth/login.module.css'
-import { style } from "@mui/system";
+import styles from '../../styles/components/Auth/login.module.css';
+import { useRouter } from 'next/router';
 const { Title } = Typography;
 
 export default function Login() {
-  // const navigate = useNavigate();
+  const router = useRouter()
   const [form] = Form.useForm();
   const [Recc, setRecc] = useState('');
   const numbers = /[0-9]/g;
@@ -40,7 +36,7 @@ export default function Login() {
       message: "Password must be minimum 6 characters.",
     },
     {
-      pattern: numbers,
+      pattern: numbers ,
       message: "Please enter your number.",
     },
     {
@@ -80,6 +76,7 @@ export default function Login() {
         captcha: Recc,
       };
 
+      //Gắn mockAPI
       const Url = 'https://jsonplaceholder.typicode.com/posts';
       axios({
         method: 'post',
@@ -88,11 +85,36 @@ export default function Login() {
           Account
         }
       })
+
+      //Lấy data gắn vào firebase
         .then(data => {
-          return (
-            console.log(data.data)
-            // navigate("/contact")
-          )
+          //nếu tài khoản = admin@gmail.com thì vào href contact/danhsach 
+          if(data.data.Account.email === 'admin@gmail.com'){
+            message.loading({
+              content: 'Loading...',
+              key,
+            });
+            setTimeout(() => {
+              message.success({
+                content: 'Loading...!',
+                key,
+                duration: 2,
+              });
+              router.push('/contact/danhsach')
+            }, 1000);
+           }else{
+            message.loading({
+              content: 'Loading...',
+              key,
+            });
+            setTimeout(() => {
+              message.error({
+                content: 'Tài khoản hoặc mật khẩu không chính xác!',
+                key,
+                duration: 2,
+              });
+            }, 1000);
+           }
         })
         .catch(err => console.error(err));
     }
