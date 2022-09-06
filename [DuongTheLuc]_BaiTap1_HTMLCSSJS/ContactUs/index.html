@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="ui middle aligned center aligned grid" id="wrapper">
+        <div class="ui form form__border">
+          <div class="header ui middle aligned center">
+            <h1>Contact Us</h1>
+          </div>
+          <div class="two fields">
+            <div class="field error">
+              <label>Full Name</label>
+              <input placeholder="Enter name here" type="text" />
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input placeholder="example@gmail.com" type="email" id="email" />
+            </div>
+          </div>
+          <div class="field error">
+            <div class="ui selection dropdown">
+              <input type="hidden" name="gender" />
+              <div class="field">
+                <label><i class="phone icon"></i> Phone Number </label>
+                <input placeholder=" 0123.." type="text" id="phone" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Message</label>
+            <textarea></textarea>
+          </div>
+          <div class="submit__btn">
+            <div
+              id="submit__btn"
+              class="ui animated fade submit button"
+              tabindex="0"
+              onclick="ValidateEmail()"
+            >
+              <div class="visible content">
+                <i class="angle right icon"></i>
+              </div>
+              <div class="hidden content">Contact Us</div>
+            </div>
+
+            <!-- <divclass="ui submit button " >
+              Submit </i>
+            </div> -->
+          </div>
+          <div class="contact__link ui middle aligned centered grid">
+            <button
+              class="ui facebook button"
+              onclick="location.href='http://facebook.com/'"
+              type="button"
+              id="facebook"
+            >
+              <i class="facebook icon"></i>
+              Facebook
+            </button>
+            <button
+              class="ui twitter button"
+              onclick="location.href='http://twitter.com/'"
+            >
+              <i class="twitter icon"></i>
+              Twitter
+            </button>
+            <button
+              class="ui google plus button"
+              onclick="location.href='http://google.com/'"
+            >
+              <i class="google plus icon"></i>
+              Google Plus
+            </button>
+            <button
+              class="ui vk button"
+              onclick="location.href='http://vk.com/'"
+            >
+              <i class="vk icon"></i>
+              VK
+            </button>
+            <button
+              class="ui linkedin button"
+              onclick="location.href='http://linkedin.com/'"
+            >
+              <i class="linkedin icon"></i>
+              LinkedIn
+            </button>
+            <button
+              class="ui instagram button"
+              onclick="location.href='http://instagram.com/'"
+            >
+              <i class="instagram icon"></i>
+              Instagram
+            </button>
+            <button
+              class="ui youtube button"
+              onclick="location.href='http://youtube.com/'"
+            >
+              <i class="youtube icon"></i>
+              YouTube
+            </button>
+          </div>
+          <!-- <div class="contact__link">
+            <a href="#">
+              <i class="facebook icon"></i>
+            </a>
+            <a href="#">
+              <i class="google plus icon"></i>
+            </a>
+            <a href="#">
+              <i class="twitter square icon"></i>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

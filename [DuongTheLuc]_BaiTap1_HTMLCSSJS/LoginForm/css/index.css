@@ -1,0 +1,59 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.white{
+    color: #fff;;
+}
+#padding-res{
+	padding: 0 40px;
+}
+#black{
+	background-color:#131d1d;
+}
+ /* constants */
+
+body{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+.grid{
+    height: 100vh;
+ }
+.image{
+    margin-top: -100px;
+ }
+.column{
+    max-width: 450px;
+    /* height: 100%; */
+}
+.content{
+
+}
+
+.google{
+	padding-top: 5%;
+}
+.google a{
+	border: #23a6d5;
+	color: #fff;
+}
+.google i{
+	font-size: 20px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

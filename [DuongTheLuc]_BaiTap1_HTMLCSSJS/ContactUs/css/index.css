@@ -1,0 +1,58 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+#center{
+	text-align: center;
+}
+#submit__btn{
+	padding: 20px 70px;
+}
+body{
+    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 500% 500%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+.container{
+	padding: 50px;
+}
+#wrapper{
+	height: 100vh;
+		justify-content: center;
+		align-items: center;
+
+}
+
+.form__border{
+	padding: 50px;
+		border: 1px solid #ccc;
+		border-radius: 7px;
+		background-color: #fff;
+}
+
+.submit__btn{
+	text-align: center;
+	padding: 10px 0 30px 0;
+}
+.ui.button{
+	margin-top: 5px;!important;
+}
+.contact__link{
+}
+.ui.grid>*{
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
