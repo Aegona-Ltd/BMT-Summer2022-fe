@@ -7,7 +7,11 @@ box-sizing: border-box;
 	text-align: center;
 }
 #submit__btn{
-	padding: 20px 70px;
+	padding: 4px 20px;
+	color: white;
+}
+.white{
+	color: #ebebeb;
 }
 body{
     background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -19,22 +23,19 @@ body{
 	padding: 50px;
 }
 #wrapper{
-	height: 100vh;
+	height: 80vh;
 		justify-content: center;
 		align-items: center;
-
 }
-
 .form__border{
-	padding: 50px;
+	/* padding: 50px; */
 		border: 1px solid #ccc;
 		border-radius: 7px;
 		background-color: #fff;
 }
-
 .submit__btn{
 	text-align: center;
-	padding: 10px 0 30px 0;
+	/* padding: 10px 0 30px 0; */
 }
 .ui.button{
 	margin-top: 5px;!important;
@@ -43,7 +44,57 @@ body{
 }
 .ui.grid>*{
 	padding-left: 2rem;
-	padding-right: 2rem;
+	padding-right: 3rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+/* contact */
+.contact__left{
+	width: 70%;
+}
+.contact__right{
+	width: 30%;
+	/* background-color: #778185; */
+	display: flex;
+	border-left: 1px solid #23d5ab;
+	flex-direction: column;
+	/* align-items: center; */
+	border-radius: 6px;
+	text-align: center;
+	justify-content: space-around;
+	padding-right: 0;!important
+
+}
+.about__header{
+	text-align: center;
+	width: 100%;
+}
+.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url]{
+	border: none;
+	border-bottom: 2px solid #ccc;
+	border-left:1px solid #ccc ;
+}
+.ui.form textarea:not([rows]){
+	border: none;
+	border-bottom: 2px solid #ccc;
+	border-left:1px solid #ccc ;
+}
+.ui.form textarea:not([rows]):focus{
+	border-color: #85b7d9;
+}
+/* right contact */
+.right__header {
+	/* display: inline; */
+}
+.contact__right-list{
+	/* padding-left: 1rem; */
+}
+.ui.form .field>label{
+	font-size: 1.1rem;
+	padding-bottom: 0.5rem;
+}
+.ui.button{
+	background: #70b9d3;
 }
 @keyframes gradient {
 	0% {

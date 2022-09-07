@@ -7,9 +7,7 @@ box-sizing: border-box;
 .white{
     color: #fff;;
 }
-#padding-res{
-	padding: 0 40px;
-}
+
 #black{
 	background-color:#131d1d;
 }
@@ -46,6 +44,13 @@ body{
 	font-size: 20px;
 }
 
+.ui.stacked.segment{
+	padding: 48px ;
+}
+.ui.form .field{
+	margin: 0px 0px 2em;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -55,5 +60,15 @@ body{
 	}
 	100% {
 		background-position: 0% 50%;
+	}
+}
+@media only screen and (max-width: 600px) {
+	#padding-res{
+		padding: 0 40px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	#padding-res{
+		padding: 0px;
 	}
 }
