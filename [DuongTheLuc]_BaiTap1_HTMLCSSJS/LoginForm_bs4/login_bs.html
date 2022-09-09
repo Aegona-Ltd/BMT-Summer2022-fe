@@ -2,18 +2,7 @@
 <html lang="en">
   <head>
     <div id="fb-root"></div>
-    <script
-      async
-      defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=485675443381536&autoLogAppEvents=1"
-      nonce="meIysxBo"
-    ></script>
-    <script
-      src="https://apis.google.com/js/platform.js?onload=init"
-      async
-      defer
-    ></script>
+
     <meta
       name="google-signin-client_id"
       content="130307167643-tv5t7jkc0j58d130ifoa7aolhosicddf.apps.googleusercontent.com"
@@ -107,7 +96,7 @@
             </div>
             <div class="btn__login">
               <button
-                type="submit"
+                type="button"
                 class="mt-3 btn btn-primary btn-block"
                 onclick="ValidateEmail()"
               >
@@ -134,14 +123,31 @@
               data-auto-logout-link="false"
               data-use-continue-as="false"
             ></div>
+
             <div id="googleForm">
-              <div class="g-signin2 col-12" data-onsuccess="onSignIn"></div>
+              <div
+                id="googleSign"
+                class="g-signin2 col-12"
+                data-onsuccess="onSignIn"
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- signin social -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=485675443381536&autoLogAppEvents=1"
+      nonce="meIysxBo"
+    ></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=init"
+      async
+      defer
+    ></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
