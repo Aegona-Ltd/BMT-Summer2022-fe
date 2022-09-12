@@ -1,0 +1,23 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.input-field .prefix ~ input, .input-field .prefix ~ textarea, .input-field .prefix ~ label, .input-field .prefix ~ .validate ~ label, .input-field .prefix ~ .autocomplete-content{
+    margin-left: 1.2rem;
+}
+
+.contact__info{
+    padding: 50% 0 30% 3%;
+}
+.list__contact i{
+    float: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+@media only screen and (max-width: 600px) {
+    .contact__info{
+        padding: 20% 0 10% 0;
+    }
+  }
