@@ -3,6 +3,15 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+.exampleDropdownFormPassword1{
+	border: none;
+}
+/* .inputPassword{
+	border: 1px solid #ced4da;
+} */
+.form-group-primary{
+	border:none;
+}
 .login__link{
 	display: flex;
 	justify-content: space-around;

@@ -28,6 +28,14 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Css -->
     <link rel="stylesheet" href="./css/index.css" />
   </head>
@@ -74,13 +82,23 @@
               />
             </div>
             <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Password</label>
-              <input
-                type="password"
+              <label for="exampleDropdownFormPassword1">Password </label>
+              <div class="inputPassword d-flex align-items-center">
+                <input type="password"
                 class="form-control"
                 id="exampleDropdownFormPassword1"
-                placeholder="Password"
-              />
+                 placeholder="Password" />
+                <span onclick="test()" class="p-2 passWordCheck">
+                  <i id="hidePassword" class" class="hidePassword fa-solid fa-eye-slash unHidePassword"></i>
+                  <i
+                    id="unHidePassword"
+                    style="display: none"
+                    class="unHidePassword fa-solid fa-eye hidePassword"
+                  ></i>
+                </span>
+              </div>
+              <!-- <div class="hide__password">
+              </div> -->
             </div>
 
             <div class="form-check">

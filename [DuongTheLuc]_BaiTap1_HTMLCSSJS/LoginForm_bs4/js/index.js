@@ -1,5 +1,15 @@
 function test() {
-  alert("test");
+  console.log("test");
+  var x = document.getElementById("hidePassword");
+  if (x.style.display == "block") {
+    document.getElementById("hidePassword").style.display = "none";
+    document.getElementById("unHidePassword").style.display = "block";
+    document.getElementById("exampleDropdownFormPassword1").type = "password";
+  } else {
+    document.getElementById("hidePassword").style.display = "block";
+    document.getElementById("unHidePassword").style.display = "none";
+    document.getElementById("exampleDropdownFormPassword1").type = "text";
+  }
 }
 function ValidateEmail(inputText) {
   var inputText = document.getElementById("exampleDropdownFormEmail1").value;
