@@ -1,3 +1,5 @@
-export default function Login() {
-  return <div className="text-center">Login page here</div>;
+import LoginView from "@/views/Login";
+
+export default function LoginPage() {
+  return <LoginView />;
 }
