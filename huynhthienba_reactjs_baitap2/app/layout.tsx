@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { ToastContainer } from "react-toastify";
+import { Providers } from "@/redux/provider";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
-import { Providers } from "@/redux/provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
