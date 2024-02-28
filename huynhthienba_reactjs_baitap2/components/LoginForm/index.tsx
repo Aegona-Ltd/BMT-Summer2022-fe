@@ -25,7 +25,7 @@ const LoginForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful, isSubmitted },
   } = useForm({
     resolver: yupResolver(loginSchema),
     mode: "onSubmit",
@@ -45,13 +45,15 @@ const LoginForm = () => {
         toast(errors.password.message, {
           type: "error",
         });
-      } else {
-        toast("Success!!!", {
-          type: "success",
-        });
       }
     }
-  }, [isSubmitting]);
+
+    if (isSubmitSuccessful) {
+      toast("Success!!!", {
+        type: "success",
+      });
+    }
+  }, [isSubmitting, isSubmitSuccessful]);
 
   return (
     <form method="post" className="min-w-72" onSubmit={handleSubmit(onSubmit)}>
