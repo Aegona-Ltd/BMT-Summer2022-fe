@@ -14,6 +14,7 @@ export interface ButtonProps {
   fullWidth?: boolean;
   type?: "button" | "submit" | "reset";
   size?: "small" | "medium" | "large";
+  theme?: "dark" | "light";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -25,14 +26,17 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = "button",
   size = "medium",
+  theme = "dark",
 }) => {
   return (
     <button
       type={type}
       className={cn(
-        `rounded-lg text-lg flex justify-center relative transition-all bg-dark-100 hover:opacity-90 hover:bg-dark-600 text-light-100`,
+        `rounded-lg text-lg flex justify-center relative transition-all hover:opacity-90`,
         className,
         {
+          "bg-dark-100 hover:bg-dark-600 text-light-100": theme === "light",
+          "bg-light-100 hover:bg-light-200 text-dark-100": theme === "dark",
           "cursor-not-allowed": !!disabled,
           "cursor-progress": !!loading,
           "px-12 py-4": size === "medium",
