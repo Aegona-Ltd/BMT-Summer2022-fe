@@ -42,7 +42,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="flex justify-between flex-wrap gap-[60px]">
+          <div className="flex justify-between flex-wrap gap-5 lg:gap-[60px]">
             <div className="flex flex-col gap-5">
               <h4 className="font-semibold text-lg">Company</h4>
               <ul className="flex flex-col gap-6">
