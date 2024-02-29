@@ -93,7 +93,7 @@ export const Footer = () => {
             <h4 className="font-semibold text-lg">Join Our Newsletter</h4>
             <div className="flex items-center">
               <input
-                className="h-10 w-full p-[10px] rounded-l-lg bg-dark-600 outline-none text-[11px] text-grey-400"
+                className="h-10 w-full p-[10px] rounded-l-lg bg-dark-600 outline-none text-[11px] placeholder:text-grey-400 text-light-200"
                 type="text"
                 placeholder="Your email address"
               />
