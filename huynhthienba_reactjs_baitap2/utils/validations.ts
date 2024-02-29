@@ -23,3 +23,11 @@ export const loginSchema = Yup.object({
     .min(8, "Length from 8 - 36 characters")
     .max(36, "Length from 8 - 36 characters"),
 });
+
+export const addTodoSchema = Yup.object({
+  newTodo: Yup.string().required("Please enter todo name"),
+});
+
+export const editTodoSchema = Yup.object({
+  editTodo: Yup.string().required("Please enter todo name"),
+});

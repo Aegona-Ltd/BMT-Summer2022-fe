@@ -35,6 +35,7 @@ const ContactView = () => {
                   height={18}
                   src="/icons/phone.svg"
                   alt="phone-icon"
+                  priority
                 />
                 <a href="#">+1012 3456 789</a>
               </li>

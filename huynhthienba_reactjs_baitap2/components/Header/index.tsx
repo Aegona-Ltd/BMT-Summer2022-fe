@@ -22,7 +22,7 @@ export const Header = () => {
             width={24}
             height={24}
             src="/icons/menu.svg"
-            alt="close-icon"
+            alt="menu-icon"
           />
         </div>
         <Menu />
