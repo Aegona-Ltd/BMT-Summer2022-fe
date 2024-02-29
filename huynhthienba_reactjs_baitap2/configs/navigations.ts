@@ -9,18 +9,19 @@ export const NAVIGATIONS = [
     name: "apps",
     group: true,
     label: "Apps",
+    active: ["/todo", "/management"],
     menu: [
       {
         name: "todo",
         label: "Todo",
         href: "/todo",
-        active: ["/todo/"],
+        active: ["/todo"],
       },
       {
         name: "management",
         label: "Management",
         href: "/management",
-        active: ["/management/"],
+        active: ["/management"],
       },
     ],
   },
