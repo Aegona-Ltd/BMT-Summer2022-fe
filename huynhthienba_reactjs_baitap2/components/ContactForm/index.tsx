@@ -5,26 +5,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import * as Yup from "yup";
-
 import Button from "../Button";
 import Input from "../Input";
-
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
-const contactSchema = Yup.object({
-  firstName: Yup.string().required("Please enter your first name"),
-  email: Yup.string()
-    .required("Please enter your email address")
-    .email("Incorrect email format"),
-  phoneNumber: Yup.string()
-    .required("Please enter your phone number")
-    .matches(phoneRegExp, "Phone number is not valid"),
-  message: Yup.string().required("Please enter your message"),
-});
-
-type FormContact = Yup.InferType<typeof contactSchema>;
+import { contactSchema } from "@/utils/validations";
+import { FormContact } from "@/utils/type";
 
 const ContactForm = () => {
   const {

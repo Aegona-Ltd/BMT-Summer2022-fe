@@ -1,16 +1,6 @@
 import cn from "@/utils/cn";
-import React, { InputHTMLAttributes } from "react";
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  type?: string;
-  placeholder?: string;
-  register?: any;
-  className?: string;
-  name: string;
-  error?: boolean;
-  required?: boolean;
-}
+import { InputProps } from "@/utils/interface";
+import React from "react";
 
 const Input: React.FC<InputProps> = ({
   label,

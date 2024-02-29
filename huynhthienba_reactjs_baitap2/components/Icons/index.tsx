@@ -1,6 +1,4 @@
-interface IconProps {
-  className?: string;
-}
+import { IconProps } from "@/utils/interface";
 
 export const Instagram = ({ className }: IconProps) => (
   <svg

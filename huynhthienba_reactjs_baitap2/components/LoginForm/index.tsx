@@ -3,23 +3,12 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
 
 import Button from "../Button";
 import Input from "../Input";
 import { toast } from "react-toastify";
-
-const loginSchema = Yup.object({
-  email: Yup.string()
-    .required("Please enter your email address")
-    .email("Incorrect email format"),
-  password: Yup.string()
-    .required("Please enter your password")
-    .min(8, "Length from 8 - 36 characters")
-    .max(36, "Length from 8 - 36 characters"),
-});
-
-type FormLogin = Yup.InferType<typeof loginSchema>;
+import { loginSchema } from "@/utils/validations";
+import { FormLogin } from "@/utils/type";
 
 const LoginForm = () => {
   const {
@@ -75,7 +64,12 @@ const LoginForm = () => {
       />
       <div className="flex flex-col gap-3">
         <div className="flex justify-end">
-          <Button theme="light" className="w-full lg:w-auto" type="submit" size="small">
+          <Button
+            theme="light"
+            className="w-full lg:w-auto"
+            type="submit"
+            size="small"
+          >
             Sign in
           </Button>
         </div>

@@ -1,21 +1,10 @@
 "use client";
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import Spinner from "@/public/icons/spinner.svg";
 
 import cn from "@/utils/cn";
 import Image from "next/image";
-
-export interface ButtonProps {
-  children?: React.ReactNode;
-  className?: string;
-  loading?: boolean;
-  disabled?: boolean;
-  onClick?: MouseEventHandler;
-  fullWidth?: boolean;
-  type?: "button" | "submit" | "reset";
-  size?: "small" | "medium" | "large";
-  theme?: "dark" | "light";
-}
+import { ButtonProps } from "@/utils/interface";
 
 const Button: React.FC<ButtonProps> = ({
   children,
