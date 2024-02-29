@@ -27,7 +27,7 @@ export const Header = () => {
         </div>
         <Menu />
         <div
-          className={cn(`fixed inset-0 transition-all duration-200`, {
+          className={cn(`fixed z-50 inset-0 transition-all duration-200`, {
             "translate-y-0 visible": isShowMewnu,
             "-translate-y-full invisible": !isShowMewnu,
           })}
