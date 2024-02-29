@@ -75,7 +75,7 @@ const LoginForm = () => {
       />
       <div className="flex flex-col gap-3">
         <div className="flex justify-end">
-          <Button className="w-full lg:w-auto" type="submit" size="small">
+          <Button theme="light" className="w-full lg:w-auto" type="submit" size="small">
             Sign in
           </Button>
         </div>
