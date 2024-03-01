@@ -24,6 +24,7 @@ const EditForm = ({ setClose }: { setClose: any }) => {
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
+    setValue,
   } = useForm({
     resolver: yupResolver(editTodoSchema),
     mode: "onSubmit",
@@ -40,7 +41,11 @@ const EditForm = ({ setClose }: { setClose: any }) => {
   };
 
   const filterCurrentTodo = () => {
-    setCurrentTodo(() => todo.todoList.filter((todo) => todo.id === todoId)[0]);
+    setCurrentTodo(() => {
+      const currTodo = todo.todoList.filter((todo) => todo.id === todoId)[0];
+      setValue("editTodo", currTodo.name);
+      return currTodo;
+    });
   };
 
   useEffect(() => {

@@ -27,4 +27,5 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   required?: boolean;
   theme?: "dark" | "light";
   defaultValue?: string;
+  value?: string;
 }

@@ -14,7 +14,7 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
       router.push("/login");
     }
   }, [auth.isAuthenticated, router]);
-
+  
   return auth.isAuthenticated ? <>{children}</> : null;
 };
 

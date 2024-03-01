@@ -29,5 +29,5 @@ export const addTodoSchema = Yup.object({
 });
 
 export const editTodoSchema = Yup.object({
-  editTodo: Yup.string().required("Please enter todo name"),
+  editTodo: Yup.string().required("Todo name is required"),
 });
