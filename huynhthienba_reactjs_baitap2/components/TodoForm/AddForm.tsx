@@ -53,7 +53,7 @@ const AddForm = () => {
   return (
     <form
       method="post"
-      className="w-1/4 flex items-center gap-4"
+      className="mx-6 w-full md:w-1/4 flex items-center gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
       <Input

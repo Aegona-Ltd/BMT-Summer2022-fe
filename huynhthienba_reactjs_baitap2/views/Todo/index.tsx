@@ -109,8 +109,8 @@ const TodoView = () => {
       <div className="flex justify-center">
         <AddForm />
       </div>
-      <div className="container mx-auto max-w-[50vw] px-6 flex justify-between gap-9 mb-10">
-        <div className="flex-1 border-r-2 border-dark-100 pr-9">
+      <div className="container mx-auto lg:max-w-[70vw] xl:max-w-[50vw] px-6 flex justify-between flex-col md:flex-row gap-9 mb-10">
+        <div className="flex-1 md:border-r-2 md:border-dark-100 md:pr-9">
           <h3 className="text-lg font-bold border-b-2 border-dark-200 inline-block pr-10 mb-9">
             Running Tasks
           </h3>
@@ -118,7 +118,7 @@ const TodoView = () => {
             {renderTasks()}
           </div>
         </div>
-        <div className="flex-1 pr-9">
+        <div className="flex-1 md:pr-9">
           <h3 className="text-lg font-bold mb-9">Completed Tasks</h3>
           <div className="flex flex-col gap-5 text-light-200 max-h-[calc(70vh)] overflow-y-auto">
             {renderTasks(true)}
@@ -128,7 +128,7 @@ const TodoView = () => {
 
       <Popup
         title="Edit task"
-        className="w-1/3"
+        className="w-full md:w-1/3 mx-2"
         open={showPopup}
         setClose={handleClosePopup}
       >
