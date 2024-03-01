@@ -119,6 +119,7 @@ const ContactForm = () => {
             width={240}
             height={112}
             src="/images/auth/letter-send.png"
+            className="w-full h-full"
             priority
             alt="letter-send"
           />

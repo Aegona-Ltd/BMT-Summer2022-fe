@@ -1,3 +1,5 @@
+"use client";
+
 import ContactForm from "@/components/ContactForm";
 import { Discord, Instagram, Twitter } from "@/components/Icons";
 import Image from "next/image";

@@ -14,9 +14,11 @@ import { selectUser } from "@/redux/features/user/reducer";
 import { getUsersList } from "@/redux/features/user/action";
 import { setLoginSuccess } from "@/redux/features/auth/action";
 import { useRouter } from "next/navigation";
+import { selectAuth } from "@/redux/features/auth/reducer";
 
 const LoginForm = () => {
   const user = useAppSelector(selectUser);
+  const { lastPathname } = useAppSelector(selectAuth);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const {
@@ -34,7 +36,7 @@ const LoginForm = () => {
     if (userLogin.email === data.email) {
       dispatch(setLoginSuccess(userLogin));
       toast("Login successful", { type: "success" });
-      router.push("/")
+      router.push(lastPathname || "/");
     } else {
       toast("Username or password incorrect", { type: "error" });
     }

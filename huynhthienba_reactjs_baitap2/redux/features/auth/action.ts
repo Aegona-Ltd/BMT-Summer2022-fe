@@ -6,3 +6,4 @@ export const setLoginSuccess = createAction<UserItemType>(
 );
 
 export const clearDataLogin = createAction("auth/clear-data-login");
+export const setLastPathname = createAction<string>("auth/set-last-pathname");

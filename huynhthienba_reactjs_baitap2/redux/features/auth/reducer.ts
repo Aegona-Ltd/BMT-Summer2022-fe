@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { AuthType, authReducerDefault } from "./type";
 import { RootState } from "@/redux/store";
-import { clearDataLogin, setLoginSuccess } from "./action";
+import { clearDataLogin, setLastPathname, setLoginSuccess } from "./action";
 
 const authReducer = createReducer(authReducerDefault, (builder) => {
   builder
@@ -12,6 +12,9 @@ const authReducer = createReducer(authReducerDefault, (builder) => {
     .addCase(clearDataLogin, (state: AuthType) => {
       state.isAuthenticated = false;
       state.user = null;
+    })
+    .addCase(setLastPathname, (state: AuthType, action: any) => {
+      state.lastPathname = action.payload;
     });
 });
 

@@ -12,6 +12,7 @@ import { GroupMenuType } from "@/utils/type";
 import { selectAuth } from "@/redux/features/auth/reducer";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { clearDataLogin } from "@/redux/features/auth/action";
+import Authenticate from "../Authenticate";
 
 const Group = ({ label, menu, isActive }: GroupMenuType) => {
   const pathname = usePathname();
@@ -88,6 +89,7 @@ const GroupRes = ({ label, menu }: GroupMenuType) => {
             height={9}
             src="/icons/arrow-white.svg"
             alt="arrow-icon"
+            className="w-full h-full"
           />
         </div>
       </div>
@@ -173,26 +175,7 @@ export const Menu = () => {
           />
         )
       )}
-      {auth.isAuthenticated ? (
-        <Button className="!px-0 !bg-transparent" onClick={handleLogout}>
-          <div className="cursor-pointer hover:scale-110 transition-all duration-200">
-            <Image
-              width={24}
-              height={24}
-              src="/icons/logout.svg"
-              alt="logout-icon"
-            />
-          </div>
-        </Button>
-      ) : (
-        <Button
-          theme="light"
-          onClick={() => router.push("/login")}
-          size="small"
-        >
-          Login
-        </Button>
-      )}
+      <Authenticate />
     </nav>
   );
 };
@@ -241,22 +224,7 @@ export const MenuRes = ({ close }: { close: any }) => {
           )
         )}
         <div>
-          {auth.isAuthenticated ? (
-            <Button className="!p-0 !bg-transparent" onClick={handleLogout}>
-              <div className="cursor-pointer hover:scale-110 transition-all duration-200">
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/logout-white.svg"
-                  alt="logout-icon"
-                />
-              </div>
-            </Button>
-          ) : (
-            <Button onClick={() => router.push("/login")} size="small">
-              Login
-            </Button>
-          )}
+          <Authenticate isMobile />
         </div>
       </nav>
     </div>
