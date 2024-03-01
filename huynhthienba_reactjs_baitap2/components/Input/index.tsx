@@ -25,8 +25,8 @@ const Input: React.FC<InputProps> = ({
           className,
           {
             "border-red-400 focus:border-red-400": error,
-            "focus:border-dark-100": theme === "light",
-            "focus:border-light-100": theme === "dark",
+            "focus:border-dark-100": theme === "light" && !error,
+            "focus:border-light-100": theme === "dark" && !error,
           }
         )}
         placeholder={placeholder}

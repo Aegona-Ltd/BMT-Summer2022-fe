@@ -9,19 +9,35 @@ import Input from "../Input";
 import { toast } from "react-toastify";
 import { loginSchema } from "@/utils/validations";
 import { FormLogin } from "@/utils/type";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { selectUser } from "@/redux/features/user/reducer";
+import { getUsersList } from "@/redux/features/user/action";
+import { setLoginSuccess } from "@/redux/features/auth/action";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const user = useAppSelector(selectUser);
+  const router = useRouter();
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful, isSubmitted },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm({
     resolver: yupResolver(loginSchema),
     mode: "onSubmit",
   });
 
   const onSubmit = (data: FormLogin) => {
-    console.log(data);
+    const userLogin = user.users.filter((user) => user.email === data.email)[0];
+
+    if (userLogin.email === data.email) {
+      dispatch(setLoginSuccess(userLogin));
+      toast("Login successful", { type: "success" });
+      router.push("/")
+    } else {
+      toast("Username or password incorrect", { type: "error" });
+    }
   };
 
   useEffect(() => {
@@ -36,13 +52,11 @@ const LoginForm = () => {
         });
       }
     }
-
-    if (isSubmitSuccessful) {
-      toast("Success!!!", {
-        type: "success",
-      });
-    }
   }, [isSubmitting, isSubmitSuccessful]);
+
+  useEffect(() => {
+    dispatch(getUsersList());
+  }, []);
 
   return (
     <form method="post" className="min-w-72" onSubmit={handleSubmit(onSubmit)}>
@@ -69,6 +83,7 @@ const LoginForm = () => {
             className="w-full lg:w-auto"
             type="submit"
             size="small"
+            loading={user.loading}
           >
             Sign in
           </Button>

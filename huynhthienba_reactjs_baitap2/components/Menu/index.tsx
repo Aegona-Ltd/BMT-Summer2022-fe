@@ -9,6 +9,9 @@ import React, { useState } from "react";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
 import { GroupMenuType } from "@/utils/type";
+import { selectAuth } from "@/redux/features/auth/reducer";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { clearDataLogin } from "@/redux/features/auth/action";
 
 const Group = ({ label, menu, isActive }: GroupMenuType) => {
   const pathname = usePathname();
@@ -142,8 +145,15 @@ const Item = ({
 };
 
 export const Menu = () => {
+  const auth = useAppSelector(selectAuth);
+  const dispatch = useAppDispatch();
   const pathname = usePathname();
   const router = useRouter();
+
+  const handleLogout = () => {
+    dispatch(clearDataLogin());
+  };
+
   return (
     <nav className="hidden lg:flex items-center gap-10">
       {NAVIGATIONS.map((z, i) =>
@@ -163,16 +173,40 @@ export const Menu = () => {
           />
         )
       )}
-      <Button theme="light" onClick={() => router.push("/login")} size="small">
-        Login
-      </Button>
+      {auth.isAuthenticated ? (
+        <Button className="!px-0 !bg-transparent" onClick={handleLogout}>
+          <div className="cursor-pointer hover:scale-110 transition-all duration-200">
+            <Image
+              width={24}
+              height={24}
+              src="/icons/logout.svg"
+              alt="logout-icon"
+            />
+          </div>
+        </Button>
+      ) : (
+        <Button
+          theme="light"
+          onClick={() => router.push("/login")}
+          size="small"
+        >
+          Login
+        </Button>
+      )}
     </nav>
   );
 };
 
 export const MenuRes = ({ close }: { close: any }) => {
+  const auth = useAppSelector(selectAuth);
+  const dispatch = useAppDispatch();
   const pathname = usePathname();
   const router = useRouter();
+
+  const handleLogout = () => {
+    dispatch(clearDataLogin());
+  };
+
   return (
     <div className="flex lg:hidden flex-col gap-14 bg-dark-100 text-light-100 h-full p-5">
       <div className="flex justify-between items-center py-1">
@@ -207,9 +241,22 @@ export const MenuRes = ({ close }: { close: any }) => {
           )
         )}
         <div>
-          <Button onClick={() => router.push("/login")} size="small">
-            Login
-          </Button>
+          {auth.isAuthenticated ? (
+            <Button className="!p-0 !bg-transparent" onClick={handleLogout}>
+              <div className="cursor-pointer hover:scale-110 transition-all duration-200">
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/logout-white.svg"
+                  alt="logout-icon"
+                />
+              </div>
+            </Button>
+          ) : (
+            <Button onClick={() => router.push("/login")} size="small">
+              Login
+            </Button>
+          )}
         </div>
       </nav>
     </div>

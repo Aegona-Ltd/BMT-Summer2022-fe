@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+  
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex items-center gap-10 p-[40px] md:p-[10px] md:pr-[40px] bg-light-100 shadow-lg rounded-lg">
