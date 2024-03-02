@@ -21,19 +21,19 @@
 
 @font-face {
   font-family: "Ubuntu-Regular";
-  src: url("../fonts/Ubuntu-Regular.woff2") format("truetype");
+  src: url("../fonts/Ubuntu-Regular.woff2") format("Web Open Font Format 2");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Ubuntu-Bold";
-  src: url("../fonts/Ubuntu-Bold.woff2") format("truetype");
+  src: url("../fonts/Ubuntu-Bold.woff2") format("Web Open Font Format 2");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Ubuntu-Medium";
-  src: url("../fonts/Ubuntu-Medium.woff2") format("truetype");
+  src: url("../fonts/Ubuntu-Medium.woff2") format("Web Open Font Format 2");
   font-weight: 500;
 }
 
@@ -52,7 +52,6 @@ body {
   line-height: 52px;
   text-transform: uppercase;
   color: var(--blue-100);
-  font-family: "Ubuntu-Bold", sans-serif;
   margin-bottom: 50px;
 }
 
@@ -136,7 +135,6 @@ body {
   color: var(--gray-400);
   font-size: 15px;
   font-weight: 600;
-  font-family: "Ubuntu-Bold", sans-serif;
   padding: 24px 15px;
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
@@ -150,7 +148,6 @@ body {
   cursor: pointer;
   color: var(--black-300);
   font-size: 13px;
-  font-family: "Ubuntu-Bold", sans-serif;
   text-transform: uppercase;
   border-bottom: 1px solid var(--black-100);
   padding: 2px 0 8px 0;
@@ -218,7 +215,6 @@ body {
   color: var(--gray-100);
   font-size: 14px;
   font-weight: 500;
-  font-family: "Ubuntu-Medium", sans-serif;
   line-height: 26px;
 }
 
@@ -336,7 +332,6 @@ body {
 .header__menu-mobile .item a,
 .header__menu-mobile .item > div {
   color: var(--black-300);
-  font-family: "Ubuntu-Bold", sans-serif;
   text-transform: uppercase;
   line-height: 32px;
   font-size: 13px;
@@ -363,10 +358,6 @@ body {
   transition: all 0.1s;
   -moz-transition: all 0.1s;
   -ms-transition: all 0.1s;
-}
-
-.header__menu-mobile .dropdown-content a {
-  font-family: "Ubuntu-Medium", sans-serif;
 }
 
 .header__menu-mobile .minus-icon {
@@ -496,7 +487,6 @@ body {
   line-height: 55px;
   text-transform: uppercase;
   color: var(--white-100);
-  font-family: "Ubuntu-Bold", sans-serif;
   font-weight: 700;
 }
 
@@ -555,13 +545,11 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 32px;
-  font-family: "Ubuntu-Medium", sans-serif;
   min-height: 850px;
 }
 
 .contact__right span {
   font-weight: 600;
-  font-family: "Ubuntu-Bold", sans-serif;
 }
 
 .contact__service,
@@ -633,7 +621,6 @@ body {
   padding: 0 10px;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: "Ubuntu-Bold", sans-serif;
   font-weight: 700;
 }
 
@@ -663,7 +650,6 @@ body {
 
 .contact__form-btn {
   font-size: 16px;
-  font-family: "Ubuntu-Medium", sans-serif;
   font-weight: 500;
   line-height: 24px;
   width: 100%;
@@ -780,10 +766,6 @@ body {
   gap: 15px;
 }
 
-.footer__description span {
-  font-family: "Ubuntu-Bold", sans-serif;
-}
-
 .footer__description {
   font-size: 16px;
   line-height: 24px;
@@ -802,7 +784,6 @@ body {
   margin-bottom: 30px;
   font-size: 24px;
   font-weight: 700;
-  font-family: "Ubuntu-Bold", sans-serif;
   line-height: 38px;
 }
 
