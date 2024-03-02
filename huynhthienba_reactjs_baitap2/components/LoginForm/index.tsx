@@ -31,10 +31,12 @@ const LoginForm = () => {
   });
 
   const onSubmit = (data: FormLogin) => {
-    const userLogin = user.users.filter((user) => user.email === data.email)[0];
+    const userLogin = user.users.filter(
+      (user) => user.email === data.email && user.password === data.password
+    );
 
-    if (userLogin.email === data.email) {
-      dispatch(setLoginSuccess(userLogin));
+    if (userLogin.length > 0) {
+      dispatch(setLoginSuccess(userLogin[0]));
       toast("Login successful", { type: "success" });
       router.push(lastPathname || "/");
     } else {

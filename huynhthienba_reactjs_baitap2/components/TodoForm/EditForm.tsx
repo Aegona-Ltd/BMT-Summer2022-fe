@@ -43,7 +43,7 @@ const EditForm = ({ setClose }: { setClose: any }) => {
   const filterCurrentTodo = () => {
     setCurrentTodo(() => {
       const currTodo = todo.todoList.filter((todo) => todo.id === todoId)[0];
-      setValue("editTodo", currTodo.name);
+      setValue("editTodo", currTodo.name  );
       return currTodo;
     });
   };
