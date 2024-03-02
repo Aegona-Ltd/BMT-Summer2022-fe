@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Button from "../Button";
 import { checkAuthenticated, setCookie } from "@/utils/helper";
 import { useState } from "react";
+import LogoutIconWhite from "@/public/icons/logout-white.svg";
+import LogoutIcon from "@/public/icons/logout.svg";
 
 const Authenticate = ({ isMobile = false }: { isMobile?: boolean }) => {
   const router = useRouter();
@@ -24,7 +26,7 @@ const Authenticate = ({ isMobile = false }: { isMobile?: boolean }) => {
         <Image
           width={isMobile ? 30 : 24}
           height={isMobile ? 30 : 24}
-          src={isMobile ? "/icons/logout-white.svg" : "/icons/logout.svg"}
+          src={isMobile ? LogoutIconWhite : LogoutIcon}
           alt="logout-icon"
         />
       </div>

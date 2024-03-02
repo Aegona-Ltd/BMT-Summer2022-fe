@@ -11,6 +11,10 @@ import Popup from "@/components/Popup";
 import { usePathname, useRouter } from "next/navigation";
 import EditForm from "@/components/TodoForm/EditForm";
 import AddForm from "@/components/TodoForm/AddForm";
+import EditIcon from "@/public/icons/edit.svg";
+import DeleteIcon from "@/public/icons//delete.svg";
+import DoubleCheckIcon from "@/public/icons/double-check.svg";
+import SingleCheckIcon from "@/public/icons/single-check.svg";
 
 const TodoView = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
@@ -61,11 +65,7 @@ const TodoView = () => {
             <Image
               width={24}
               height={24}
-              src={
-                completedTasks
-                  ? "/icons/double-check.svg"
-                  : "/icons/single-check.svg"
-              }
+              src={completedTasks ? DoubleCheckIcon : SingleCheckIcon}
               alt="complete-icon"
               className="group-hover:scale-110 transition-all duration-200"
             />
@@ -80,12 +80,7 @@ const TodoView = () => {
               router.replace(`${pathname}?id=${z.id}`);
             }}
           >
-            <Image
-              width={24}
-              height={24}
-              src="/icons/edit.svg"
-              alt="complete-icon"
-            />
+            <Image width={24} height={24} src={EditIcon} alt="complete-icon" />
           </div>
           <div
             className="cursor-pointer hover:scale-110 transition-all duration-200 p-1"
@@ -94,7 +89,7 @@ const TodoView = () => {
             <Image
               width={22}
               height={24}
-              src="/icons/delete.svg"
+              src={DeleteIcon}
               className="w-auto h-auto"
               alt="complete-icon"
             />

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
+import PhoneIcon from "@/public/icons/phone.svg";
+import EmailIcon from "@/public/icons/email.svg";
+import LocationIcon from "@/public/icons/location.svg";
 
 export const Footer = () => {
   return (
@@ -15,7 +18,7 @@ export const Footer = () => {
                 <Image
                   width={24}
                   height={24}
-                  src="/icons/phone.svg"
+                  src={PhoneIcon}
                   alt="phone-icon"
                   priority
                 />
@@ -25,7 +28,7 @@ export const Footer = () => {
                 <Image
                   width={24}
                   height={24}
-                  src="/icons/email.svg"
+                  src={EmailIcon}
                   alt="email-icon"
                 />
                 <a href="#">demo@gmail.com</a>
@@ -34,7 +37,7 @@ export const Footer = () => {
                 <Image
                   width={24}
                   height={24}
-                  src="/icons/location.svg"
+                  src={LocationIcon}
                   alt="location-icon"
                 />
                 <span>

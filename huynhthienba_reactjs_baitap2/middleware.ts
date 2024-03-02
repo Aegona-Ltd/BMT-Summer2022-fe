@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const isAuthenticated: string | undefined =
     request.cookies.get("isAuthenticated")?.value;
-
+    
   if (
     isAuthenticated !== "true" &&
     !(request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/")

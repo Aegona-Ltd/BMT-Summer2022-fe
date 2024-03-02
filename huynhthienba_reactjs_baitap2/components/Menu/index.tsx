@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import { GroupMenuType } from "@/utils/type";
 import Authenticate from "../Authenticate";
 import ArrowIcon from "@/public/icons/arrow.svg";
+import ArrowWhiteIcon from "@/public/icons/arrow-white.svg";
+import CloseIcon from "@/public/icons/close.svg";
 
 const Group = ({ label, menu, isActive }: GroupMenuType) => {
   const pathname = usePathname();
@@ -83,7 +85,7 @@ const GroupRes = ({ label, menu }: GroupMenuType) => {
           <Image
             width={13}
             height={9}
-            src="/icons/arrow-white.svg"
+            src={ArrowWhiteIcon}
             alt="arrow-icon"
             className="w-full h-full"
           />
@@ -179,12 +181,7 @@ export const MenuRes = ({ close }: { close: any }) => {
           Next App
         </Link>
         <div className="p-2" onClick={close}>
-          <Image
-            width={24}
-            height={24}
-            src="/icons/close.svg"
-            alt="close-icon"
-          />
+          <Image width={24} height={24} src={CloseIcon} alt="close-icon" />
         </div>
       </div>
       <nav className="flex flex-col gap-10">

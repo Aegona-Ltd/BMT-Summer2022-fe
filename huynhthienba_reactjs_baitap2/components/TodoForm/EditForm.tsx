@@ -12,6 +12,7 @@ import { updateTodo } from "@/redux/features/todo/action";
 import { useSearchParams } from "next/navigation";
 import { selectTodo } from "@/redux/features/todo/reducer";
 import { TodoItemType } from "@/redux/features/todo/type";
+import PlusWhiteIcon from "@/public/icons/plus-white.svg";
 
 const EditForm = ({ setClose }: { setClose: any }) => {
   const [currentTodo, setCurrentTodo] = useState<TodoItemType>();
@@ -43,7 +44,7 @@ const EditForm = ({ setClose }: { setClose: any }) => {
   const filterCurrentTodo = () => {
     setCurrentTodo(() => {
       const currTodo = todo.todoList.filter((todo) => todo.id === todoId)[0];
-      setValue("editTodo", currTodo.name  );
+      setValue("editTodo", currTodo.name);
       return currTodo;
     });
   };
@@ -88,12 +89,7 @@ const EditForm = ({ setClose }: { setClose: any }) => {
         theme="light"
         className="!p-0 hover:scale-125 transition-all duration-200"
       >
-        <Image
-          width={35}
-          height={35}
-          src="/icons/plus-white.svg"
-          alt="plus-icon"
-        />
+        <Image width={35} height={35} src={PlusWhiteIcon} alt="plus-white-icon" />
       </Button>
     </form>
   );

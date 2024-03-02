@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { TodoItemType, todoItemDefault } from "@/redux/features/todo/type";
 import { useAppDispatch } from "@/redux/hook";
 import { addTodo } from "@/redux/features/todo/action";
+import PlusIcon from "@/public/icons/plus.svg";
 
 const AddForm = () => {
   const dispatch = useAppDispatch();
@@ -67,7 +68,7 @@ const AddForm = () => {
         type="submit"
         className="!p-0 hover:scale-125 transition-all duration-200"
       >
-        <Image width={28} height={28} src="/icons/plus.svg" alt="plus-icon" />
+        <Image width={28} height={28} src={PlusIcon} alt="plus-icon" />
       </Button>
     </form>
   );

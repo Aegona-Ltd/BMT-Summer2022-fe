@@ -1,7 +1,7 @@
 import cn from "@/utils/cn";
 import Image from "next/image";
 import React, { ReactNode, useEffect } from "react";
-import Input from "../Input";
+import CloseIcon from "@/public/icons/close.svg";
 
 const Popup = ({
   open,
@@ -44,12 +44,7 @@ const Popup = ({
         <div className="flex justify-between items-center">
           <h4 className="font-semibold text-lg">{title}</h4>
           <button onClick={setClose} type="button">
-            <Image
-              width={24}
-              height={24}
-              src="/icons/close.svg"
-              alt="close-icon"
-            />
+            <Image width={24} height={24} src={CloseIcon} alt="close-icon" />
           </button>
         </div>
         <div className="mt-3">{children}</div>

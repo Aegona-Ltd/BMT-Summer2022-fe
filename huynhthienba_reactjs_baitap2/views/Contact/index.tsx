@@ -5,6 +5,9 @@ import { Discord, Instagram, Twitter } from "@/components/Icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import PhoneIcon from "@/public/icons/phone.svg";
+import EmailIcon from "@/public/icons/email.svg";
+import LocationIcon from "@/public/icons/location.svg";
 
 const ContactView = () => {
   return (
@@ -35,7 +38,7 @@ const ContactView = () => {
                 <Image
                   width={18}
                   height={18}
-                  src="/icons/phone.svg"
+                  src={PhoneIcon}
                   alt="phone-icon"
                   priority
                 />
@@ -45,7 +48,7 @@ const ContactView = () => {
                 <Image
                   width={18}
                   height={18}
-                  src="/icons/email.svg"
+                  src={EmailIcon}
                   alt="email-icon"
                 />
                 <a href="#">demo@gmail.com</a>
@@ -54,7 +57,7 @@ const ContactView = () => {
                 <Image
                   width={18}
                   height={18}
-                  src="/icons/location.svg"
+                  src={LocationIcon}
                   alt="location-icon"
                 />
                 <span>

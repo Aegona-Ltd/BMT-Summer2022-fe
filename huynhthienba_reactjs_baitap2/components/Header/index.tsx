@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, MenuRes } from "../Menu";
 import Image from "next/image";
 import cn from "@/utils/cn";
+import MenuIcon from "@/public/icons/menu.svg";
 
 export const Header = () => {
   const [isShowMewnu, setIsShowMewnu] = useState(false);
@@ -18,12 +19,7 @@ export const Header = () => {
           className="block lg:hidden p-2"
           onClick={() => setIsShowMewnu(true)}
         >
-          <Image
-            width={24}
-            height={24}
-            src="/icons/menu.svg"
-            alt="menu-icon"
-          />
+          <Image width={24} height={24} src={MenuIcon} alt="menu-icon" />
         </div>
         <Menu />
         <div
