@@ -12,12 +12,13 @@ import { FormLogin } from "@/utils/type";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { selectUser } from "@/redux/features/user/reducer";
 import { getUsersList } from "@/redux/features/user/action";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { setCookie } from "@/utils/helper";
 
 const LoginForm = () => {
   const user = useAppSelector(selectUser);
   const router = useRouter();
+  const pathname = usePathname();
   const dispatch = useAppDispatch();
   const {
     register,
@@ -36,7 +37,7 @@ const LoginForm = () => {
     if (userLogin.length > 0) {
       setCookie("isAuthenticated", true, 1);
       toast("Login successful", { type: "success" });
-      router.push("/");
+      router.push(pathname || "/");
     } else {
       toast("Username or password incorrect", { type: "error" });
     }

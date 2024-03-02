@@ -17,6 +17,7 @@ const Authenticate = ({ isMobile = false }: { isMobile?: boolean }) => {
   const handleLogout = () => {
     setCookie("isAuthenticated", false, 1);
     setLoggedIn(false);
+    ``;
     router.refresh();
   };
 
