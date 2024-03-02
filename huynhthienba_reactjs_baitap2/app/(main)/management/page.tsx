@@ -8,10 +8,8 @@ export const metadata: Metadata = {
 
 export default function ManagementPage() {
   return (
-    <PrivateRoute>
-      <div className="xl:min-h-[calc(100vh_-_89.2px_-_471.79px)] flex justify-center items-center">
-        <ManagementView />
-      </div>
-    </PrivateRoute>
+    <div className="xl:min-h-[calc(100vh_-_89.2px_-_471.79px)] flex justify-center items-center">
+      <ManagementView />
+    </div>
   );
 }

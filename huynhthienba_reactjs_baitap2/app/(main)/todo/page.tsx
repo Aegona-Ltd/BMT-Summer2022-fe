@@ -1,4 +1,3 @@
-import PrivateRoute from "@/components/PrivateRoute";
 import TodoView from "@/views/Todo";
 import { Metadata } from "next";
 
@@ -8,10 +7,8 @@ export const metadata: Metadata = {
 
 export default function TodoPage() {
   return (
-    <PrivateRoute>
-      <div className="xl:min-h-[calc(100vh_-_89.2px_-_471.79px)]">
-        <TodoView />
-      </div>
-    </PrivateRoute>
+    <div className="xl:min-h-[calc(100vh_-_89.2px_-_471.79px)]">
+      <TodoView />
+    </div>
   );
 }

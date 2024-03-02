@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { GroupMenuType } from "@/utils/type";
 import Authenticate from "../Authenticate";
+import ArrowIcon from "@/public/icons/arrow.svg";
 
 const Group = ({ label, menu, isActive }: GroupMenuType) => {
   const pathname = usePathname();
@@ -31,7 +32,7 @@ const Group = ({ label, menu, isActive }: GroupMenuType) => {
           width={13}
           height={9}
           className="w-full h-auto"
-          src="/icons/arrow.svg"
+          src={ArrowIcon}
           alt="arrow-icon"
         />
       </div>

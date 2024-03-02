@@ -3,23 +3,22 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Button from "../Button";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { selectAuth } from "@/redux/features/auth/reducer";
-import { usePathname } from "next/navigation";
-import { clearDataLogin, setLastPathname } from "@/redux/features/auth/action";
+import { checkAuthenticated, setCookie } from "@/utils/helper";
+import { useState } from "react";
 
 const Authenticate = ({ isMobile = false }: { isMobile?: boolean }) => {
-  const { isAuthenticated } = useAppSelector(selectAuth);
-  const dispatch = useAppDispatch();
-  const pathname = usePathname();
   const router = useRouter();
+  const [loggedIn, setLoggedIn] = useState(
+    checkAuthenticated("isAuthenticated")
+  );
 
   const handleLogout = () => {
-    dispatch(setLastPathname(pathname));
-    dispatch(clearDataLogin());
+    setCookie("isAuthenticated", false, 1);
+    setLoggedIn(false);
+    router.refresh();
   };
 
-  return isAuthenticated ? (
+  return loggedIn ? (
     <Button className="!px-0 !bg-transparent" onClick={handleLogout}>
       <div className="cursor-pointer hover:scale-110 transition-all duration-200">
         <Image

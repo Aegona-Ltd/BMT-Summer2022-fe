@@ -3,18 +3,16 @@ import { persistReducer, persistStore } from "redux-persist";
 import todoReducer from "./features/todo/reducer";
 import { storage } from "@/configs/storage";
 import userReducer from "./features/user/reducer";
-import authReducer from "./features/auth/reducer";
 
 const persistConfig = {
   key: "next-app",
   storage,
-  whitelist: ["todo", "auth"],
+  whitelist: ["todo"],
 };
 
 const rootReducer = combineReducers({
   todo: todoReducer,
   user: userReducer,
-  auth: authReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

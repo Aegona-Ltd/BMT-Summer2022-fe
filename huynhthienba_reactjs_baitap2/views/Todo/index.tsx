@@ -11,12 +11,10 @@ import Popup from "@/components/Popup";
 import { usePathname, useRouter } from "next/navigation";
 import EditForm from "@/components/TodoForm/EditForm";
 import AddForm from "@/components/TodoForm/AddForm";
-import { selectAuth } from "@/redux/features/auth/reducer";
 
 const TodoView = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const todos = useAppSelector(selectTodo);
-  const auth = useAppSelector(selectAuth);
   const dispatch = useAppDispatch();
   const router = useRouter();
   const pathname = usePathname();
