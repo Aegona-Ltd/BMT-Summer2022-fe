@@ -1,0 +1,15 @@
+D:\Fast track\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.deps.json
+D:\Fast track\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.dll
+D:\Fast track\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.pdb
+D:\Fast track\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppEntity.dll
+D:\Fast track\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppEntity.pdb
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.AssemblyReference.cache
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.AssemblyInfoInputs.cache
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.AssemblyInfo.cs
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.CoreCompileInputs.cache
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.CopyComplete
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.dll
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\refint\IdentityAppRepositories.dll
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.pdb
+D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\ref\IdentityAppRepositories.dll

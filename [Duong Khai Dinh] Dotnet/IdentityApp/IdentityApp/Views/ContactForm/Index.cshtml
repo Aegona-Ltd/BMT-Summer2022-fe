@@ -1,0 +1,280 @@
+﻿@model IdentityApp.DTOs.ContactDto
+@{
+    ViewData["Title"] = "Contact Form";
+}
+@*@section stylesheets {
+   
+
+}*@
+
+<body class="layout-no-sidebars wide not-preloader frontpage node--type-home-page" style="background-image: url('https://www.aegona.com/themes/gavias_comely/assets/image/master-section/contact-us/contact-us-bg.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+
+    <style>
+
+        .form-item {
+            width: 100% !important;
+        }
+        .focus_input {
+            position: absolute !important;
+            top: 5% !important;
+            transform: translateY(-50%) !important;
+            left: 5% !important;
+            width: fit-content !important;
+            margin-bottom: 0 !important;
+            z-index: 10 !important;
+            color: #f8abb4 !important;
+            background-color: white !important;
+        }
+
+        .focus_textarea {
+            position: absolute !important;
+            top: 1% !important;
+            transform: translateY(-50%) !important;
+            left: 5% !important;
+            width: fit-content !important;
+            margin-bottom: 0 !important;
+            z-index: 10 !important;
+            color: #f8abb4 !important;
+            background-color: white !important;
+        }
+
+        .form-text {
+                margin-top: 0 !important;
+        }
+    </style>
+    <div class="master-contact-us-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 box-left-area">
+                    <div class="group-title-area">
+                        <div class="icon-btn-area">
+                            <a href="">
+                                <img src="https://www.aegona.com/themes/gavias_comely/assets/icon/logo-small.png" width="19" height="19" alt="aegona" loading="lazy"><span>connect with us</span>
+                            </a>
+                        </div>
+                        <div class="title-area">
+                            <h2>
+                                <span>100%</span>
+                                CUSTOMER SUPPORT
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="slogan-area">
+                        <h2>THERE'RE SEVERAL WAYS TO CONNECT WITH US</h2>
+                    </div>
+                    <div class="description-area">
+                        <h4>
+                            You can reach our customer service at
+                            <span>
+                                <a href="tel: 84 28 71092939">84-28-71092939</a>
+                            </span>
+                            or
+                            <span>
+                                <a href="mailto: contact@aegona.com">contact@aegona.com</a>
+                            </span>
+                            For additional assistance, we offers the following support channels
+                            <a class="aegona-link" href="">Contact Us</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-md-6 box-right-area contact-form-area">
+                    <div class="form-title-area">
+                        <h2>contact us</h2>
+                    </div>
+                    <form asp-action="Index" class="contact-message-aegona-contact-form contact-message-form contact-form" data-drupal-selector="contact-message-aegona-contact-form" method="post" id="contact-message-aegona-contact-form" accept-charset="UTF-8" autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <div class="field--type-string field--name-field-ctf-full-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-ctf-full-name-wrapper" id="edit-field-ctf-full-name-wrapper">
+                                <div class="full-name-group input-group col-md-12">
+                                    <div class="js-form-item form-item js-form-type-textfield form-item-field-ctf-full-name-0-value js-form-item-field-ctf-full-name-0-value">
+                                        <label asp-for="Name" class="control-label js-form-required form-required " id="edit-field-ctf-full-name-0-label">Full Name</label>
+                                        <input  asp-for="Name" class="js-text-full text-full form-text required"  type="text" id="edit-field-ctf-full-name-0-value"  required="required" aria-required="true" tabindex="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                             <div class="field--type-string field--name-field-ctf-company-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-ctf-company-name-wrapper" id="edit-field-ctf-company-name-wrapper">
+                            <div class="company-name-group input-group col-md-12">
+                                <div class="js-form-item form-item js-form-type-textfield form-item-field-ctf-company-name-0-value js-form-item-field-ctf-company-name-0-value">
+                                        <label asp-for="Company" class="control-label js-form-required form-required " id="edit-field-ctf-company-name-0-label">Company Name</label>
+                                        <input asp-for="Company" class="js-text-full text-full form-text required" type="text" id="edit-field-ctf-company-name-0-value" required="required" aria-required="true" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="telephone-group input-group col-md-12">
+                                <div class="js-form-item form-item js-form-type-textfield form-item-field-ctf-telephone-0-value js-form-item-field-ctf-telephone-0-value">
+                                    <label asp-for="Phone" class="control-label js-form-required form-required " id="edit-field-ctf-telephone-0-label">Bussiness Phone</label>
+                                    <input asp-for="Phone" class="js-text-full text-full form-text required" type="text" id="edit-field-ctf-telephone-0-value" required="required" aria-required="true" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field--type-email field--name-field-ctf-email field--widget-email-default js-form-wrapper form-wrapper" data-drupal-selector="edit-field-ctf-email-wrapper" id="edit-field-ctf-email-wrapper">
+                            <div class="email-group input-group col-md-12">
+                                <div class="js-form-item form-item js-form-type-email form-item-field-ctf-email-0-value js-form-item-field-ctf-email-0-value">
+                                        <label asp-for="Email" class="control-label js-form-required form-required " id="edit-field-ctf-email-0-label">Email</label>
+                                        <input asp-for="Email" class="js-text-full text-full form-text required" type="text" id="edit-field-ctf-email-0-value" required="required" aria-required="true" tabindex="1">
+                                 </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field--type-string-long field--name-field-ctf-message field--widget-string-textarea js-form-wrapper form-wrapper" data-drupal-selector="edit-field-ctf-message-wrapper" id="edit-field-ctf-message-wrapper">
+                                <div class="message-group textarea-group col-md-12">
+                                    <div class="js-form-item form-item js-form-type-textarea form-item-field-ctf-message-0-value js-form-item-field-ctf-message-0-value">
+                                        <label asp-for="Message" class="control-label js-form-required form-required " id="edit-field-ctf-message-0-label">Message</label>
+                                      
+                                        <div>
+                                            <input asp-for="Message" class="js-text-full text-full form-text required" type="text" id="edit-field-ctf-message-0-value" required="required" aria-required="true" tabindex="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            function getElementByXpath(path) {
+                                return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                            }
+
+                            var nameInput = document.getElementById('edit-field-ctf-full-name-0-value');
+                            var nameLabel = document.getElementById('edit-field-ctf-full-name-0-label')
+
+                            var companyInput = document.getElementById('edit-field-ctf-company-name-0-value');
+                            var companyLabel = document.getElementById('edit-field-ctf-company-name-0-label');
+
+                            var phoneInput = document.getElementById('edit-field-ctf-telephone-0-value');
+                            var phoneLabel = document.getElementById('edit-field-ctf-telephone-0-label');
+
+                            var emailInput = document.getElementById('edit-field-ctf-email-0-value');
+                            var emailLabel = document.getElementById('edit-field-ctf-email-0-label');
+
+                            var textInput = document.getElementById('edit-field-ctf-message-0-value');
+                            var textLabel = document.getElementById('edit-field-ctf-message-0-label');
+
+                            nameInput.addEventListener('focus', function () {
+                                nameLabel.classList.add("focus_input");
+                                if (nameLabel.classList.contains('form-required') && (nameInput.value.trim() === '')) {
+                                    var string = nameLabel.textContent;
+                                    nameLabel.innerText = string + ' *';
+                                }
+                            });
+                            nameInput.addEventListener('blur', function () {
+                                if (nameInput.value.trim() !== '') {
+                                } else {
+                                    nameLabel.classList.remove("focus_input");
+                                    var string = nameLabel.textContent;
+                                    nameLabel.innerText = string.slice(0, -2);;
+                                }
+
+                            });
+                            companyInput.addEventListener('focus', function () {
+                                companyLabel.classList.add("focus_input");
+                                if (companyLabel.classList.contains('form-required') && (companyInput.value.trim() === '')) {
+                                    var string = companyLabel.textContent;
+                                    companyLabel.innerText = string + ' *';
+                                }
+                            });
+                            companyInput.addEventListener('blur', function () {
+                                if (companyInput.value.trim() !== '') {
+                                } else {
+                                    companyLabel.classList.remove("focus_input");
+                                    if (companyLabel.classList.contains('form-required')) {
+                                        var string = companyLabel.textContent;
+                                        companyLabel.innerText = string.slice(0, -2);;
+                                    }
+                                }
+                            });
+
+                            phoneInput.addEventListener('focus', function () {
+                                phoneLabel.classList.add("focus_input");
+                                if (phoneLabel.classList.contains('form-required') && (phoneInput.value.trim() === '')) {
+                                    var string = phoneLabel.textContent;
+                                    phoneLabel.innerText = string + ' *';
+                                }
+                            });
+                            phoneInput.addEventListener('blur', function () {
+                                if (phoneInput.value.trim() !== '') {
+                                } else {
+                                    phoneLabel.classList.remove("focus_input");
+                                    if (phoneLabel.classList.contains('form-required')) {
+                                        var string = phoneLabel.textContent;
+                                        phoneLabel.innerText = string.slice(0, -2);;
+                                    }
+                                }
+
+                            });
+
+                            emailInput.addEventListener('focus', function () {
+                                emailLabel.classList.add("focus_input");
+                                if (emailLabel.classList.contains('form-required') && (emailInput.value.trim() === '')) {
+                                    var string = emailLabel.textContent;
+                                    emailLabel.innerText = string + ' *';
+                                }
+                            });
+                            emailInput.addEventListener('blur', function () {
+                                if (emailInput.value.trim() !== '') {
+                                } else {
+                                    emailLabel.classList.remove("focus_input");
+                                    if (emailLabel.classList.contains('form-required')) {
+                                        var string = emailLabel.textContent;
+                                        emailLabel.innerText = string.slice(0, -2);;
+                                    }
+                                }
+                            });
+
+                            textInput.addEventListener('focus', function () {
+                                textLabel.classList.add("focus_textarea");
+                                if (textLabel.classList.contains('form-required') && (textInput.value.trim() === '')) {
+                                    var string = textLabel.textContent;
+                                    textLabel.innerText = string + ' *';
+                                }
+                            });
+                            textInput.addEventListener('blur', function () {
+                                if (textInput.value.trim() !== '') {
+                                } else {
+                                    textLabel.classList.remove("focus_textarea");
+                                    if (textLabel.classList.contains('form-required')) {
+                                        var string = textLabel.textContent;
+                                        textLabel.innerText = string.slice(0, -2);;
+                                    }
+                                }
+                            });
+                        </script>
+                        <script>
+                            var onloadCallback = function () {
+                                function (response) {
+                                    document.getElementById('g-recaptcha-response').value = response;
+                                    
+                                };
+                        </script>
+
+                        <div class="aegona-recaptcha-area">
+                            <input asp-for="Recaptcha" type="hidden" id="g-recaptcha-response">
+                         
+                            <script src='https://www.google.com/recaptcha/api.js'></script>
+                            <div class="g-recaptcha" data-sitekey="6Le_TIopAAAAAL414AQX_mJ3W8fQcV5d0GZDcFhP"></div>
+                        <br/>                           
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-submit">
+                                <div class=" form-wrapper" id="edit-actions">
+                                    <input type="submit" value="Submit" class="btn btn-primary button button--primary " tabindex="6">
+                                  
+                        </div>
+                                @if (!string.IsNullOrEmpty(ViewBag.Message))
+                                {
+                                    <script type="text/javascript">
+                                        alert("@ViewBag.Message");
+                                    </script>
+                                }
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+</body>

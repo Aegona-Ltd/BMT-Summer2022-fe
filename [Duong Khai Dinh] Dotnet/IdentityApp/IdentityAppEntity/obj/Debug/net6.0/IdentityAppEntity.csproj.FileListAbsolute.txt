@@ -1,0 +1,14 @@
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.csproj.AssemblyReference.cache
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.AssemblyInfoInputs.cache
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.AssemblyInfo.cs
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.csproj.CoreCompileInputs.cache
+D:\Fast track\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.deps.json
+D:\Fast track\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.runtimeconfig.json
+D:\Fast track\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.dll
+D:\Fast track\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.pdb
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.dll
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\refint\IdentityAppEntity.dll
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.pdb
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.genruntimeconfig.cache
+D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\ref\IdentityAppEntity.dll

@@ -1,0 +1,11 @@
+﻿INSERT INTO Contacts (Name, Company, Phone, Email, Message) VALUES
+('John Doe', 'ABC Inc.', '1234567890', 'john.doe@example.com', 'Hello, I am interested in your services. Please provide more information.'),
+('Jane Smith', 'XYZ Corp.', '9876543210', 'jane.smith@example.com', 'I have a query regarding your products. Can you assist me?'),
+('Alice Johnson', 'LMN Ltd.', '5551112222', 'alice.johnson@example.com', 'Interested in partnership opportunities. Let\'s discuss.'),
+('Bob Anderson', 'PQR Co.', '3334445555', 'bob.anderson@example.com', 'Enquiring about upcoming events. Any details available?'),
+('Eva Williams', 'XYZ Corp.', '7778889999', 'eva.williams@example.com', 'Looking for pricing information for your software solutions.'),
+('Michael Davis', 'ABC Inc.', '1112223333', 'michael.davis@example.com', 'Inquiring about your consulting services. Please provide details.'),
+('Sara Miller', 'PQR Co.', '6667778888', 'sara.miller@example.com', 'Interested in your training programs. Can you share the curriculum?'),
+('Alex Turner', 'XYZ Corp.', '4445556666', 'alex.turner@example.com', 'Have a support issue with your software. Need assistance urgently.'),
+('Laura Wilson', 'LMN Ltd.', '8889990000', 'laura.wilson@example.com', 'Looking to schedule a demo of your new product. Please arrange.'),
+('David Harris', 'ABC Inc.', '9990001111', 'david.harris@example.com', 'I have a general inquiry about your company. Can someone get back to me?');

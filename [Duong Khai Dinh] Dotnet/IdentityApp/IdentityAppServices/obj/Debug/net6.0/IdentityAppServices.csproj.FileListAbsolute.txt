@@ -1,0 +1,17 @@
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.csproj.AssemblyReference.cache
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.AssemblyInfoInputs.cache
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.AssemblyInfo.cs
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.csproj.CoreCompileInputs.cache
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppServices.deps.json
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppServices.dll
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppServices.pdb
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppDto.dll
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppEntity.dll
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppDto.pdb
+D:\Fast track\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppEntity.pdb
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.csproj.CopyComplete
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.dll
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\refint\IdentityAppServices.dll
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.pdb
+D:\Fast track\IdentityApp\IdentityAppServices\obj\Debug\net6.0\ref\IdentityAppServices.dll
