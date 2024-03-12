@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "37vAJw+qvx60CUpBE9s0AfkLA42JuydC26zpBjWoXA418p1NXh2ReNsck9U3zPRPQzWtSDy491N0c52R3qrjrQ==",
+  "dgSpecHash": "wcR01ez6C4JLDyCQEbYLVuHGI0UoVZLjfCEIDnXIi5udIEMQ/6tg6YfTpv29fiTzazf3LRzjAWaT96KhnInZhA==",
   "success": true,
-  "projectFilePath": "D:\\Fast track\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
+  "projectFilePath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",

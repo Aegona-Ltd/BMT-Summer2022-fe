@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Eeall5PN9nngHtP8jArS3R2Vndx1LW7RHHuzG+yBOTqtLSkvUfSXOAuLSljFUVVkZDnJi+qZdEXtd80ogB/yVA==",
+  "dgSpecHash": "XGZsKhij2iDzY4Dsu+HyxNUo9g6TlHHpZR8vPuaTEeTKXBsY/ja6l/CDMai256FGt65L1m2uE3KVsYJNnDXEpw==",
   "success": true,
-  "projectFilePath": "D:\\Fast track\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj",
+  "projectFilePath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.27\\microsoft.aspnetcore.authentication.jwtbearer.6.0.27.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.27\\microsoft.aspnetcore.cryptography.internal.6.0.27.nupkg.sha512",

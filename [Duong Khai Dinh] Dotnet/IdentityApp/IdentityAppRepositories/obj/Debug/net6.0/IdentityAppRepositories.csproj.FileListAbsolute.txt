@@ -13,3 +13,18 @@ D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRe
 D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\refint\IdentityAppRepositories.dll
 D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.pdb
 D:\Fast track\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\ref\IdentityAppRepositories.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.deps.json
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppRepositories.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppEntity.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\bin\Debug\net6.0\IdentityAppEntity.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.AssemblyReference.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.AssemblyInfoInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.AssemblyInfo.cs
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.CoreCompileInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.csproj.CopyComplete
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\refint\IdentityAppRepositories.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\IdentityAppRepositories.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppRepositories\obj\Debug\net6.0\ref\IdentityAppRepositories.dll

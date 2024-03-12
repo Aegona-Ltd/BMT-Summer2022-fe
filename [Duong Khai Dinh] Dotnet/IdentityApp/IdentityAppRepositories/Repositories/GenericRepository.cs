@@ -1,4 +1,5 @@
 ﻿using IdentityApp.Data;
+using IdentityAppRepositories.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IdentityAppRepositories.Repositories
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity : class
     {
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;
@@ -19,11 +20,11 @@ namespace IdentityAppRepositories.Repositories
             this.dbSet = context.Set<TEntity>();
         }
 
-        public virtual TEntity GetByID(object id)
+        public   TEntity GetByID(object id)
         {
             return dbSet.Find(id);
         }
-        public virtual IEnumerable<TEntity> Get(
+        public   IEnumerable<TEntity> Get(
           Expression<Func<TEntity, bool>> filter = null,
           Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
           string includeProperties = "")
@@ -50,30 +51,57 @@ namespace IdentityAppRepositories.Repositories
                 return query.ToList();
             }
         }
-        public virtual void Insert(TEntity entity)
+        public   void Insert(TEntity entity)
         {
             dbSet.Add(entity);
         }
 
-        public virtual void Delete(object id)
+        public   void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
         }
 
-        public virtual void Delete(TEntity entityToDelete)
+        public  void Delete(TEntity entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
             {
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
+            context.SaveChanges();
         }
 
-        public virtual void Update(TEntity entityToUpdate)
+        public   void Update(TEntity entityToUpdate)
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
+            context.SaveChanges();
+        }
+
+        public Task<IEnumerable<TEntity>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity?> GetAsyncByID(int? entityId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task InsertAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeletAsync(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
         }
     }
     

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {}
+    "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {}
   },
   "projects": {
-    "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {
+    "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj",
+        "projectUniqueName": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj",
         "projectName": "IdentityAppDto",
-        "projectPath": "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj",
+        "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\Fast track\\IdentityApp\\IdentityAppDto\\obj\\",
+        "outputPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

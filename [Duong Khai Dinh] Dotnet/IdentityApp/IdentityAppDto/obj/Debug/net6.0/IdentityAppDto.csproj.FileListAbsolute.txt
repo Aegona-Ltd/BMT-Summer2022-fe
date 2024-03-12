@@ -10,3 +10,15 @@ D:\Fast track\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.dll
 D:\Fast track\IdentityApp\IdentityAppDto\obj\Debug\net6.0\refint\IdentityAppDto.dll
 D:\Fast track\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.pdb
 D:\Fast track\IdentityApp\IdentityAppDto\obj\Debug\net6.0\ref\IdentityAppDto.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\bin\Debug\net6.0\IdentityAppDto.deps.json
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\bin\Debug\net6.0\IdentityAppDto.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\bin\Debug\net6.0\IdentityAppDto.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.csproj.AssemblyReference.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.AssemblyInfoInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.AssemblyInfo.cs
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.csproj.CoreCompileInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\refint\IdentityAppDto.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\IdentityAppDto.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppDto\obj\Debug\net6.0\ref\IdentityAppDto.dll
