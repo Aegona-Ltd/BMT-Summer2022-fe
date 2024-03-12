@@ -68,8 +68,8 @@
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
             <a class="active item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            <a class="item">Work</a>
-            <a class="item">Company</a>
+            <a class="item" asp-area="" asp-controller="ContactUs" asp-action="ContactForm">ContacUs</a>
+            <a class="item" asp-controller="ContactUs" asp-action="ListContact">ListUs</a>
             <a class="item">Careers</a>
             <partial name="_LoginPartial" />
         </div>
@@ -80,9 +80,9 @@
                 <a class="toc item">
                     <i class="sidebar icon"></i>
                 </a>
-                <a class="active item">Home</a>
-                <a class="item">Work</a>
-                <a class="item">Company</a>
+                <a class="active item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="item" asp-area="" asp-controller="ContactUs" asp-action="ContactForm">ContacUs</a>
+                <a class="item" asp-controller="ContactUs" asp-action="ListContact">ListUs</a>
                 <a class="item">Careers</a>
                 <partial name="_LoginPartial" />
             </div>
@@ -92,7 +92,7 @@
 
     <!-- Page Contents -->
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" >
             @RenderBody()
         </main>
     </div>

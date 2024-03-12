@@ -1,5 +1,176 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Contact us Example - Semantic</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/Semantic-UI-master/dist/components/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/site.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/message.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/button.css">
+
+
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/transition.css">
+
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/form.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/input.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/list.css">
+
+    <script src="~/semantic-ui-master/examples/assets/library/jquery.min.js"></script>
+    <script src="~/semantic-ui-master/dist/components/visibility.js"></script>
+    <script src="~/semantic-ui-master/dist/components/sidebar.js"></script>
+    <script src="~/semantic-ui-master/dist/components/transition.js"></script>
+
+    <link href="~/foldercs/contact.css" rel="stylesheet" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script type="text/javascript">
+        var contactCaptcha;
+        // var widgetId2;
+        console.log(contactCaptcha);
+        var onloadCallback = function () {
+            contactCaptcha = grecaptcha.render('captcha-login', {
+                'sitekey': '6LeopYUpAAAAADxWOfgRfwhmKFhGGzGVVU_o0n7L',
+                'theme': 'light',
+                'callback': function (response) {
+                    // Update the value of the hidden input field with the reCAPTCHA response
+                    document.getElementById('input-captcha').value = response;
+                }
+            });
+
+        };
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div style="width: 100%;" class="contact">
+
+        <div class="ui vertical stripe quote segment">
+            <div class="ui equal width stackable internally celled grid">
+                <div class="center aligned row " style="width: 80%;">
+                    <!-- ui inforamtion contact -->
+                    <div class="column ">
+                        <div class="inform-contact">
+                            <div class="icon-btn-area">
+                                <a href="/contact-us">
+                                    <img src="https://www.aegona.com/themes/gavias_comely/assets/icon/logo-small.png"
+                                         width="19" height="19" alt="aegona" loading="lazy">
+                                    <span style="color: aliceblue; font-size: 12px;">connect with us</span>
+                                </a>
+                            </div>
+                            <div class="title-area">
+                                <h1>
+                                    <span>100%</span>
+                                    <br> CUSTOMER SUPPORT
+                                </h1>
+                            </div>
+                            <div class="slogan-area">
+                                <h2>THERE'RE SEVERAL WAYS TO CONNECT WITH US</h2>
+                            </div>
+                            <div class="description-area">
+                                <h4>
+                                    You can reach our customer service at
+                                    <span>
+                                        <a href="tel: 84 28 71092939">84-28-71092939</a>
+                                    </span>
+                                    or
+                                    <span>
+                                        <a href="mailto: contact@aegona.com">contact@aegona.com</a>
+                                    </span>
+                                    For additional assistance, we offers the following support channels
+                                    <a class="aegona-link" href="/contact-us">Contact Us</a>
+                                </h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ui contact-form -->
+                    <div class="column">
+                        <form class="contact-form ui form">
+                            <h2><b>Contact Us</b></h2>
+                            <div class="field input-box">
+
+                                <input class="input-field" type="text" name="full-name" title="" required>
+                                <label>FULL NAME</label>
+                            </div>
+                            <div class="field input-box">
+
+                                <input class="input-field" type="text" name="company-name" title="" required>
+                                <label>COMPANY NAME</label>
+                            </div>
+                            <div class="field input-box">
+
+                                <input class="input-field" type="text" name="business-phone" title="" required>
+                                <label>BUSINESS PHONE</label>
+                            </div>
+                            <div class="field input-box">
+
+                                <input class="input-field" type="text" name="email" title="" required>
+                                <label>EMAIL</label>
+                            </div>
+
+                            <div class="ui form">
+                                <div class="field input-box">
+
+                                    <textarea class="input-field" name="message" required></textarea>
+                                    <label>MESSAGE </label>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: center; margin: 10px; ;">
+                                <input type="hidden" id="input-captcha"  />
+                                <div id="captcha-login"> </div>
+                                <br>
+                                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                                        async defer>
+                                </script>
+                            </div>
+
+                            <div class="btn-submit">
+                                <input type="submit" value="SEND MESSAGE">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js.js"></script>
+<script src="/Semantic-UI-master/dist/components/jquery.min.js"></script>
+
+<script src="/Semantic-UI-master/dist/components/form.js"></script>
+<script src="/Semantic-UI-master/dist/components/transition.js"></script>
+<script src="/FolderJS/contact.js"></script>
+<script src="/FolderJS/Base.js"></script>
+
+</html>

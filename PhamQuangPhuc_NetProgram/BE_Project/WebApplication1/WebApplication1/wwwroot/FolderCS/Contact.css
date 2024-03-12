@@ -1,9 +1,11 @@
-body,
-html {
+.ui.form {
+    font-size: 0.8rem;
+}
+.contact {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('./Image/contact-us-bg.png');
+    background-image: url('../image/contact-us-bg.png');
     /* Replace with your image URL */
     background-size: cover;
     background-position: center;
@@ -12,9 +14,7 @@ html {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-  
 }
-
 .row{
     width: 90%;
 }
