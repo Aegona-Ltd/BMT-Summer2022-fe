@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/Database/bin/Debug/net6.0
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/.vs
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/Database/obj
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/WebApplication1/bin/Debug/net6.0
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/WebApplication1/obj
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/WebApplication1_Entity/obj
+/PhamQuangPhuc_NetProgram/BE_Project/WebApplication1/WebApplication1_Entity/bin/Debug/net6.0
+/PhamQuangPhuc_NetProgram/FE_Project/Semantic-UI-master/.github
