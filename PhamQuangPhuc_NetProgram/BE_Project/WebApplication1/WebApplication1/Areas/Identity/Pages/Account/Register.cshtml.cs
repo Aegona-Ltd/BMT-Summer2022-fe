@@ -80,9 +80,9 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
 
-            [Required(ErrorMessage = "Blank Captcha.")]
-            [DataType(DataType.Text)]
-            public string UserName { get; set; }
+            //[Required(ErrorMessage = "Blank Captcha.")]
+            //[DataType(DataType.Text)]
+            //public string UserName { get; set; }
 
             [Required(ErrorMessage = "Please Do Captcha")]
             public string Captcha { get; set; }
