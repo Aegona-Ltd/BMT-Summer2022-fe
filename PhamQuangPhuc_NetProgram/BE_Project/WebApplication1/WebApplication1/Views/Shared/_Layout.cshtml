@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebApplication1</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+
    
     <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/reset.css">
     <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/site.css">
@@ -26,6 +25,7 @@
 
     <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/popup.css">
     <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/table.css">
+
     <script src="~/semantic-ui-master/examples/assets/library/iframe-content.js"></script>
     <script type="text/javascript" src="~/semantic-ui-master/dist/components/popup.js"></script>
     <script src="~/semantic-ui-master/examples/assets/library/jquery.min.js"></script>
@@ -35,6 +35,11 @@
     <script src="~/semantic-ui-master/dist/components/transition.js"></script>
     <link href="~/foldercs/homepage.css" rel="stylesheet" />
     <link href="~/foldercs/style.css" rel="stylesheet" />
+    <style>
+        body{
+            height:100%;
+        }
+    </style>
     <script>
         $(document)
             .ready(function () {
@@ -62,39 +67,37 @@
 <body>
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
-            <a class="active item">Home</a>
+            <a class="active item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
             <a class="item">Work</a>
             <a class="item">Company</a>
             <a class="item">Careers</a>
-            <div class="right menu">
-                <div class="item">
-                    <a class="ui button">Log in</a>
-                </div>
-                <div class="item">
-                    <a class="ui primary button">Sign Up</a>
-                </div>
-            </div>
+            <partial name="_LoginPartial" />
         </div>
     </div>
-
-    <!-- Sidebar Menu -->
-    <div class="ui vertical inverted sidebar menu">
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <a class="item">Login</a>
-        <a class="item">Signup</a>
-    </div>
-
+    <header style="background: #1B1C1D; color: rgba(255, 255, 255, 0.9);">
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="active item">Home</a>
+                <a class="item">Work</a>
+                <a class="item">Company</a>
+                <a class="item">Careers</a>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </header>
+   
 
     <!-- Page Contents -->
-    <div class="pusher">
-         <main role="main">
-         @RenderBody()
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
         </main>
-     </div>
-    <div class="pusher">
+    </div>
+     <footer>
+          <div class="pusher">
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
                 <div class="ui stackable inverted divided equal height stackable grid">
@@ -124,6 +127,8 @@
             </div>
         </div>
     </div>
+     </footer>
+   
   
     @await RenderSectionAsync("Scripts", required: false)
 </body>
