@@ -16,7 +16,26 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>() //It enables you to create roles with different permissions and assign those roles to users.
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+//builder.Services.Configure<IdentityOptions>(options =>
+//{
+//    // Password settings.
+//    options.Password.RequireDigit = true;
+//    options.Password.RequireLowercase = true;
+//    options.Password.RequireNonAlphanumeric = true;
+//    options.Password.RequireUppercase = true;
+//    options.Password.RequiredLength = 6;
+//    options.Password.RequiredUniqueChars = 1;
 
+//    // Lockout settings.
+//    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+//    options.Lockout.MaxFailedAccessAttempts = 5;
+//    options.Lockout.AllowedForNewUsers = true;
+
+//    // User settings.
+//    options.User.AllowedUserNameCharacters =
+//    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+//    options.User.RequireUniqueEmail = false;
+//});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,7 +68,7 @@ using (var scope = app.Services.CreateScope())
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var roles = new[]
     {
-        "Admin","User"
+        "Admin","User","UserStaff"
     };
 
     foreach (var role in roles)
