@@ -12,3 +12,17 @@ D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\refint\IdentityAppE
 D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.pdb
 D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.genruntimeconfig.cache
 D:\Fast track\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\ref\IdentityAppEntity.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.deps.json
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.runtimeconfig.json
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\bin\Debug\net6.0\IdentityAppEntity.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.csproj.AssemblyReference.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.AssemblyInfoInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.AssemblyInfo.cs
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.csproj.CoreCompileInputs.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\refint\IdentityAppEntity.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.pdb
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\IdentityAppEntity.genruntimeconfig.cache
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppEntity\obj\Debug\net6.0\ref\IdentityAppEntity.dll

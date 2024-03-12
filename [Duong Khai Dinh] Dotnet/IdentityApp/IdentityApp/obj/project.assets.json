@@ -11669,11 +11669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fast track\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
+      "projectUniqueName": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
       "projectName": "IdentityApp",
-      "projectPath": "D:\\Fast track\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
+      "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityApp\\IdentityApp.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "D:\\Fast track\\IdentityApp\\IdentityApp\\obj\\",
+      "outputPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11693,17 +11693,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {
-              "projectPath": "D:\\Fast track\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj"
+            "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj": {
+              "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppDto\\IdentityAppDto.csproj"
             },
-            "D:\\Fast track\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj": {
-              "projectPath": "D:\\Fast track\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj"
+            "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj": {
+              "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj"
             },
-            "D:\\Fast track\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj": {
-              "projectPath": "D:\\Fast track\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj"
+            "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj": {
+              "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj"
             },
-            "D:\\Fast track\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj": {
-              "projectPath": "D:\\Fast track\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj"
+            "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj": {
+              "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppServices\\IdentityAppServices.csproj"
             }
           }
         }
