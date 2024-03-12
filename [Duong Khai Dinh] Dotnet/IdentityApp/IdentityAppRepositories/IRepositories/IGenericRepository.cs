@@ -19,10 +19,11 @@ namespace IdentityAppRepositories.IRepositories
         void Delete(object id);
         void Delete(TEntity entityToDelete);
         void Update(TEntity entityToUpdate);
+         /*
         Task<IEnumerable<TEntity>> GetAsync();
         Task<TEntity?> GetAsyncByID(int? entityId);
         Task InsertAsync(TEntity entity);
         Task DeletAsync(object id);
-        Task UpdateAsync(TEntity entity);
+        Task UpdateAsync(TEntity entity);*/
     }
 }   

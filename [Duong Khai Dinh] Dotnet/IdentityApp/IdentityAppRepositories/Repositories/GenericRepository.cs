@@ -79,7 +79,7 @@ namespace IdentityAppRepositories.Repositories
             context.SaveChanges();
         }
 
-        public Task<IEnumerable<TEntity>> GetAsync()
+       /* public Task<IEnumerable<TEntity>> GetAsync()
         {
             throw new NotImplementedException();
         }
@@ -102,7 +102,7 @@ namespace IdentityAppRepositories.Repositories
         public Task UpdateAsync(TEntity entity)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
     
 }

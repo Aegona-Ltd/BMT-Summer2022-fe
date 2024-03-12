@@ -5,12 +5,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - IdentityApp</title>
+    
     <link rel="stylesheet" type="text/css" href="~/css/Contact-us.css">
+    <link rel="stylesheet" type="text/css" href="~/css/semantic.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IdentityApp.styles.css" asp-append-version="true" />
    
     @RenderSection("Styles", false)
+        <style>
+            .navbar {
+            border-radius: 0px!important;
+            }
+            .navbar-collapse.collapse{
+            display: flex !important;
+            }
+            .navbar-brand  {
+            padding-top: 0.7rem;
+            }
+            .btn:hover{
+            background: none;
+            color:red;
+            border: 1px solid red;
+            }
+         </style>
 </head>
 <body>
     <header>
