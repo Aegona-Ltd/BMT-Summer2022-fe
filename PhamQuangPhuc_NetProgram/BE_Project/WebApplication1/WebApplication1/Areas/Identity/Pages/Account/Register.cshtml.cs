@@ -84,8 +84,8 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             //[DataType(DataType.Text)]
             //public string UserName { get; set; }
 
-            [Required(ErrorMessage = "Please Do Captcha")]
-            public string Captcha { get; set; }
+            //[Required(ErrorMessage = "Please Do Captcha")]
+            //public string Captcha { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -105,6 +105,8 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+
         }
 
 
@@ -133,6 +135,7 @@ namespace WebApplication1.Areas.Identity.Pages.Account
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    await _userManager.AddToRoleAsync(user, "UserStaff");
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",

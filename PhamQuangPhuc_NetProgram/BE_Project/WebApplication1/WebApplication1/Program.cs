@@ -2,40 +2,24 @@
 using Database;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using WebApplication1_Service.IService;
+using WebApplication1_Service.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySQL(connectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>() //It enables you to create roles with different permissions and assign those roles to users.
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
-//builder.Services.Configure<IdentityOptions>(options =>
-//{
-//    // Password settings.
-//    options.Password.RequireDigit = true;
-//    options.Password.RequireLowercase = true;
-//    options.Password.RequireNonAlphanumeric = true;
-//    options.Password.RequireUppercase = true;
-//    options.Password.RequiredLength = 6;
-//    options.Password.RequiredUniqueChars = 1;
 
-//    // Lockout settings.
-//    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-//    options.Lockout.MaxFailedAccessAttempts = 5;
-//    options.Lockout.AllowedForNewUsers = true;
-
-//    // User settings.
-//    options.User.AllowedUserNameCharacters =
-//    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-//    options.User.RequireUniqueEmail = false;
-//});
+builder.Services.AddScoped<IContactUsService, ContactUsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -60,7 +44,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Manager}/{action=Index}/{id?}");
 
 //Data Seeding Role
 using (var scope = app.Services.CreateScope())

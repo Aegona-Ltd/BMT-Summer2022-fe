@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Title"] = "Index";
+    ErrorViewModel errorViewModel = new ErrorViewModel();
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -158,6 +162,13 @@
                                 <input type="submit" value="SEND MESSAGE">
                             </div>
                         </form>
+                        @if(errorViewModel.StatusError == 1)
+                        {
+                            <div class="ui green message">@Html.DisplayName(errorViewModel.ShowRequesValue)</div>
+                        }else
+                        {
+                            <div class="ui red message">@Html.DisplayName(errorViewModel.ShowRequesValue)</div>
+                        }
                     </div>
                 </div>
             </div>

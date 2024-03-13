@@ -2,8 +2,8 @@ namespace WebApplication1.Models
 {
     public class ErrorViewModel
     {
-        public string? RequestId { get; set; }
+        public int StatusError { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public string ShowRequesValue { get; set; } = string.Empty;
     }
 }

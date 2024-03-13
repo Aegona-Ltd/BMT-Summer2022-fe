@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model List<IdentityUser>
+
+<head>
+    <link href="~/foldercs/manager.css" rel="stylesheet" />
+    <style>
+        i.icon.trash.alternate:before {
+            color: red;
+        }
+
+        i.icon, i.icons {
+            font-size: 1.2em;
+        }
+
+        .confirm{
+            background: green;
+            border-radius: 110%;
+        }
+    </style>
+</head>
+
+    <div class="table-users">
+        <div class="header">Users</div>
+
+        <table cellspacing="0">
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th width="10">ConfirmEmail</th>
+                <th width="100">Function</th>
+            </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" /></td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>
+                    @if (@item.EmailConfirmed)
+                    {
+                        <i class="circle outline icon"></i>
+                    }
+                    else
+                    {
+                        <i class="circle outline icon confirm"></i>
+                    }
+
+                </td>
+                <td>
+                    <i class="address card icon"></i>
+                    <i class="trash alternate icon"></i>
+                    <i class="edit outline icon"></i>
+                </td>
+            </tr>
+        }
+            
+           
+
+           
+            
+        </table>
+    </div>
+
