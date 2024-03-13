@@ -23,9 +23,6 @@ namespace IdentityApp.Controllers
         {
            _unitOfWork = new UnitOfWork(context);
         }
-       
-
-
 
         // GET: Contacts
         [Authorize(Roles = "Administrator, Moderator")]

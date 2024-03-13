@@ -1,5 +1,6 @@
 ﻿using IdentityApp.Data;
 using IdentityApp.Models;
+using IdentityAppRepositories.IRepositories;
 using IdentityAppRepositories.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,32 +14,31 @@ namespace IdentityAppRepositories.UnitOfWork
     public class UnitOfWork : IDisposable
     {
         private ApplicationDbContext _context;
-        private GenericRepository<Contact> _contactRepository;
-        private GenericRepository<Company> _companyRepository;
+        private IContactRepository _contactRepository;
+        private ICompanyRepository _companyRepository;
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
         }
-        public GenericRepository<Contact> ContactRepository
+        public IContactRepository ContactRepository
         {
             get
             {
-
-                if (this._contactRepository == null)
+                if (_contactRepository == null)
                 {
-                    this._contactRepository = new GenericRepository<Contact>(_context);
+                    _contactRepository = new ContactRepository(_context);
                 }
                 return _contactRepository;
             }
         }
-        public GenericRepository<Company> CompanyRepository
+        public ICompanyRepository CompanyRepository
         {
             get
             {
 
-                if (this._companyRepository == null)
+                if (_companyRepository == null)
                 {
-                    this._companyRepository = new GenericRepository<Company>(_context);
+                   _companyRepository = new CompanyRepository(_context);
                 }
                 return _companyRepository;
             }

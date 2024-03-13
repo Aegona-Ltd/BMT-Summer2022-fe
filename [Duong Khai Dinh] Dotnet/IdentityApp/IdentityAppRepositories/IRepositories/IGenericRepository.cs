@@ -11,10 +11,11 @@ namespace IdentityAppRepositories.IRepositories
     public interface IGenericRepository<TEntity> where TEntity : class
     {
         TEntity GetByID(object id);
-        IEnumerable<TEntity> Get(
-          Expression<Func<TEntity, bool>> filter,
-          Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
-          string includeProperties);
+        IQueryable<TEntity> Get();
+        /*    IEnumerable<TEntity> Get(
+              Expression<Func<TEntity, bool>> filter,
+              Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
+              string includeProperties);*/
         void Insert(TEntity entity);
         void Delete(object id);
         void Delete(TEntity entityToDelete);

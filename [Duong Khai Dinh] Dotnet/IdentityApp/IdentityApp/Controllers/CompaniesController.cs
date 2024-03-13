@@ -28,7 +28,7 @@ namespace FastTrack.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         public async Task<IActionResult> Index()
         {
-          var listCompany = _unitOfWork.CompanyRepository.Get();
+          var  listCompany = _unitOfWork.CompanyRepository.Get();
           return View(listCompany);
         }
 
