@@ -118,14 +118,9 @@ namespace IdentityApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                   /* if (!ContactExists(contact.ContactId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
+                 
                         throw;
-                    }*/
+                 
                 }
                 return RedirectToAction(nameof(Index));
             }

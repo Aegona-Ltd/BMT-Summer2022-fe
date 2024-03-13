@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace IdentityAppRepositories.IRepositories
 {
-    public interface IContactRepository : IDisposable
+    public interface IContactRepository : IRepositories<Contact>
     {
-        Task <IEnumerable<Contact>> GetContacts();
+      /*  Task <IEnumerable<Contact>> GetContacts();
         Task <Contact?> GetContactByID(int? contactId);
         Task InsertContact(Contact contact);
         Task DeleteContact(int contactID);
-        Task UpdateContact(Contact contact);
+        Task UpdateContact(Contact contact);*/
     }
 }

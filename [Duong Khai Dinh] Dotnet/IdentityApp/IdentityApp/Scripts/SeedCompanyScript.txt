@@ -1,0 +1,12 @@
+﻿INSERT INTO Companies (CompanyId, CompanyName, Domain, Director, TaxNumber, Email, PhoneNumber, Website)
+VALUES
+(1, 'Company A', 'companya.com', 'John Director', '123456', 'companya@email.com', '123-456-7890', 'www.companya.com'),
+(2, 'Company B', 'companyb.com', 'Jane Director', '654321', 'companyb@email.com', '987-654-3210', 'www.companyb.com'),
+(3, 'Company C', 'companyc.com', 'Alice Director', '987654', 'companyc@email.com', '111-222-3333', 'www.companyc.com'),
+(4, 'Company D', 'companyd.com', 'Bob Director', '456789', 'companyd@email.com', '222-333-4444', 'www.companyd.com'),
+(5, 'Company E', 'companye.com', 'Eva Director', '789012', 'companye@email.com', '333-444-5555', 'www.companye.com'),
+(6, 'Company F', 'companyf.com', 'Frank Director', '345678', 'companyf@email.com', '444-555-6666', 'www.companyf.com'),
+(7, 'Company G', 'companyg.com', 'Grace Director', '901234', 'companyg@email.com', '555-666-7777', 'www.companyg.com'),
+(8, 'Company H', 'companyh.com', 'Harry Director', '567890', 'companyh@email.com', '666-777-8888', 'www.companyh.com'),
+(9, 'Company I', 'companyi.com', 'Ivy Director', '123890', 'companyi@email.com', '777-888-9999', 'www.companyi.com'),
+(10, 'Company J', 'companyj.com', 'Jack Director', '890123', 'companyj@email.com', '888-999-0000', 'www.companyj.com');

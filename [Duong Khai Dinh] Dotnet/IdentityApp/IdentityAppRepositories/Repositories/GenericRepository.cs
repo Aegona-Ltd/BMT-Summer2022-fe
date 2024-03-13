@@ -54,6 +54,7 @@ namespace IdentityAppRepositories.Repositories
         public   void Insert(TEntity entity)
         {
             dbSet.Add(entity);
+            context.SaveChanges();
         }
 
         public   void Delete(object id)

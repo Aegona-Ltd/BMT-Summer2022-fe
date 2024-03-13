@@ -4119,7 +4119,8 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
           "Microsoft.AspNetCore.Identity.UI": "6.0.27",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
+          "MySql.EntityFrameworkCore": "6.0.25"
         },
         "compile": {
           "bin/placeholder/IdentityAppEntity.dll": {}

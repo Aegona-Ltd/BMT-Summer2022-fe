@@ -14,7 +14,7 @@ namespace IdentityAppRepositories.UnitOfWork
     {
         private ApplicationDbContext _context;
         private GenericRepository<Contact> _contactRepository;
-
+        private GenericRepository<Company> _companyRepository;
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
@@ -29,6 +29,18 @@ namespace IdentityAppRepositories.UnitOfWork
                     this._contactRepository = new GenericRepository<Contact>(_context);
                 }
                 return _contactRepository;
+            }
+        }
+        public GenericRepository<Company> CompanyRepository
+        {
+            get
+            {
+
+                if (this._companyRepository == null)
+                {
+                    this._companyRepository = new GenericRepository<Company>(_context);
+                }
+                return _companyRepository;
             }
         }
 
