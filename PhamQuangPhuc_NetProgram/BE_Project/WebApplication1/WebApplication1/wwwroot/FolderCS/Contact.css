@@ -1,5 +1,5 @@
 .ui.form {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 .contact {
     width: 100%;
@@ -38,17 +38,18 @@
         text-transform: uppercase;
         text-align: left;
     }
- 
-    .field::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-top: 10px solid #961e3c;
-        border-right: 11px solid #fff;
-        border-left: 10px solid #961e3c;
-        border-bottom: 10px solid #fff;   
-     }
+
+.field::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 10px solid #961e3c;
+    border-right: 11px solid #fff;
+    border-left: 10px solid #961e3c;
+    border-bottom: 10px solid #fff;
+    border-bottom-right-radius: 44px;
+}
     
     
 }
@@ -94,7 +95,7 @@
 .title-area{
  
     font-size: 28px;
-    font-weight: 70px;
+    font-weight: 100;
     line-height: 52px;
     text-align: center;
     text-transform: uppercase;
@@ -172,7 +173,7 @@ input {
     left: 30px;
     transform: translateY(-70%);
     pointer-events: none;
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
     background-color: white;
   
     .ui.form .field > label {
@@ -190,7 +191,7 @@ input {
     left: 30px;
     transform: translateY(-70%);
     pointer-events: none;
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
     background-color: white;
     font-size: 15px;
     font-style: oblique;

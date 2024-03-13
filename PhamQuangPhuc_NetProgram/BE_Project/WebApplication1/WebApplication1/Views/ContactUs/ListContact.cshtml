@@ -1,5 +1,11 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+@using WebApplication1_DTO.Response;
+@model ListContactUsResponse
+
+@{
+    ViewData["Title"] = "Index";
+    ListContactUsResponse modelList = new ListContactUsResponse();
+}
 
 <head>
     <meta charset="UTF-8">
@@ -38,12 +44,12 @@
             font-size: 2em;
         }
         .listContact{
-            height:90vh;
+            min-height:80vh;
             padding-left:5%;
             padding-right:5%;
             padding-top: 5px;
         }
-        
+       
     </style>
 </head>
 
@@ -55,35 +61,37 @@
                     <th class="single line">Avatar</th>
                     <th>FullName</th>
                     <th>Contract Method</th>
-                    <th>Comments</th>
+                    <th>Message</th>
                     <th>executed</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <h2 class="ui center aligned header">A</h2>
-                    </td>
-                    <td class="single line">
-                        Power Output
-                    </td>
+                @foreach (var item in Model.listContactUsRequests)
+                {
+                    <tr>
+                        <td>
+                            <h2 class="ui center aligned header">A</h2>
+                        </td>
+                        <td class="single line">
+                            @Html.DisplayFor(a=>item.Email);
+                        </td>
 
-                    <td class="single line">
-                        SDT :<a href="#">18 studies</a>
-                        <br>
-                        Email :<a href="#">18 studies</a>
-                    </td>
-                    <td>
-                        Creatine supplementation is the reference compound for increasing muscular creatine levels; there is
-                        variability in this increase, however, with some nonresponders.
-                    </td>
-                    <td>
-                        <div class="single line" style="display:flex; justify-content: center;">
-                            <a href="#"> <i class="angle double right icon" style="size: 25pxpx;"></i></a>
-
-                        </div>
-                    </td>
-                </tr>
+                        <td class="single line">
+                            SĐT :<a href="#">@Html.DisplayFor(a=>item.BusinessPhone)</a>
+                            <br>
+                            Email :<a href="#">@Html.DisplayFor(a=>item.Email)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(a=>item.Message)
+                        </td>
+                        <td>
+                            <div class="single line" style="display:flex; justify-content: center;">
+                                <a href="#"> <i class="angle double right icon" style="size: 25pxpx;"></i></a>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                }
 
             </tbody>
             <tfoot>
@@ -108,5 +116,3 @@
     </div>
   
 </body>
-
-</html>

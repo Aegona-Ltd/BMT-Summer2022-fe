@@ -1,0 +1,319 @@
+﻿-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: localhost    Database: aegona_project
+-- ------------------------------------------------------
+-- Server version	8.0.36
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `__efmigrationshistory`
+--
+
+DROP TABLE IF EXISTS `__efmigrationshistory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `__efmigrationshistory` (
+  `MigrationId` varchar(150) NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL,
+  PRIMARY KEY (`MigrationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `__efmigrationshistory`
+--
+
+LOCK TABLES `__efmigrationshistory` WRITE;
+/*!40000 ALTER TABLE `__efmigrationshistory` DISABLE KEYS */;
+INSERT INTO `__efmigrationshistory` VALUES ('20240313025043_CreateIdentitySchema','6.0.27');
+/*!40000 ALTER TABLE `__efmigrationshistory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetroleclaims`
+--
+
+DROP TABLE IF EXISTS `aspnetroleclaims`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetroleclaims` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `RoleId` varchar(255) NOT NULL,
+  `ClaimType` longtext,
+  `ClaimValue` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `IX_AspNetRoleClaims_RoleId` (`RoleId`),
+  CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetroleclaims`
+--
+
+LOCK TABLES `aspnetroleclaims` WRITE;
+/*!40000 ALTER TABLE `aspnetroleclaims` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetroleclaims` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetroles`
+--
+
+DROP TABLE IF EXISTS `aspnetroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetroles` (
+  `Id` varchar(255) NOT NULL,
+  `Name` varchar(256) DEFAULT NULL,
+  `NormalizedName` varchar(256) DEFAULT NULL,
+  `ConcurrencyStamp` longtext,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `RoleNameIndex` (`NormalizedName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetroles`
+--
+
+LOCK TABLES `aspnetroles` WRITE;
+/*!40000 ALTER TABLE `aspnetroles` DISABLE KEYS */;
+INSERT INTO `aspnetroles` VALUES ('a4949730-fe45-44ea-837f-7605d5634dc9','UserStaff','USERSTAFF','855c1e7c-25ef-44ad-9cf6-4e8174c0e9ee'),('f0bdd801-0cb2-4675-b9b3-0fe7efd25361','Admin','ADMIN','909f7a24-9a8c-4b31-8fbb-ede310103f03'),('fbd329a5-b1ad-4a99-b6f8-ffd8fe1ab2e3','User','USER','28bd3cab-8548-4d46-a581-ddc97efccb7d');
+/*!40000 ALTER TABLE `aspnetroles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserclaims`
+--
+
+DROP TABLE IF EXISTS `aspnetuserclaims`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetuserclaims` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `UserId` varchar(255) NOT NULL,
+  `ClaimType` longtext,
+  `ClaimValue` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `IX_AspNetUserClaims_UserId` (`UserId`),
+  CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserclaims`
+--
+
+LOCK TABLES `aspnetuserclaims` WRITE;
+/*!40000 ALTER TABLE `aspnetuserclaims` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetuserclaims` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserlogins`
+--
+
+DROP TABLE IF EXISTS `aspnetuserlogins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetuserlogins` (
+  `LoginProvider` varchar(128) NOT NULL,
+  `ProviderKey` varchar(128) NOT NULL,
+  `ProviderDisplayName` longtext,
+  `UserId` varchar(255) NOT NULL,
+  PRIMARY KEY (`LoginProvider`,`ProviderKey`),
+  KEY `IX_AspNetUserLogins_UserId` (`UserId`),
+  CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserlogins`
+--
+
+LOCK TABLES `aspnetuserlogins` WRITE;
+/*!40000 ALTER TABLE `aspnetuserlogins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetuserlogins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserroles`
+--
+
+DROP TABLE IF EXISTS `aspnetuserroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetuserroles` (
+  `UserId` varchar(255) NOT NULL,
+  `RoleId` varchar(255) NOT NULL,
+  PRIMARY KEY (`UserId`,`RoleId`),
+  KEY `IX_AspNetUserRoles_RoleId` (`RoleId`),
+  CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserroles`
+--
+
+LOCK TABLES `aspnetuserroles` WRITE;
+/*!40000 ALTER TABLE `aspnetuserroles` DISABLE KEYS */;
+INSERT INTO `aspnetuserroles` VALUES ('3600f6da-afd3-43d2-996b-115db0ae8b89','f0bdd801-0cb2-4675-b9b3-0fe7efd25361'),('65656dfd-6a74-4469-be5e-3b31b1f539c8','fbd329a5-b1ad-4a99-b6f8-ffd8fe1ab2e3');
+/*!40000 ALTER TABLE `aspnetuserroles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetusers`
+--
+
+DROP TABLE IF EXISTS `aspnetusers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetusers` (
+  `Id` varchar(255) NOT NULL,
+  `Discriminator` longtext NOT NULL,
+  `UserName` varchar(256) DEFAULT NULL,
+  `NormalizedUserName` varchar(256) DEFAULT NULL,
+  `Email` varchar(256) DEFAULT NULL,
+  `NormalizedEmail` varchar(256) DEFAULT NULL,
+  `EmailConfirmed` tinyint(1) NOT NULL,
+  `PasswordHash` longtext,
+  `SecurityStamp` longtext,
+  `ConcurrencyStamp` longtext,
+  `PhoneNumber` longtext,
+  `PhoneNumberConfirmed` tinyint(1) NOT NULL,
+  `TwoFactorEnabled` tinyint(1) NOT NULL,
+  `LockoutEnd` datetime(6) DEFAULT NULL,
+  `LockoutEnabled` tinyint(1) NOT NULL,
+  `AccessFailedCount` int NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `UserNameIndex` (`NormalizedUserName`),
+  KEY `EmailIndex` (`NormalizedEmail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetusers`
+--
+
+LOCK TABLES `aspnetusers` WRITE;
+/*!40000 ALTER TABLE `aspnetusers` DISABLE KEYS */;
+INSERT INTO `aspnetusers` VALUES ('3600f6da-afd3-43d2-996b-115db0ae8b89','IdentityUser','Adminr@gmail.com','ADMINR@GMAIL.COM','Adminr@gmail.com','ADMINR@GMAIL.COM',0,'AQAAAAEAACcQAAAAEK0QEW7rQL4hxCCe5umcwqYdCn6hoyYd9ebCaKlhFc78O0L6Zgiy3MewZFej3ZgUZA==','XVWNMKBQN2U7QOA6EZ25D74BACEQZBQV','af2756ec-fea6-4b23-b80d-9c1061c3c07f',NULL,0,0,NULL,1,0),('65656dfd-6a74-4469-be5e-3b31b1f539c8','IdentityUser','user1@gmail.com','USER1@GMAIL.COM','user1@gmail.com','USER1@GMAIL.COM',1,'AQAAAAEAACcQAAAAEH9G4CHmFL/9nofa6au02o+mzRYdFfjLtG3q5sbLwV11JpzLrvoKxu9LlaIN88uV2w==','VYKW3M3Y2ILNDRPVGJEMQHHBQQIEZGE5','253045ba-42ca-445c-b146-23fc6bf98665',NULL,0,0,NULL,1,0);
+/*!40000 ALTER TABLE `aspnetusers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetusertokens`
+--
+
+DROP TABLE IF EXISTS `aspnetusertokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetusertokens` (
+  `UserId` varchar(255) NOT NULL,
+  `LoginProvider` varchar(128) NOT NULL,
+  `Name` varchar(128) NOT NULL,
+  `Value` longtext,
+  PRIMARY KEY (`UserId`,`LoginProvider`,`Name`),
+  CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetusertokens`
+--
+
+LOCK TABLES `aspnetusertokens` WRITE;
+/*!40000 ALTER TABLE `aspnetusertokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetusertokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_contact_us`
+--
+
+DROP TABLE IF EXISTS `tbl_contact_us`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_contact_us` (
+  `contact_us_id` char(36) NOT NULL,
+  `company_name` longtext NOT NULL,
+  `business_phone` longtext NOT NULL,
+  `contact_name` longtext NOT NULL,
+  `phone_number` longtext NOT NULL,
+  `email` longtext NOT NULL,
+  `message` longtext NOT NULL,
+  `CreatedBy` longtext NOT NULL,
+  `CreatedDate` datetime(6) NOT NULL,
+  `IsActive` tinyint(1) NOT NULL,
+  `LastUpdateBy` longtext NOT NULL,
+  `LastUpdateDate` datetime(6) NOT NULL,
+  PRIMARY KEY (`contact_us_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_contact_us`
+--
+
+LOCK TABLES `tbl_contact_us` WRITE;
+/*!40000 ALTER TABLE `tbl_contact_us` DISABLE KEYS */;
+INSERT INTO `tbl_contact_us` VALUES ('8a8a645e-e0e8-11ee-b69f-c85b76af694a','John Doe','123456789','ABC Company','987654321','john.doe@example.com','Hello, this is a message.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6aed-e0e8-11ee-b69f-c85b76af694a','Jane Doe','987654321','XYZ Corp','123456789','jane.doe@example.com','Another message.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6c30-e0e8-11ee-b69f-c85b76af694a','Alice Smith','555555555','ACME Inc','111111111','alice.smith@example.com','Yet another message.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6d5b-e0e8-11ee-b69f-c85b76af694a','Bob Johnson','999999999','Tech Solutions','444444444','bob.johnson@example.com','Message from Bob.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6e13-e0e8-11ee-b69f-c85b76af694a','Charlie Brown','888888888','Brown Industries','777777777','charlie.brown@example.com','Message from Charlie.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6ea4-e0e8-11ee-b69f-c85b76af694a','David Miller','666666666','Miller Enterprises','555555555','david.miller@example.com','Hello, David here.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a6fbc-e0e8-11ee-b69f-c85b76af694a','Eva White','777777777','White Corporation','666666666','eva.white@example.com','Message from Eva.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a7036-e0e8-11ee-b69f-c85b76af694a','Frank Johnson','888888888','Johnson Ltd','999999999','frank.johnson@example.com','Hello from Frank.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a70b1-e0e8-11ee-b69f-c85b76af694a','Grace Davis','555555555','Davis Co.','333333333','grace.davis@example.com','Message from Grace.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000'),('8a8a7125-e0e8-11ee-b69f-c85b76af694a','Henry Black','111111111','Black & Sons','444444444','henry.black@example.com','Hello, Henry here.','Admin','2024-03-13 10:19:45.000000',1,'Admin','2024-03-13 10:19:45.000000');
+/*!40000 ALTER TABLE `tbl_contact_us` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_user_detail`
+--
+
+DROP TABLE IF EXISTS `tbl_user_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_user_detail` (
+  `Id` char(36) NOT NULL,
+  `Avatar` longtext NOT NULL,
+  `Age` int NOT NULL,
+  `Birthday` datetime(6) NOT NULL,
+  `UserId` varchar(255) NOT NULL,
+  `CreatedBy` longtext NOT NULL,
+  `CreatedDate` datetime(6) NOT NULL,
+  `IsActive` tinyint(1) NOT NULL,
+  `LastUpdateBy` longtext NOT NULL,
+  `LastUpdateDate` datetime(6) NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_tbl_user_detail_UserId` (`UserId`),
+  CONSTRAINT `FK_tbl_user_detail_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_user_detail`
+--
+
+LOCK TABLES `tbl_user_detail` WRITE;
+/*!40000 ALTER TABLE `tbl_user_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_user_detail` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-03-13 10:34:51

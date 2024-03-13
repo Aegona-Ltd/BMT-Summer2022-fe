@@ -59,6 +59,10 @@
         .column {
             max-width: 450px;
         }
+
+        .text-danger {
+            color: red
+        }
     </style>
     <script>
         $(document)
@@ -92,16 +96,7 @@
                                     }
                                 ]
                             },
-                            registerCaptcha: {
-                                identifier: 'Input.Captcha',
-                                rules: [
-                                    {
-                                        type: 'empty',
-                                        prompt: 'Please do Captcha'
-                                    },
-
-                                ]
-                            }
+                        
                         }
                     })
                     ;
@@ -137,7 +132,7 @@
                 </div>
             </h2>
             <form class="ui large form" id="account" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger left"></div>
                 <div class="ui stacked segment">
                     <div class="field">
                         <div class="ui left icon input ">
@@ -159,10 +154,18 @@
                         </div>
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
                     </div>
-                    <div>
-                        <button class="ui fluid large teal submit button" type="submit">Log in</button>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                                <input type="password" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="RepeatPassword" />
+                        </div>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
-                    <div class="field" style="display: flex; justify-content: center;">
+                   
+                    <div>
+                        <button class="ui fluid large teal submit button" type="submit">Register</button>
+                    </div>
+                   @*  <div class="field" style="display: flex; justify-content: center;">
                         <input type="hidden" id="input-captcha" asp-for="Input.Captcha" />
                         <div id="captcha-login"> </div>
                         <span asp-validation-for="Input.Captcha" class="text-danger"></span>
@@ -171,7 +174,7 @@
                                 async defer>
                         </script>
 
-                    </div>
+                    </div> *@
                 </div>
 
                 <div class="ui error message"></div>
