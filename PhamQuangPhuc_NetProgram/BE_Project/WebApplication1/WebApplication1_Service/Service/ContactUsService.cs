@@ -42,9 +42,29 @@ namespace WebApplication1_Service.Service
             return response;
         }
 
-        public Task<bool> InsertContactUs()
+        public async Task<bool> InsertContactUs(ContactUsRequest request, Guid userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ContactUs contactUs = new ContactUs()
+                {
+                    BusinessPhone = request.BusinessPhone,
+                    CompanyName = request.CompanyName,
+                    Email = request.Email,
+                    FullName = request.FullName,
+                    Phone = request.Phone,
+                    Message = request.Message,
+                    CreatedBy = userId.ToString(),
+                    CreatedDate = DateTime.Now,
+                    IsActive = true,
+                };
+                await unitOfWork.ContactUsRepository.Insert(contactUs);
+                return true;
+            }catch (Exception ex) {
+
+                throw new Exception(ex.Message);
+            }
+            
         }
     }
 }

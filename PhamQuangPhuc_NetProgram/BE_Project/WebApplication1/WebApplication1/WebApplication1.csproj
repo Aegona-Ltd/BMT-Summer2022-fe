@@ -24,8 +24,4 @@
     <ProjectReference Include="..\WebApplication1_Service\WebApplication1_Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>
