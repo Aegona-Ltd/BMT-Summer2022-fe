@@ -61,7 +61,7 @@ namespace WebApplication1.Controllers
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        [Authorize(Roles = "Admin, UserStaff")]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> ListContact()
         {
             try
