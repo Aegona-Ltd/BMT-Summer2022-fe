@@ -38,20 +38,27 @@ namespace IdentityApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index([Bind("ContactId,Name,Company,Phone,Email,Message,Recaptcha")] ContactDto contact)
         {
-             bool IsRecaptchaed = await _iGoogleService.VerifyCaptcha(contact.Recaptcha);
-           
-            if (ModelState.IsValid && IsRecaptchaed )
+            try {
+                bool IsRecaptchaed = await _iGoogleService.VerifyCaptcha(contact.Recaptcha);
+                if (ModelState.IsValid && IsRecaptchaed)
+                {
+                    var checkSending = await _iContactFormServices.SendFormService(contact, _context);
+                    if (checkSending == true)
+                        ViewBag.Message = "Submit successfully";
+                    else ViewBag.Message = "Submit error";
+                    ModelState.Clear();
+                    return View();
+                }
+                ViewBag.Message = "Submit failed";
+                ModelState.Clear();
+                return View();
+            } catch(Exception ex)
             {
-                var checkSending = await _iContactFormServices.SendFormService(contact, _context);
-                if (checkSending == true)
-                    ViewBag.Message = "Submit successfully";
-                else ViewBag.Message = "Submit error";
+                ViewBag.Message = "Captcha Requied";
                 ModelState.Clear();
                 return View();
             }
-            ViewBag.Message = "Submit failed";
-            ModelState.Clear();
-            return View();
+ 
         }
 
     }
