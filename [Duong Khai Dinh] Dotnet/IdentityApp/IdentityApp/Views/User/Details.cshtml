@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model Tuple<IdentityUser,IList<string>>;
+<h1>Details</h1>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>model.Item1.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model =>  model.Item1.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>  model.Item1.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model =>  model.Item1.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>  model.Item1.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.EmailConfirmed)
+        </dt>
+        <dd class = "col-sm-10">
+            @if (Model.Item1.EmailConfirmed)
+            {
+                          <p> True</p>
+            }
+            else
+            {
+
+                            <p> False</p>
+            }
+        </dd>
+        <dt class = "col-sm-2">
+           Roles
+        </dt>
+        <dd class = "col-sm-10">
+            @foreach (var item in Model.Item2)
+            {
+                @item
+            } 
+        </dd>
+    </dl>
+</div>
+<div>
+  
+    <a asp-action="Index">Back to List</a>
+</div>

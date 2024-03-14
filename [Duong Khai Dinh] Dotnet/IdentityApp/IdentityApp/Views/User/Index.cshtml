@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model List<IdentityUser>
+
+<div>
+    <h1>List of Users</h1>
+</div>
+<p>
+    <a asp-area="Identity" asp-page="/Account/RegisterAdmin" class="btn btn-success">Create New</a>
+</p>
+    <table class="table alert  table-info table-hover">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>ConfirmEmail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+             
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>
+                    @if (@item.EmailConfirmed)
+                    {
+                        <p> True</p>
+                       @* <i class="circle outline icon"></i>*@
+                    }
+                    else
+                    {
+                        
+                        <p> False</p>
+                      @*  <i class="circle outline icon confirm"></i>*@
+                    }
+
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Edit Role</a> 
+                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">Details</a> 
+                </td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+
