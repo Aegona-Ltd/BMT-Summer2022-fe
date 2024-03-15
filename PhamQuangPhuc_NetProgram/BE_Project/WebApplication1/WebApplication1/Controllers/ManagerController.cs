@@ -13,7 +13,7 @@ using WebApplication1_DTO.Request;
 namespace WebApplication1.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
+   
     public class ManagerController : Controller
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -39,6 +39,7 @@ namespace WebApplication1.Controllers
         public string? ReturnUrl { get; set; } = null;
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             List<IdentityUser> users = _userManager.Users.ToList();

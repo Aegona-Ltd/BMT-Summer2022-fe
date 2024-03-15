@@ -27,7 +27,8 @@ namespace WebApplication1_Service.Service
         {
             ListContactUsResponse response = new ListContactUsResponse();
             Expression<Func<ContactUs, bool>> filterExpression = u => string.IsNullOrEmpty(null) && u.IsActive==true;
-            var contactUsList =  unitOfWork.ContactUsRepository.GetAll(filterExpression);
+            var contactUsList =  unitOfWork.ContactUsRepository.GetAll(filterExpression).Skip(0).Take(10);
+
             response.NumberCount = contactUsList.Count();
             response.listContactUsRequests = contactUsList.Select(
                 contactUs => new ContactUsRequest {
@@ -36,7 +37,7 @@ namespace WebApplication1_Service.Service
                         CompanyName = (contactUs.CompanyName==null? string.Empty: contactUs.CompanyName),
                         Email= (contactUs.Email == null ? string.Empty : contactUs.Email),
                         FullName=(contactUs.FullName == null ? string.Empty : contactUs.FullName),
-                        Phone= (contactUs.Phone == null ? string.Empty : contactUs.Phone),
+                        Message= (contactUs.Message == null ? string.Empty : contactUs.Message),
 
                 }).ToList ();
             return response;
@@ -52,14 +53,15 @@ namespace WebApplication1_Service.Service
                     CompanyName = request.CompanyName,
                     Email = request.Email,
                     FullName = request.FullName,
-                    Phone = request.Phone,
+                    Phone = request.BusinessPhone,
                     Message = request.Message,
                     CreatedBy = userId.ToString(),
                     CreatedDate = DateTime.Now,
                     IsActive = true,
                 };
                 await unitOfWork.ContactUsRepository.Insert(contactUs);
-                return true;
+                int i  = unitOfWork.Save();
+                return i>=1;
             }catch (Exception ex) {
 
                 throw new Exception(ex.Message);

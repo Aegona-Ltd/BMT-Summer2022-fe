@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
         .then((response) => response.json()) //định dạng trả về 
         .then((result) => {
             alert(
-                (result[0].code + " - " + result[0].description\    
+                result[0].code + " - " + result[0].description
             )
             console.log(result)
         })

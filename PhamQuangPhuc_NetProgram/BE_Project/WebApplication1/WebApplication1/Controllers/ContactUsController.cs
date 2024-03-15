@@ -1,20 +1,25 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Mysqlx.Crud;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using WebApplication1.Models;
 using WebApplication1_DTO.Request;
 using WebApplication1_DTO.Response;
+using WebApplication1_Entity.Entity;
 using WebApplication1_Service.IService;
 using WebApplication1_Service.Service;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class ContactUsController : Controller
     {
       
@@ -28,33 +33,8 @@ namespace WebApplication1.Controllers
             _signInManager = signInManager;
 
         }
-        [BindProperty]
-        public InputModel Input { get; set; }
-        public class InputModel
-        {
-            
-            [Required]
-            [DataType(DataType.Text)]
-            public string? FullName { get; set; }
 
-            [Required]
-            [DataType(DataType.PhoneNumber)]
-            public string BusinessPhone { get; set; } = string.Empty;
-
-            [Required]
-            public string? CompanyName { get; set; }
-
-            [Required]
-            [EmailAddress]
-            public string? Email { get; set; }
-
-            [Column("message")]
-            public string Message { get; set; } = string.Empty;
-
-            [Column("message")]
-            public string Captcha { get; set; } = string.Empty;
-
-        }
+        public string ReturnUrl { get; set; }
 
         /// <summary>
         /// Get All contact us isActive=true
@@ -76,62 +56,113 @@ namespace WebApplication1.Controllers
 
 
         /// <summary>
-        /// Create New ContactUs
+        /// watch ContactUs
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-  
-        [Authorize(Roles = "User")]
-        public async Task<IActionResult> ContactForm(ContactUsRequest request)
+        //[Authorize(Roles = "User")]
+        public IActionResult ContactForm()
+        {
+            return View();
+        }
+
+
+
+        //public async Task<IActionResult> AddContactForm(ContactModel model)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            ContactUsRequest request = new ContactUsRequest()
+        //            {
+        //                Email = Input.Email != null ? Input.Email : string.Empty,
+        //                BusinessPhone = Input.BusinessPhone != null ? Input.BusinessPhone : string.Empty,
+        //                CompanyName = Input.CompanyName != null ? Input.CompanyName : string.Empty,
+        //                FullName = Input.FullName != null ? Input.FullName : string.Empty,
+        //                Message = Input.Message != null ? Input.Message : string.Empty,
+        //                Phone = Input.BusinessPhone != null ? Input.BusinessPhone : string.Empty,
+        //            };
+        //            string userId = _userManager.GetUserId(User);
+        //            Guid.TryParse(userId, out Guid guidValue);
+        //            bool insert = await contactUsService.InsertContactUs(request, guidValue);
+        //            if (insert)
+        //            {
+        //                View(
+        //                    new ErrorViewModel
+        //                    {
+        //                        StatusError = 1,
+        //                        ShowRequesValue = "Success Create New Contact"
+        //                    });
+        //            }
+        //            else
+        //            {
+        //                View(
+        //                     new ErrorViewModel
+        //                     {
+        //                         StatusError = 0,
+        //                         ShowRequesValue = "Fails Create New Contact"
+        //                     });
+        //            }
+        //        }
+
+        //        return View();
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
+
+        //[Bind("FullName,BusinessPhone,CompanyName")]
+        //ContactModel model
+
+
+        /// <summary>
+        /// Create ContactFrom data
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> AddContactForm(ContactUsRequest request )
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    request = new ContactUsRequest()
-                    {
-                        Email = Input.Email!=null ? Input.Email: string.Empty,
-                        BusinessPhone=Input.BusinessPhone !=null ? Input.BusinessPhone : string.Empty,
-                        CompanyName= Input.CompanyName!=null? Input.CompanyName :string.Empty,
-                        FullName = Input.FullName!=null? Input.FullName : string.Empty,
-                        Message = Input.Message!=null ? Input.Message : string.Empty,
-                        Phone = Input.BusinessPhone!= null ? Input.BusinessPhone : string.Empty,
-                    };
-                    string userId = _userManager.GetUserId(User);
-                    Guid.TryParse(userId, out Guid guidValue);
-                    bool insert = await contactUsService.InsertContactUs(request, guidValue);
+
+                    var userId = _userManager.GetUserId(User);
+                    Guid.TryParse(userId, out Guid guidValue); // Re-render the view with validation errors 
+                    var insert = await contactUsService.InsertContactUs(request, guidValue);
+                    ViewData["Message"] = "Insert Success";
                     if (insert)
                     {
-                        View(
-                            new ErrorViewModel
-                            {
-                                StatusError = 1,
-                                ShowRequesValue="Success Create New Contact"
-                            }); 
+                        TempData["color"] = "green";
+                        TempData["ErrorMessage"] = "success";
+                        return RedirectToAction("ContactForm", "ContactUs");
                     }
+
+                    
                     else
                     {
-                        View(
-                             new ErrorViewModel
-                             {
-                                 StatusError = 0,
-                                 ShowRequesValue = "Fails Create New Contact"
-                             });
+                        TempData["color"] = null;
+                        TempData["ErrorMessage"] = " Create contact Fails";
+                        return RedirectToAction("ContactForm", "ContactUs");
                     }
                 }
-                return
-                     View(
-                             new ErrorViewModel
-                             {
-                                 StatusError = 0,
-                                 ShowRequesValue = "Fails Create New Contact"
-                             }); ;
+                else
+                    TempData["color"] = null;
+                    TempData["ErrorMessage"] = " Create contact Fails";
+                return RedirectToAction("ContactForm", "ContactUs");
             }
             catch (Exception ex)
             {
-               
                 throw new Exception(ex.Message);
             }
+          
+
         }
     }
+
 }

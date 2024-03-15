@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\FolderCS\EmailVerify.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\FolderJS\manager.js" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     console.log(data);
     if (widgetId1 != 0) {
         // Gửi dữ liệu bằng fetch
-        fetch('https://localhost:7287/ContactUs/InsertContac', {
+        fetch('https://localhost:7188/ContactUs/ContactForm', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Đặt loại nội dung là JSON nếu bạn gửi dữ liệu JSON
