@@ -1,66 +1,217 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @model List<IdentityUser>
+@{
+    var index = 1;
+}
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/form.css">
+    <link rel="stylesheet" type="text/css" href="~/semantic-ui-master/dist/components/input.css">
+     <link rel="stylesheet" type="text/css" href="/Semantic-UI-master/dist/components/dropdown.css">
+   
     <link href="~/foldercs/manager.css" rel="stylesheet" />
     <style>
         i.icon.trash.alternate:before {
             color: red;
         }
 
-        i.icon, i.icons {
+        i.icon,
+        i.icons {
             font-size: 1.2em;
         }
 
-        .confirm{
-            background: green;
-            border-radius: 110%;
+        .check {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+
+        .confirm {
+            color: red;
+        }
+        .header{
+            border-bottom: dotted;
+        }
+
+        .text-dark {
+            color: #e5e9ec !important;
         }
     </style>
+
+
+   @*  <script>
+        $(document).ready(function () {
+            $('.dropdown').dropdown({
+                transition: 'drop'
+            });
+        });
+    </script> *@
+    <script>
+        $(document).ready(function () {
+            // Attach a change event listener to the select element
+            $('#inputGroupSelect01').on('change', function () {
+                // Get the selected value
+                var selectedValue = $(this).val();
+
+                // Log or use the selected value as needed
+                console.log("Selected value: " + selectedValue);
+            });
+        });
+       
+
+    </script>
+
+    <script>
+      
+        </script>
+     
+   
 </head>
 
-    <div class="table-users">
-        <div class="header">Users</div>
+<div class="table-users">
+   
+    <div class="header">
+        List User <i class="arrow right icon"></i> <div type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="user plus icon"></i>
+            new
+        </div>
+    </div>
+    <!-- Modal pop up -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CreateNew Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-        <table cellspacing="0">
-            <tr>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th width="10">ConfirmEmail</th>
-                <th width="100">Function</th>
-            </tr>
+                <div class="modal-body">
+                    <!-- content pop up -->
+                    <form id="createUserForm" >
+                        <div class="ui equal width form">
+                            <div class="fields">
+                                <div class="field">
+                                    <label>Username</label>
+                                    <input name="UserName" type="text" placeholder="Username" required>
+                                </div>
+                                <div class="field">
+                                    <label>Password</label>
+                                    <input name="password" type="password" required>
+                                </div>
+                            </div>
+                            <div class="fields">
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input name="Email" type="email" placeholder="Email" required>
+                                </div>
+                                <div class="field">
+                                    <label>Phone</label>
+                                    <input name="Phone" type="text" attern="[0-9]+" title="please enter number only" placeholder="Phone" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Role</label>
+                                <select class="form-select" id="inputGroupSelect01" name="role">
+                                    <option selected>Choose...</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                    <option value="Staff">Staff</option>
+                                </select>
+                            </div>
+                        </div>
+                        @* <div class="btn-submit">
+                            <input type="submit" value="SEND ">
+                        </div> *@
+                        <div class="modal-footer">
+                         
+                          
+                            <div class="ui buttons">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Close </button>
+                                <div class="or" ></div>
+                                <input type="submit" class="btn btn-primary" value="SEND">
+                            </div>
+                           @*  <button type="submit" class="btn btn-primary">Create</button> *@
+                        </div>
+                    </form>
+                    <!-- End content pop up -->
+                </div>
+             
+                      
+            </div>
+        </div>
+    </div>
+    <table cellspacing="0">
+        <tr>
+            <th width="5"></th>
+            <th width="30">Picture</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th width="100">Function</th>
+        </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td><img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" /></td>
-                <td>@item.UserName</td>
-                <td>@item.Email</td>
-                <td>@item.PhoneNumber</td>
+                <td>@index</td>
                 <td>
-                    @if (@item.EmailConfirmed)
-                    {
-                        <i class="circle outline icon"></i>
-                    }
-                    else
-                    {
-                        <i class="circle outline icon confirm"></i>
-                    }
-
+                    <img src="https://th.bing.com/th/id/OIP.awAiMS1BCAQ2xS2lcdXGlwHaHH?rs=1&pid=ImgDetMain" alt="" />
                 </td>
+                <td>@item.UserName</td>
+
+                @if (!@item.EmailConfirmed)
+                {
+                    <td>
+                        <div class="check ">
+                            @item.Email
+                        </div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="check confirm ">
+                            @item.Email
+                        </div>
+                    </td>
+                }
+
+                <td>@item.PhoneNumber</td>
+
                 <td>
-                    <i class="address card icon"></i>
-                    <i class="trash alternate icon"></i>
-                    <i class="edit outline icon"></i>
+                    <div class="ui teal buttons">
+                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                         
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#"><i class="edit icon"></i> Edit </a></li>
+                            <li><a class="dropdown-item" href="#"><i class="delete icon"></i> Remove </a></li>
+                            <li><a class="dropdown-item" href="#"><i class="id card icon"></i> Details</a></li>
+                           
+                        </ul>
+                    </div>
                 </td>
             </tr>
+            index++;
         }
-            
-           
+    </table>
+</div>
+<script src="~/folderjs/manager.js"></script>
+<script src="~/semantic-ui-master/examples/assets/library/jquery.min.js"></script>
+<script src="~/semantic-ui-master/dist/components/visibility.js"></script>
+<script src="~/semantic-ui-master/dist/components/sidebar.js"></script>
+<script src="~/semantic-ui-master/dist/components/transition.js"></script>
 
-           
-            
-        </table>
-    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Semantic UI JavaScript from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- only for form -->
+<script src="~/semantic-ui-master/dist/components/form.js"></script>
+<script src="~/semantic-ui-master/dist/components/transition.js"></script>

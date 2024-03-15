@@ -21,9 +21,9 @@ namespace WebApplication1_Repository.UnitOfWork
                 return contactUsRepository;
             }
         }
-        public void Save()
+        public int Save()
         {
-            context.SaveChanges();
+          return  context.SaveChanges();
         }
 
         private bool disposed = false;
