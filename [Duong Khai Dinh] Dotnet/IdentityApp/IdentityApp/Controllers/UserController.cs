@@ -26,14 +26,6 @@ namespace IdentityApp.Controllers
         {
             List<IdentityUser> users = _userManager.Users.ToList();
             List<(IdentityUser, Task<IList<string>>)> appUsers = new List<(IdentityUser, Task<IList<string>>)> { };
-            foreach (var user in users)
-            {
-                var role = _userManager.GetRolesAsync(user);
-                if (role != null)
-                {
-                }
-
-            }
             // Do something with the users, for example, pass them to a view
             return View(users);
         }
@@ -82,10 +74,13 @@ namespace IdentityApp.Controllers
             string selectedValue = Request.Form["role"];
             try
             {
-                IList<string> role = await _userManager.GetRolesAsync(user);
-                await _userManager.RemoveFromRolesAsync(user, role);
-                await _userManager.AddToRoleAsync(user, selectedValue);
-                //await _contactRepository.UpdateContact(contact);
+                if (selectedValue!=null)
+                {   
+                    var userUpdate = await _userManager.FindByIdAsync(user.Id);
+                    IList<string> role = await _userManager.GetRolesAsync(userUpdate);
+                    await _userManager.RemoveFromRolesAsync(userUpdate, role);
+                    await _userManager.AddToRoleAsync(userUpdate, selectedValue);
+                }
             }
             catch (DbUpdateConcurrencyException)
             {

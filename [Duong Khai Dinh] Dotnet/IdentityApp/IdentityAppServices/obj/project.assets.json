@@ -1323,6 +1323,19 @@
         "runtime": {
           "bin/placeholder/IdentityAppEntity.dll": {}
         }
+      },
+      "IdentityAppRepositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "IdentityAppEntity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IdentityAppRepositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IdentityAppRepositories.dll": {}
+        }
       }
     }
   },
@@ -3727,12 +3740,18 @@
       "type": "project",
       "path": "../IdentityAppEntity/IdentityAppEntity.csproj",
       "msbuildProject": "../IdentityAppEntity/IdentityAppEntity.csproj"
+    },
+    "IdentityAppRepositories/1.0.0": {
+      "type": "project",
+      "path": "../IdentityAppRepositories/IdentityAppRepositories.csproj",
+      "msbuildProject": "../IdentityAppRepositories/IdentityAppRepositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "IdentityAppDto >= 1.0.0",
       "IdentityAppEntity >= 1.0.0",
+      "IdentityAppRepositories >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.27",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.27",
@@ -3776,6 +3795,9 @@
             },
             "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj": {
               "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppEntity\\IdentityAppEntity.csproj"
+            },
+            "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj": {
+              "projectPath": "D:\\Summer2022-fe\\[Duong Khai Dinh] Dotnet\\IdentityApp\\IdentityAppRepositories\\IdentityAppRepositories.csproj"
             }
           }
         }

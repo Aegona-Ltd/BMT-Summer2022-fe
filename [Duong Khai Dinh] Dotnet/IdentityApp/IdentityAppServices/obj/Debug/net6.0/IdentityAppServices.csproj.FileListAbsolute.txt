@@ -32,3 +32,5 @@ D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\obj\De
 D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\obj\Debug\net6.0\refint\IdentityAppServices.dll
 D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\obj\Debug\net6.0\IdentityAppServices.pdb
 D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\obj\Debug\net6.0\ref\IdentityAppServices.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppRepositories.dll
+D:\Summer2022-fe\[Duong Khai Dinh] Dotnet\IdentityApp\IdentityAppServices\bin\Debug\net6.0\IdentityAppRepositories.pdb

@@ -5,22 +5,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
 using IdentityApp.Models;
 using IdentityApp.Data;
 using IdentityAppRepositories.UnitOfWork;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using IdentityAppServices.IServices;
+using IdentityAppServices.Services;
 
 namespace FastTrack.Controllers
 {
     public class CompaniesController : Controller
     {
 
-        private UnitOfWork _unitOfWork;
+        /*  private UnitOfWork _unitOfWork;*/
+        private ICompaniesServices _companiesServices;
         public CompaniesController(ApplicationDbContext context)
         {
-            _unitOfWork = new UnitOfWork(context);
+            _companiesServices = new CompaniesServices(context);
         }
 
 
@@ -28,7 +30,7 @@ namespace FastTrack.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         public async Task<IActionResult> Index()
         {
-          var  listCompany = _unitOfWork.CompanyRepository.Get();
+          var  listCompany = _companiesServices.Get();
           return View(listCompany);
         }
 
@@ -41,7 +43,7 @@ namespace FastTrack.Controllers
                 return NotFound();
             }
 
-            var company = _unitOfWork.CompanyRepository.GetByID(id);
+            var company = _companiesServices.GetByID(id);
             if (company == null)
             {
                 return NotFound();
@@ -67,7 +69,7 @@ namespace FastTrack.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.CompanyRepository.Insert(company);
+                _companiesServices.Insert(company);
                 return RedirectToAction(nameof(Index));
             }
             return View(company);
@@ -82,7 +84,7 @@ namespace FastTrack.Controllers
                 return NotFound();
             }
 
-            var company = _unitOfWork.CompanyRepository.GetByID(id);
+            var company = _companiesServices.GetByID(id);
             if (company == null)
             {
                 return NotFound();
@@ -107,7 +109,7 @@ namespace FastTrack.Controllers
             {
                 try
                 {
-                    _unitOfWork.CompanyRepository.Update(company);
+                    _companiesServices.Update(company);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -129,7 +131,7 @@ namespace FastTrack.Controllers
                 return NotFound();
             }
 
-            var company = _unitOfWork.CompanyRepository.GetByID(id);
+            var company = _companiesServices.GetByID(id);
             if (company == null)
             {
                 return NotFound();
@@ -144,7 +146,7 @@ namespace FastTrack.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _unitOfWork.CompanyRepository.Delete(id);
+            _companiesServices.Delete(id);
             /*await _companyRepository.DeleteCompany(id);*/
 
             return RedirectToAction(nameof(Index));

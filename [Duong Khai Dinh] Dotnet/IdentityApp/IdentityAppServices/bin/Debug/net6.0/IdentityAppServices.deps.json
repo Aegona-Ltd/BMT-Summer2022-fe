@@ -10,6 +10,7 @@
         "dependencies": {
           "IdentityAppDto": "1.0.0",
           "IdentityAppEntity": "1.0.0",
+          "IdentityAppRepositories": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.27",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
@@ -786,6 +787,14 @@
         "runtime": {
           "IdentityAppEntity.dll": {}
         }
+      },
+      "IdentityAppRepositories/1.0.0": {
+        "dependencies": {
+          "IdentityAppEntity": "1.0.0"
+        },
+        "runtime": {
+          "IdentityAppRepositories.dll": {}
+        }
       }
     }
   },
@@ -1312,6 +1321,11 @@
       "sha512": ""
     },
     "IdentityAppEntity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IdentityAppRepositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

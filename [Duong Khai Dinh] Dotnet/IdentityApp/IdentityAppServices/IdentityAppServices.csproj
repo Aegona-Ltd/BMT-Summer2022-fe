@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\IdentityAppDto\IdentityAppDto.csproj" />
     <ProjectReference Include="..\IdentityAppEntity\IdentityAppEntity.csproj" />
+    <ProjectReference Include="..\IdentityAppRepositories\IdentityAppRepositories.csproj" />
   </ItemGroup>
 
 </Project>

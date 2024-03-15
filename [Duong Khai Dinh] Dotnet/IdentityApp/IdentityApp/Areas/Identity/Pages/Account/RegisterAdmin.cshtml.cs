@@ -139,11 +139,11 @@ namespace IdentityApp.Areas.Identity.Pages.Account
 /*                string selectedValue = role.SelectedItem.ToString();*/
                 var result = await _userManager.CreateAsync(user, Input.Password);
               
-                await _userManager.AddToRoleAsync(user, selectedValue);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    await _userManager.AddToRoleAsync(user, selectedValue);
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

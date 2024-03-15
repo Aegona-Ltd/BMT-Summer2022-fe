@@ -12,16 +12,20 @@ using Microsoft.AspNetCore.Authorization;
 using IdentityAppRepositories.IRepositories;
 using IdentityAppRepositories.Repositories;
 using IdentityAppRepositories.UnitOfWork;
+using IdentityAppServices.IServices;
+using IdentityAppServices.Services;
 
 namespace IdentityApp.Controllers
 {
     public class ContactsController : Controller
     {
 
-        private UnitOfWork _unitOfWork;
+       
+        private IContactsServices _contactsServices;
         public ContactsController(ApplicationDbContext context)
         {
-           _unitOfWork = new UnitOfWork(context);
+            _contactsServices = new ContactsServices(context);
+        
         }
 
         // GET: Contacts
@@ -29,7 +33,7 @@ namespace IdentityApp.Controllers
         public async Task<IActionResult> Index()
         {
 
-            var listContact = _unitOfWork.ContactRepository.Get();
+            var listContact = _contactsServices.Get();
             return View(listContact);
            
         }
@@ -42,7 +46,7 @@ namespace IdentityApp.Controllers
             {
                 return NotFound();
             }
-            var contact = _unitOfWork.ContactRepository.GetByID(id);
+            var contact = _contactsServices.GetByID(id);
              /* await _context.Contacts
                 .FirstOrDefaultAsync(m => m.ContactId == id);*/
             if (contact == null)
@@ -69,7 +73,7 @@ namespace IdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                 _unitOfWork.ContactRepository.Insert(contact);
+                 _contactsServices.Insert(contact);
                 //await _contactRepository.InsertContact(contact);
                 return RedirectToAction(nameof(Index));
             }
@@ -84,7 +88,7 @@ namespace IdentityApp.Controllers
             {
                 return NotFound();
             }
-            var contact = _unitOfWork.ContactRepository.GetByID(id);
+            var contact = _contactsServices.GetByID(id);
             /*var contact = await _contactRepository.GetContactByID(id);*/
             /*var contact = await _context.Contacts.FindAsync(id);*/
             if (contact == null)
@@ -110,7 +114,7 @@ namespace IdentityApp.Controllers
             {
                 try
                 {
-                    _unitOfWork.ContactRepository.Update(contact);
+                    _contactsServices.Update(contact);
                     //await _contactRepository.UpdateContact(contact);
                 }
                 catch (DbUpdateConcurrencyException)
@@ -131,7 +135,7 @@ namespace IdentityApp.Controllers
             {
                 return NotFound();
             }
-            var contact = _unitOfWork.ContactRepository.GetByID(id);
+            var contact = _contactsServices.GetByID(id);
             //var contact = await _contactRepository.GetContactByID(id);
            /* var contact = await _context.Contacts
                 .FirstOrDefaultAsync(m => m.ContactId == id);*/
@@ -152,7 +156,7 @@ namespace IdentityApp.Controllers
               {
                   return Problem("Entity set 'DBFastTrackContext.Contacts'  is null.");
               }*/
-           _unitOfWork.ContactRepository.Delete(id);
+           _contactsServices.Delete(id);
             /*await _contactRepository.DeleteContact(id);*/
           
             return RedirectToAction(nameof(Index));
