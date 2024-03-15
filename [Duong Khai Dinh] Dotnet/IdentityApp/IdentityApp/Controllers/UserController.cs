@@ -1,7 +1,9 @@
-﻿using IdentityAppRepositories.UnitOfWork;
+﻿using IdentityApp.Models;
+using IdentityAppRepositories.UnitOfWork;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,7 @@ namespace IdentityApp.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        
+
         public UserController(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager;
@@ -54,6 +56,47 @@ namespace IdentityApp.Controllers
             var tuple = Tuple.Create(user, role);
             return View(tuple);
         }
+        public async Task<IActionResult> Edit(string? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var role = await _userManager.GetRolesAsync(user);
+            var tuple = Tuple.Create(user, role);
+            return View(tuple);
+        }
 
+        // POST: User/Edit/??
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(IdentityUser user)
+        {
+            string selectedValue = Request.Form["role"];
+            try
+            {
+                IList<string> role = await _userManager.GetRolesAsync(user);
+                await _userManager.RemoveFromRolesAsync(user, role);
+                await _userManager.AddToRoleAsync(user, selectedValue);
+                //await _contactRepository.UpdateContact(contact);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+                throw;
+
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
+
+
+
 }

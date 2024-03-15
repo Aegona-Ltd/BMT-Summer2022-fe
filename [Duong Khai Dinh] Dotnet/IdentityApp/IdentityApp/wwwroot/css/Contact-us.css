@@ -26796,7 +26796,7 @@ html {
 }
 
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
     font-family: ubuntu,sans-serif!important
 }
 

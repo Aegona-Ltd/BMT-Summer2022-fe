@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model Tuple<IdentityUser,IList<string>>;
+<h1>Edit role</h1>
+
+<div>
+   
+    <hr />
+    <form asp-action="Edit">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>model.Item1.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model =>  model.Item1.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>  model.Item1.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model =>  model.Item1.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model =>  model.Item1.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.EmailConfirmed)
+        </dt>
+        <dd class = "col-sm-10">
+            @if (Model.Item1.EmailConfirmed)
+            {
+                <p> True</p>
+            }
+            else
+            {
+                <p> False</p>
+            }
+        </dd>
+        <dt class = "col-sm-2">
+           Roles
+        </dt>
+        <dd class = "col-sm-10">
+        <select class="form-control" id="role" name="role">
+                    <option value=Model.Item2>
+                        Current Role:
+                        @foreach (var item in Model.Item2)
+                    {
+                        @item
+                    }</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Moderator">Moderator</option>
+                <option value="User">User</option>
+            </select>
+            @*@foreach (var item in Model.Item2)
+            {
+                @item
+            } *@
+        </dd>
+    </dl>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+  
+    <a asp-action="Index">Back to List</a>
+</div>
