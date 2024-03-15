@@ -20,6 +20,20 @@
         <div class="item">
             <a class="ui primary button" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Logout</a>
         </div>
+
+        if (User.IsInRole("Admin"))
+        {
+            <a class="item" asp-controller="Manager" asp-action="Index">
+                <div class="ui teal vertical animated button" tabindex="0">
+                    <div class="hidden content">Manager</div>
+                    <div class="visible content">
+                        <i class="database icon"></i>
+                    </div>
+                </div>
+            </a>
+          
+        }
+     
 }
 else
 {

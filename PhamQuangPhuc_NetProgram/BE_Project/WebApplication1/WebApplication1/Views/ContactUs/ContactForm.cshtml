@@ -1,7 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Index";
-    ErrorViewModel errorViewModel = new ErrorViewModel();
-}
+﻿
+@using WebApplication1_DTO.Request
+@model ContactUsRequest
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +57,7 @@
         // var widgetId2;
         console.log(contactCaptcha);
         var onloadCallback = function () {
-            contactCaptcha = grecaptcha.render('captcha-login', {
+            contactCaptcha = grecaptcha.render('captcha', {
                 'sitekey': '6LeopYUpAAAAADxWOfgRfwhmKFhGGzGVVU_o0n7L',
                 'theme': 'light',
                 'callback': function (response) {
@@ -119,56 +120,60 @@
 
                     <!-- ui contact-form -->
                     <div class="column">
-                        <form class="contact-form ui form">
+                        <form class="contact-form ui form" method="post" asp-action="AddContactForm">
+
                             <h2><b>Contact Us</b></h2>
                             <div class="field input-box">
-
-                                <input class="input-field" type="text" name="full-name" title="" required>
+                                <input class="input-field" type="text" asp-for=" FullName" required>
                                 <label>FULL NAME</label>
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+
                             </div>
                             <div class="field input-box">
-
-                                <input class="input-field" type="text" name="company-name" title="" required>
+                                <input class="input-field" type="text" asp-for="CompanyName" required>
                                 <label>COMPANY NAME</label>
+                                <span asp-validation-for="CompanyName" class="text-danger"></span>
                             </div>
                             <div class="field input-box">
-
-                                <input class="input-field" type="text" name="business-phone" title="" required>
+                                <input class="input-field" type="text" asp-for="BusinessPhone" required>
                                 <label>BUSINESS PHONE</label>
+                                <span asp-validation-for="BusinessPhone" class="text-danger"></span>
                             </div>
                             <div class="field input-box">
-
-                                <input class="input-field" type="text" name="email" title="" required>
+                                <input class="input-field" type="text" asp-for="Email" required>
                                 <label>EMAIL</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
-
                             <div class="ui form">
                                 <div class="field input-box">
-
-                                    <textarea class="input-field" name="message" required></textarea>
-                                    <label>MESSAGE </label>
+                                    <textarea class="input-field" asp-for="Message" required></textarea>
+                                    <label>MESSAGE</label>
+                                    <span asp-validation-for="Message" class="text-danger"></span>
                                 </div>
                             </div>
-                            <div style="display: flex; justify-content: center; margin: 10px; ;">
-                                <input type="hidden" id="input-captcha"  />
-                                <div id="captcha-login"> </div>
-                                <br>
-                                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-                                        async defer>
-                                </script>
+                            <div style="display: flex; justify-content: center; margin: 10px;">
+                                <input type="hidden" asp-for="Captcha" id="input-captcha" />
+                                <div id="captcha"> </div>
+                                <span asp-validation-for="Captcha" class="text-danger"></span>
+                                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                             </div>
+                            @if (TempData["ErrorMessage"] != null && TempData["color"]!=null)
+                            {
+                                <div class="ui green message">@TempData["ErrorMessage"]</div>
+                            }
+                            else if (TempData["ErrorMessage"] != null && TempData["color"] ==null)
+                            {
+                                <div class="alert alert-danger" style="color:black">@TempData["ErrorMessage"]</div>
+                            }else{
 
+                            }
                             <div class="btn-submit">
                                 <input type="submit" value="SEND MESSAGE">
                             </div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger left"></div>
                         </form>
-                        @if(errorViewModel.StatusError == 1)
-                        {
-                            <div class="ui green message">@Html.DisplayName(errorViewModel.ShowRequesValue)</div>
-                        }else
-                        {
-                            <div class="ui red message">@Html.DisplayName(errorViewModel.ShowRequesValue)</div>
-                        }
+
+                       
                     </div>
                 </div>
             </div>
@@ -176,12 +181,17 @@
     </div>
 
 </body>
+
+
+</html>
 <script src="js.js"></script>
 <script src="/Semantic-UI-master/dist/components/jquery.min.js"></script>
 
 <script src="/Semantic-UI-master/dist/components/form.js"></script>
 <script src="/Semantic-UI-master/dist/components/transition.js"></script>
-<script src="/FolderJS/contact.js"></script>
-<script src="/FolderJS/Base.js"></script>
+@*
+<script src="~/folderjs/contact.js"></script> *@
 
-</html>
+@section Scripts {
+    <partial name="_CheckData.cshtml" />
+}
